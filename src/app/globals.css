@@ -281,6 +281,38 @@ body {
 }
 
 /* ═══════════════════════════════════════
+   SCREENSHOT & DEVICE FRAME
+   ═══════════════════════════════════════ */
+
+@keyframes glow-pulse {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50%      { opacity: 0.7; transform: scale(1.04); }
+}
+
+.hero-glow {
+  position: absolute;
+  inset: -40px;
+  border-radius: 32px;
+  filter: blur(60px);
+  z-index: 0;
+  animation: glow-pulse 4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.screenshot-float {
+  transform: perspective(1200px) rotateY(-4deg) rotateX(2deg);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.screenshot-float:hover {
+  transform: perspective(1200px) rotateY(0deg) rotateX(0deg);
+}
+
+.card-premium:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 20px 60px rgba(0,0,0,0.1);
+  transform: translate3d(0, -5px, 0);
+}
+
+/* ═══════════════════════════════════════
    PERFORMANCE
    ═══════════════════════════════════════ */
 

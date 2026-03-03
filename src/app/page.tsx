@@ -5,7 +5,10 @@ import MarqueeStrip from '@/components/MarqueeStrip';
 import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
-import Card from '@/components/Card';
+import DeviceFrame from '@/components/DeviceFrame';
+import FloatingScreenshot from '@/components/FloatingScreenshot';
+import FeatureShowcase from '@/components/FeatureShowcase';
+import { DashboardMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
   title: 'PreCalIQ — AI-Powered Preconstruction Platform',
@@ -16,91 +19,100 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div>
-      {/* ═══════════ HERO ═══════════ */}
-      <section className="relative overflow-hidden">
-        {/* Gradient background */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(170deg, #FFFFFF 0%, #F0F4FF 40%, #E8EEFB 70%, #FAFAFA 100%)' }} />
+      {/* ═══════════ DARK HERO ═══════════ */}
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 50%, #0A0A1A 100%)' }}>
+        {/* Decorative gradient orbs */}
+        <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full opacity-[0.07] pointer-events-none blur-3xl" style={{ background: '#2563EB' }} />
+        <div className="absolute bottom-[20%] left-[5%] w-[350px] h-[350px] rounded-full opacity-[0.04] pointer-events-none blur-2xl" style={{ background: '#60A5FA' }} />
 
-        {/* Decorative geometric elements */}
-        <div className="absolute top-[15%] right-[8%] w-[500px] h-[500px] rounded-full opacity-[0.06] pointer-events-none blur-3xl" style={{ background: '#2563EB' }} />
-        <div className="absolute bottom-[10%] left-[3%] w-[350px] h-[350px] rounded-full opacity-[0.04] pointer-events-none blur-2xl" style={{ background: '#60A5FA' }} />
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        {/* Floating grid decoration */}
-        <div className="absolute top-20 right-[12%] w-64 h-64 opacity-[0.03] pointer-events-none" aria-hidden="true">
-          <svg viewBox="0 0 256 256" fill="none" className="w-full h-full animate-float-gentle">
-            <rect x="0" y="0" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="80" y="20" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="160" y="0" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="40" y="100" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="120" y="80" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="200" y="100" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="0" y="180" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="80" y="160" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-            <rect x="160" y="180" width="60" height="60" rx="12" stroke="#2563EB" strokeWidth="1" />
-          </svg>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-36 md:pb-28">
+          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left: Text */}
+            <div>
+              <AnimatedReveal direction="fade">
+                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-xs font-medium text-blue-300 mb-10 ring-1 ring-blue-400/20" style={{ background: 'rgba(37,99,235,0.1)' }}>
+                  <span className="relative flex h-2 w-2">
+                    <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" style={{ animationDuration: '2s' }} />
+                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
+                  </span>
+                  AI-Powered Preconstruction Intelligence
+                </div>
+              </AnimatedReveal>
+
+              <AnimatedReveal direction="up" delay={80}>
+                <h1 className="text-[2.5rem] sm:text-[3.25rem] md:text-[3.5rem] lg:text-[4rem] font-extrabold leading-[1.06] tracking-[-0.03em] text-white">
+                  From Specs to Bids
+                  <br />
+                  <span className="text-gradient">in Minutes</span>
+                </h1>
+              </AnimatedReveal>
+
+              <AnimatedReveal direction="up" delay={200}>
+                <p className="mt-7 text-[1.0625rem] md:text-[1.125rem] text-blue-100/60 max-w-md leading-[1.7]">
+                  The only AI platform that reads your specifications <em className="text-white/90 not-italic font-medium">and</em> your plans, then generates material takeoffs with complete CSI details — automatically.
+                </p>
+              </AnimatedReveal>
+
+              <AnimatedReveal direction="up" delay={350}>
+                <div className="mt-9 flex flex-col sm:flex-row gap-4">
+                  <Button href="/contact">
+                    Request a Demo
+                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Button>
+                  <Button href="/features" variant="secondary">
+                    Explore Features
+                  </Button>
+                </div>
+              </AnimatedReveal>
+
+              <AnimatedReveal direction="fade" delay={550}>
+                <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3">
+                  {[
+                    { text: 'SOC 2 Compliant', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+                    { text: 'No credit card', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
+                    { text: '15-min setup', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  ].map((item, i) => (
+                    <span key={i} className="flex items-center gap-2 text-xs text-white/30 font-medium">
+                      <svg className="w-3.5 h-3.5 text-blue-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                      </svg>
+                      {item.text}
+                    </span>
+                  ))}
+                </div>
+              </AnimatedReveal>
+            </div>
+
+            {/* Right: Floating Dashboard Screenshot */}
+            <AnimatedReveal direction="left" delay={300}>
+              <FloatingScreenshot glow className="md:translate-y-4">
+                <DeviceFrame>
+                  <DashboardMockup />
+                </DeviceFrame>
+              </FloatingScreenshot>
+            </AnimatedReveal>
+          </div>
         </div>
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-28 md:pt-36 md:pb-40">
-          <AnimatedReveal direction="fade">
-            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass-surface text-xs font-medium text-accent mb-10 ring-1 ring-accent/10 shadow-xs">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-accent opacity-75 animate-ping" style={{ animationDuration: '2s' }} />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
-              </span>
-              AI-Powered Preconstruction Intelligence
-            </div>
-          </AnimatedReveal>
+        {/* Bottom gradient fade to white */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style={{ background: 'linear-gradient(to top, #FFFFFF, transparent)' }} />
+      </section>
 
-          <AnimatedReveal direction="up" delay={80}>
-            <h1 className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-extrabold leading-[1.04] tracking-[-0.03em] text-charcoal max-w-4xl">
-              From Specs to Bids
-              <br />
-              <span className="text-gradient">in Minutes</span>
-            </h1>
-          </AnimatedReveal>
-
-          <AnimatedReveal direction="up" delay={200}>
-            <p className="mt-7 text-[1.125rem] md:text-[1.25rem] text-graphite max-w-xl leading-[1.7]">
-              The only AI platform that reads your specifications <em className="text-charcoal not-italic font-medium">and</em> your plans, then generates material takeoffs with complete CSI details — automatically.
-            </p>
-          </AnimatedReveal>
-
-          <AnimatedReveal direction="up" delay={350}>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4">
-              <Button href="/contact">
-                Request a Demo
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </Button>
-              <Button href="/features" variant="secondary">
-                Explore Features
-              </Button>
-            </div>
-          </AnimatedReveal>
-
-          {/* Trust indicators with icons */}
-          <AnimatedReveal direction="fade" delay={550}>
-            <div className="mt-16 flex flex-wrap items-center gap-x-6 gap-y-3">
-              {[
-                { text: 'SOC 2 Compliant', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-                { text: 'No credit card', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-                { text: '15-min setup', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-                { text: 'Cancel anytime', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
-              ].map((item, i) => (
-                <span key={i} className="flex items-center gap-2 text-xs text-slate font-medium bg-white/60 px-3 py-1.5 rounded-full ring-1 ring-black/[0.04]">
-                  <svg className="w-3.5 h-3.5 text-accent/50" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
-                  {item.text}
-                </span>
-              ))}
-            </div>
-          </AnimatedReveal>
+      {/* ═══════════ SOCIAL PROOF ═══════════ */}
+      <section className="py-10 md:py-14 px-6 bg-white border-b border-border">
+        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
+          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate whitespace-nowrap">Trusted by GCs across the US</p>
+          <div className="flex items-center gap-8 md:gap-10 flex-wrap justify-center">
+            {['Summit Healthcare', 'Lakeshore Dev', 'Metro Transit', 'Pinnacle Build Co', 'Apex Contractors'].map((name) => (
+              <span key={name} className="text-sm font-bold text-stone tracking-tight whitespace-nowrap">{name}</span>
+            ))}
+          </div>
         </div>
-
-        {/* Bottom gradient transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: 'linear-gradient(to top, #FFFFFF, transparent)' }} />
       </section>
 
       {/* ═══════════ PROBLEM STATEMENT ═══════════ */}
@@ -133,81 +145,69 @@ export default function HomePage() {
         </AnimatedReveal>
       </Section>
 
-      {/* ═══════════ THE SOLUTION — 3 PILLARS ═══════════ */}
-      <section className="relative py-24 md:py-36 px-6 overflow-hidden">
-        {/* Subtle dot grid background */}
-        <div className="absolute inset-0 dot-pattern" />
-        <div className="absolute inset-0 bg-snow/80" />
-
-        <div className="max-w-6xl mx-auto relative z-10">
-          <AnimatedReveal direction="up" className="text-center mb-20">
+      {/* ═══════════ THE SOLUTION (WITH SCREENSHOTS) ═══════════ */}
+      <section className="py-16 md:py-24 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedReveal direction="up" className="text-center mb-8">
             <SectionLabel>The Solution</SectionLabel>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
               Three capabilities.<br className="hidden sm:block" /> Zero competitors.
             </h2>
           </AnimatedReveal>
 
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {[
-              {
-                number: '01',
-                title: 'We Read Your Specs',
-                description: 'Upload a spec PDF. PreCalIQ identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page.',
-                icon: (
-                  <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-                    <rect x="6" y="4" width="28" height="36" rx="4" stroke="#2563EB" strokeWidth="1.5" fill="rgba(37,99,235,0.04)" />
-                    <path d="M14 14h12M14 20h12M14 26h8" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" opacity="0.6" />
-                    <circle cx="36" cy="36" r="10" fill="rgba(37,99,235,0.08)" stroke="#2563EB" strokeWidth="1.5" />
-                    <path d="M33 36h6M36 33v6" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" />
-                  </svg>
-                ),
-              },
-              {
-                number: '02',
-                title: 'We Cross-Reference Everything',
-                description: 'Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." PreCalIQ connects them automatically — no manual lookup.',
-                icon: (
-                  <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-                    <rect x="4" y="8" width="16" height="16" rx="4" stroke="#2563EB" strokeWidth="1.5" fill="rgba(37,99,235,0.04)" />
-                    <rect x="28" y="24" width="16" height="16" rx="4" stroke="#2563EB" strokeWidth="1.5" fill="rgba(37,99,235,0.04)" />
-                    <path d="M20 16l8 8m0-8l-8 8" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
-                    <path d="M20 16h8v8" stroke="#2563EB" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
-                ),
-              },
-              {
-                number: '03',
-                title: 'We Build Your Bid',
-                description: 'Generate Standard, Premium, and Budget variants. Collect vendor pricing. Assemble professional bid documents. All in one platform.',
-                icon: (
-                  <svg className="w-12 h-12" viewBox="0 0 48 48" fill="none">
-                    <rect x="4" y="4" width="40" height="40" rx="6" stroke="#2563EB" strokeWidth="1.5" fill="rgba(37,99,235,0.04)" />
-                    <path d="M14 34V22M24 34V14M34 34V26" stroke="#2563EB" strokeWidth="3" strokeLinecap="round" />
-                    <circle cx="14" cy="18" r="2.5" fill="#2563EB" opacity="0.3" />
-                    <circle cx="24" cy="10" r="2.5" fill="#2563EB" opacity="0.3" />
-                    <circle cx="34" cy="22" r="2.5" fill="#2563EB" opacity="0.3" />
-                  </svg>
-                ),
-              },
-            ].map((item, i) => (
-              <AnimatedReveal key={i} direction="up" delay={i * 120}>
-                <Card premium className="p-8 md:p-10 h-full group rounded-2xl">
-                  <div className="mb-8 p-3 bg-accent-soft rounded-xl w-fit">{item.icon}</div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[0.8125rem] font-bold tracking-wider text-accent">{item.number}</span>
-                    <div className="flex-1 h-px bg-border" />
-                  </div>
-                  <h3 className="text-xl font-bold text-charcoal leading-snug">{item.title}</h3>
-                  <p className="mt-4 text-graphite leading-relaxed">{item.description}</p>
-                </Card>
-              </AnimatedReveal>
-            ))}
-          </div>
+          <FeatureShowcase
+            badge="01 — Specification Parsing"
+            title="We Read Your Specs"
+            description="Upload a spec PDF. PreCalIQ identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page."
+            details={[
+              'Supports 200+ page specification documents',
+              'Extracts data from all CSI divisions automatically',
+              'Identifies manufacturers, materials, and finishes',
+            ]}
+            screenshot={
+              <DeviceFrame>
+                <SpecsMockup />
+              </DeviceFrame>
+            }
+          />
+
+          <FeatureShowcase
+            badge="02 — Cross-Referencing"
+            title="We Cross-Reference Everything"
+            description='Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." PreCalIQ connects them automatically — no manual lookup.'
+            details={[
+              'Matches spec requirements to plan schedules',
+              'Generates takeoff items with full CSI details',
+              'Multi-option variants: Standard, Premium, Budget',
+            ]}
+            screenshot={
+              <DeviceFrame>
+                <TakeoffMockup />
+              </DeviceFrame>
+            }
+            reverse
+          />
+
+          <FeatureShowcase
+            badge="03 — Bid Assembly"
+            title="We Build Your Bid"
+            description="Generate Standard, Premium, and Budget variants. Collect vendor pricing. Assemble professional bid documents. All in one platform."
+            details={[
+              'Real-time cost totals across all categories',
+              'Vendor portal for automated quote collection',
+              'One-click PDF and Excel bid document generation',
+            ]}
+            screenshot={
+              <DeviceFrame>
+                <BidBuilderMockup />
+              </DeviceFrame>
+            }
+          />
         </div>
       </section>
 
       {/* ═══════════ HOW IT WORKS ═══════════ */}
-      <Section bg="white" wide>
+      <Section bg="snow" wide>
         <AnimatedReveal direction="up" className="text-center mb-20">
           <SectionLabel>Process</SectionLabel>
           <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
@@ -238,58 +238,6 @@ export default function HomePage() {
             </AnimatedReveal>
           ))}
         </div>
-      </Section>
-
-      {/* ═══════════ COMPARISON TABLE ═══════════ */}
-      <Section bg="snow">
-        <AnimatedReveal direction="up" className="text-center mb-14">
-          <SectionLabel>Comparison</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
-            What others miss, we catch
-          </h2>
-        </AnimatedReveal>
-
-        <AnimatedReveal direction="scale" delay={100}>
-          <div className="rounded-2xl ring-1 ring-border overflow-hidden shadow-card bg-white">
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
-                <thead>
-                  <tr style={{ background: 'linear-gradient(to right, #F8F9FC, #F0F4FF, #F8F9FC)' }}>
-                    <th className="text-left py-4 px-6 font-semibold text-charcoal text-[0.8125rem]">Capability</th>
-                    <th className="text-center py-4 px-6 font-bold text-accent text-[0.8125rem]">PreCalIQ</th>
-                    <th className="text-center py-4 px-6 font-medium text-slate text-[0.8125rem]">PlanSwift</th>
-                    <th className="text-center py-4 px-6 font-medium text-slate text-[0.8125rem]">Bluebeam</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {[
-                    ['AI Specification Reading', true, false, false],
-                    ['Automated Material Takeoffs', true, false, false],
-                    ['Multi-Option Bid Variants', true, false, false],
-                    ['Vendor Pricing Portal', true, false, false],
-                    ['Change Order Detection', true, false, false],
-                    ['Bid Document Generation', true, false, false],
-                    ['Plan Markup Tools', false, true, true],
-                    ['On-Screen Measurement', false, true, true],
-                  ].map(([feature, b, p, bb], i) => (
-                    <tr key={i} className="border-t border-border hover:bg-accent-mist transition-colors">
-                      <td className="py-3.5 px-6 text-charcoal font-medium text-[0.875rem]">{feature as string}</td>
-                      {[b, p, bb].map((val, j) => (
-                        <td key={j} className="text-center py-3.5 px-6">
-                          {val ? (
-                            <span className={`inline-flex w-7 h-7 items-center justify-center rounded-full ${j === 0 ? 'bg-accent/10 text-accent' : 'bg-smoke text-slate'}`}>
-                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                            </span>
-                          ) : <span className="text-stone">—</span>}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </AnimatedReveal>
       </Section>
 
       {/* ═══════════ STATS ═══════════ */}
@@ -340,19 +288,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════ CTA ═══════════ */}
-      <section className="relative overflow-hidden py-32 md:py-44 px-6">
-        {/* Background gradient */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(170deg, #FAFAFA 0%, #F0F4FF 50%, #FAFAFA 100%)' }} />
-        {/* Decorative accent circle */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-[0.04]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
+      {/* ═══════════ CTA (DARK) ═══════════ */}
+      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 60%, #0A0A1A 100%)' }}>
+        {/* Background screenshot at low opacity */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
+          <div className="w-[800px] max-w-full">
+            <DeviceFrame>
+              <DashboardMockup />
+            </DeviceFrame>
+          </div>
+        </div>
+
+        {/* Decorative accent glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-[0.06]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
 
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
-          <SectionLabel>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
+          <SectionLabel light>Get Started</SectionLabel>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">
             Ready to transform your preconstruction?
           </h2>
-          <p className="mt-6 text-[1.0625rem] text-graphite leading-[1.75]">
+          <p className="mt-6 text-[1.0625rem] text-blue-100/40 leading-[1.75]">
             Join the GCs who are winning more bids with AI-powered estimating. Start with a free project — no credit card required.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

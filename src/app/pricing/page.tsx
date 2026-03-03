@@ -4,6 +4,8 @@ import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Accordion from '@/components/Accordion';
+import DeviceFrame from '@/components/DeviceFrame';
+import { BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
   title: 'Pricing',
@@ -100,7 +102,7 @@ export default function PricingPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
+      <section className="relative overflow-hidden bg-white py-24 md:py-32 px-6">
         <div className="max-w-4xl mx-auto text-center">
           <AnimatedReveal direction="fade">
             <SectionLabel>Pricing</SectionLabel>
@@ -114,6 +116,13 @@ export default function PricingPage() {
             <p className="mt-6 text-[1.125rem] text-graphite max-w-lg mx-auto leading-relaxed">
               Start free. Scale as your team wins more bids.
             </p>
+          </AnimatedReveal>
+          <AnimatedReveal direction="scale" delay={300}>
+            <div className="mt-12 max-w-md mx-auto screenshot-float rounded-2xl overflow-hidden shadow-xl ring-1 ring-border">
+              <DeviceFrame>
+                <BidBuilderMockup />
+              </DeviceFrame>
+            </div>
           </AnimatedReveal>
         </div>
       </section>
