@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useMemo } from 'react';
 
 interface AnimatedCounterProps {
   value: string;
@@ -10,6 +10,15 @@ interface AnimatedCounterProps {
 export default function AnimatedCounter({ value, label }: AnimatedCounterProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const hasAnimated = useRef(false);
+
+  const parsed = useMemo(() => {
+    const match = value.match(/^([<$]?)(\d+)(.*)/);
+    if (!match) return null;
+    return { prefix: match[1] || '', num: parseInt(match[2], 10), suffix: match[3] || '' };
+  }, [value]);
+
+  const [count, setCount] = useState(parsed ? parsed.num : 0);
 
   useEffect(() => {
     const el = ref.current;
@@ -27,15 +36,10 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
     return () => observer.disconnect();
   }, []);
 
-  const match = value.match(/^([<$]?)(\d+)(.*)/);
-  const prefix = match?.[1] || '';
-  const numPart = match ? parseInt(match[2], 10) : 0;
-  const suffix = match?.[3] || value;
-
-  const [count, setCount] = useState(0);
-
   useEffect(() => {
-    if (!visible || !match) return;
+    if (!visible || !parsed || hasAnimated.current) return;
+    hasAnimated.current = true;
+    setCount(0);
     const duration = 1200;
     const steps = 30;
     const stepTime = duration / steps;
@@ -44,20 +48,23 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
       current++;
       const progress = current / steps;
       const eased = 1 - (1 - progress) * (1 - progress);
-      setCount(Math.round(eased * numPart));
-      if (current >= steps) clearInterval(timer);
+      setCount(Math.round(eased * parsed.num));
+      if (current >= steps) {
+        setCount(parsed.num);
+        clearInterval(timer);
+      }
     }, stepTime);
     return () => clearInterval(timer);
-  }, [visible, numPart, match]);
+  }, [visible, parsed]);
 
   return (
     <div ref={ref} className="text-center">
       <div
-        className={`text-5xl md:text-6xl font-extrabold tracking-tight text-gradient inline-block transition-all duration-700 ${
+        className={`text-5xl md:text-6xl font-extrabold tracking-tight text-white inline-block transition-all duration-700 ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
-        {match ? `${prefix}${count}${suffix}` : value}
+        {parsed ? `${parsed.prefix}${count}${parsed.suffix}` : value}
       </div>
       <div
         className={`text-[0.8125rem] text-white/35 mt-3 font-medium tracking-wide uppercase transition-all duration-700 delay-200 ${
