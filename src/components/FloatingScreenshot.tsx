@@ -4,10 +4,9 @@ interface FloatingScreenshotProps {
   children: React.ReactNode;
   glow?: boolean;
   className?: string;
-  float?: boolean;
 }
 
-export default function FloatingScreenshot({ children, glow = false, className = '', float = false }: FloatingScreenshotProps) {
+export default function FloatingScreenshot({ children, glow = false, className = '' }: FloatingScreenshotProps) {
   return (
     <div className={`relative group ${className}`}>
       {glow && (
@@ -16,7 +15,7 @@ export default function FloatingScreenshot({ children, glow = false, className =
           style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.3), rgba(96,165,250,0.15), rgba(37,99,235,0.2))' }}
         />
       )}
-      <div className={`relative ${float ? 'screenshot-hero' : 'screenshot-float'}`}>
+      <div className="relative">
         {children}
       </div>
     </div>

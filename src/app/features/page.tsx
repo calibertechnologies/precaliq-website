@@ -5,6 +5,8 @@ import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import DeviceFrame from '@/components/DeviceFrame';
 import FloatingScreenshot from '@/components/FloatingScreenshot';
+import ScrollPerspective from '@/components/ScrollPerspective';
+import AuroraBackground from '@/components/AuroraBackground';
 import FeatureShowcase from '@/components/FeatureShowcase';
 import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
@@ -18,9 +20,12 @@ export default function FeaturesPage() {
   return (
     <div>
       {/* ═══════════ DARK HERO ═══════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #0f1029 40%, #12122A 60%, #0A0A1A 100%)' }}>
-        <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full opacity-[0.07] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
-        <div className="absolute bottom-[30%] left-[5%] w-[300px] h-[300px] rounded-full opacity-[0.04] pointer-events-none blur-3xl" style={{ background: '#60A5FA' }} />
+      <section className="relative overflow-hidden pb-24 md:pb-36" style={{ background: '#0A0A1A' }}>
+        {/* Animated aurora gradient blobs */}
+        <AuroraBackground />
+
+        {/* Subtle grid overlay */}
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-8 md:pt-36 md:pb-12 text-center">
           <AnimatedReveal direction="fade">
@@ -39,19 +44,16 @@ export default function FeaturesPage() {
           </AnimatedReveal>
         </div>
 
-        {/* Centered HeroMockup */}
-        <AnimatedReveal direction="up" delay={300}>
-          <div className="relative z-10 max-w-4xl mx-auto px-6 pb-4">
-            <FloatingScreenshot glow float>
+        {/* Centered HeroMockup — scroll-driven perspective flatten */}
+        <div className="relative z-10 max-w-4xl mx-auto px-6">
+          <ScrollPerspective>
+            <FloatingScreenshot glow>
               <DeviceFrame glow dark>
                 <HeroMockup />
               </DeviceFrame>
             </FloatingScreenshot>
-          </div>
-        </AnimatedReveal>
-
-        {/* Smooth multi-step gradient transition */}
-        <div className="relative h-40 md:h-48 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(10,10,26,0.8) 20%, rgba(15,15,40,0.9) 40%, rgba(30,30,60,0.6) 55%, rgba(200,205,220,0.3) 70%, rgba(250,250,250,0.7) 85%, #FAFAFA 100%)' }} />
+          </ScrollPerspective>
+        </div>
       </section>
 
       {/* ═══════════ FEATURE SHOWCASES ═══════════ */}
@@ -255,12 +257,16 @@ export default function FeaturesPage() {
         </AnimatedReveal>
       </Section>
 
-      {/* ═══════════ CTA ═══════════ */}
-      <section className="relative overflow-hidden py-28 px-6 bg-snow">
-        <AnimatedReveal direction="up" className="text-center relative z-10">
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">See PreCalIQ in action</h2>
-          <p className="mt-4 text-graphite">Book a 30-minute demo with your own spec documents.</p>
-          <div className="mt-8">
+      {/* ═══════════ CTA (DARK) ═══════════ */}
+      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
+
+        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
+          <SectionLabel light>Get Started</SectionLabel>
+          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">See PreCalIQ in action</h2>
+          <p className="mt-4 text-blue-100/40 leading-relaxed">Book a 30-minute demo with your own spec documents.</p>
+          <div className="mt-10">
             <Button href="/contact">
               Request a Demo
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

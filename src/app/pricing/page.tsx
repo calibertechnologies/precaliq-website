@@ -5,6 +5,9 @@ import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Accordion from '@/components/Accordion';
 import DeviceFrame from '@/components/DeviceFrame';
+import ScrollPerspective from '@/components/ScrollPerspective';
+import FloatingScreenshot from '@/components/FloatingScreenshot';
+import AuroraBackground from '@/components/AuroraBackground';
 import { BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
@@ -102,28 +105,34 @@ export default function PricingPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-24 md:py-32 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden pb-24 md:pb-36" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+
+        <div className="relative z-10 max-w-4xl mx-auto text-center px-6 pt-24 md:pt-36 pb-8">
           <AnimatedReveal direction="fade">
-            <SectionLabel>Pricing</SectionLabel>
+            <SectionLabel light>Pricing</SectionLabel>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={80}>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white">
               Simple, <span className="text-gradient">transparent</span> pricing
             </h1>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={180}>
-            <p className="mt-6 text-[1.125rem] text-graphite max-w-lg mx-auto leading-relaxed">
+            <p className="mt-6 text-[1.125rem] text-blue-100/50 max-w-lg mx-auto leading-relaxed">
               Start free. Scale as your team wins more bids.
             </p>
           </AnimatedReveal>
-          <AnimatedReveal direction="scale" delay={300}>
-            <div className="mt-12 max-w-md mx-auto screenshot-float rounded-2xl overflow-hidden shadow-xl ring-1 ring-border">
-              <DeviceFrame>
+        </div>
+
+        <div className="relative z-10 max-w-md mx-auto px-6">
+          <ScrollPerspective>
+            <FloatingScreenshot glow>
+              <DeviceFrame glow dark>
                 <BidBuilderMockup />
               </DeviceFrame>
-            </div>
-          </AnimatedReveal>
+            </FloatingScreenshot>
+          </ScrollPerspective>
         </div>
       </section>
 

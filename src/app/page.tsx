@@ -7,6 +7,8 @@ import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import DeviceFrame from '@/components/DeviceFrame';
 import FloatingScreenshot from '@/components/FloatingScreenshot';
+import ScrollPerspective from '@/components/ScrollPerspective';
+import AuroraBackground from '@/components/AuroraBackground';
 import FeatureShowcase from '@/components/FeatureShowcase';
 import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
@@ -20,11 +22,9 @@ export default function HomePage() {
   return (
     <div>
       {/* ═══════════ DARK HERO ═══════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #0f1029 40%, #12122A 60%, #0A0A1A 100%)' }}>
-        {/* Decorative gradient orbs */}
-        <div className="absolute top-[5%] right-[10%] w-[600px] h-[600px] rounded-full opacity-[0.08] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
-        <div className="absolute bottom-[15%] left-[3%] w-[400px] h-[400px] rounded-full opacity-[0.05] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #60A5FA, transparent 70%)' }} />
-        <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full opacity-[0.03] pointer-events-none blur-3xl" style={{ background: '#818CF8' }} />
+      <section className="relative overflow-hidden pb-24 md:pb-36" style={{ background: '#0A0A1A' }}>
+        {/* Animated aurora gradient blobs */}
+        <AuroraBackground />
 
         {/* Subtle grid overlay */}
         <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
@@ -89,30 +89,15 @@ export default function HomePage() {
             </AnimatedReveal>
           </div>
 
-          {/* Hero Screenshot — large, centered, floating below text */}
-          <AnimatedReveal direction="up" delay={500}>
-            <div className="mt-16 md:mt-20 mx-auto max-w-5xl">
-              <FloatingScreenshot glow float>
+          {/* Hero Screenshot — scroll-driven perspective flatten */}
+          <div className="mt-16 md:mt-20 mx-auto max-w-5xl">
+            <ScrollPerspective>
+              <FloatingScreenshot glow>
                 <DeviceFrame glow dark>
                   <HeroMockup />
                 </DeviceFrame>
               </FloatingScreenshot>
-            </div>
-          </AnimatedReveal>
-        </div>
-
-        {/* Bottom gradient — smooth multi-step dark→white transition */}
-        <div className="relative h-48 md:h-56 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(10,10,26,0.8) 20%, rgba(15,15,40,0.9) 40%, rgba(30,30,60,0.6) 55%, rgba(200,205,220,0.3) 70%, rgba(250,250,250,0.7) 85%, #FAFAFA 100%)' }} />
-      </section>
-
-      {/* ═══════════ SOCIAL PROOF ═══════════ */}
-      <section className="py-10 md:py-14 px-6 bg-snow border-b border-border">
-        <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
-          <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate whitespace-nowrap">Trusted by GCs across the US</p>
-          <div className="flex items-center gap-8 md:gap-10 flex-wrap justify-center">
-            {['Summit Healthcare', 'Lakeshore Dev', 'Metro Transit', 'Pinnacle Build Co', 'Apex Contractors'].map((name) => (
-              <span key={name} className="text-sm font-bold text-stone tracking-tight whitespace-nowrap">{name}</span>
-            ))}
+            </ScrollPerspective>
           </div>
         </div>
       </section>
@@ -130,7 +115,6 @@ export default function HomePage() {
           </p>
         </AnimatedReveal>
 
-        {/* Visual stat callouts */}
         <AnimatedReveal direction="up" delay={150}>
           <div className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
             {[
@@ -218,7 +202,6 @@ export default function HomePage() {
         </AnimatedReveal>
 
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
-          {/* Connecting gradient line */}
           <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px]" style={{ background: 'linear-gradient(to right, rgba(37,99,235,0.08), rgba(37,99,235,0.2), rgba(37,99,235,0.08))' }} aria-hidden="true" />
 
           {[
@@ -244,11 +227,9 @@ export default function HomePage() {
 
       {/* ═══════════ STATS ═══════════ */}
       <section className="relative overflow-hidden py-24 md:py-36 px-6" style={{ background: 'linear-gradient(170deg, #0D0D0D 0%, #111827 50%, #0D0D0D 100%)' }}>
-        {/* Decorative gradient orbs */}
         <div className="absolute top-0 left-1/4 w-[500px] h-[300px] rounded-full blur-3xl opacity-[0.06] pointer-events-none" style={{ background: '#2563EB' }} />
         <div className="absolute bottom-0 right-1/4 w-[400px] h-[250px] rounded-full blur-3xl opacity-[0.04] pointer-events-none" style={{ background: '#60A5FA' }} />
 
-        {/* Subtle grid overlay */}
         <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
         <div className="max-w-6xl mx-auto relative z-10">
@@ -278,7 +259,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Marquee */}
         <div className="mt-20 max-w-6xl mx-auto relative z-10">
           <div className="border-t border-b border-white/[0.04] py-6">
             <MarqueeStrip items={[
@@ -291,8 +271,8 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ CTA (DARK) ═══════════ */}
-      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 60%, #0A0A1A 100%)' }}>
-        {/* Decorative accent glow */}
+      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
 
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">

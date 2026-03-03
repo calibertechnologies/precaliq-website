@@ -4,6 +4,7 @@ import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Card from '@/components/Card';
 import Accordion from '@/components/Accordion';
+import AuroraBackground from '@/components/AuroraBackground';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -34,18 +35,20 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden py-24 md:py-36 px-6" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <AnimatedReveal direction="fade">
-            <SectionLabel>Contact</SectionLabel>
+            <SectionLabel light>Contact</SectionLabel>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={80}>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white">
               Request a Demo
             </h1>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={180}>
-            <p className="mt-6 text-[1.125rem] text-graphite max-w-xl mx-auto leading-relaxed">
+            <p className="mt-6 text-[1.125rem] text-blue-100/50 max-w-xl mx-auto leading-relaxed">
               See how PreCalIQ can transform your preconstruction workflow.
             </p>
           </AnimatedReveal>

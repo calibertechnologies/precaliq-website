@@ -4,6 +4,7 @@ import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
+import AuroraBackground from '@/components/AuroraBackground';
 
 export const metadata: Metadata = {
   title: 'About',
@@ -15,20 +16,21 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
-        <div className="absolute top-[30%] right-[5%] w-[300px] h-[300px] rounded-full opacity-[0.03] pointer-events-none" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
-        <div className="max-w-4xl mx-auto text-center">
+      <section className="relative overflow-hidden py-24 md:py-36 px-6" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
           <AnimatedReveal direction="fade">
-            <SectionLabel>Our Story</SectionLabel>
+            <SectionLabel light>Our Story</SectionLabel>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={80}>
-            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-white">
               The IQ behind<br className="hidden sm:block" />
               <span className="text-gradient">your precon</span>
             </h1>
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={180}>
-            <p className="mt-6 text-[1.125rem] text-graphite max-w-xl mx-auto leading-relaxed">
+            <p className="mt-6 text-[1.125rem] text-blue-100/50 max-w-xl mx-auto leading-relaxed">
               Built by estimators, for estimators. AI that understands construction.
             </p>
           </AnimatedReveal>
@@ -212,10 +214,14 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-28 px-6 bg-white">
-        <AnimatedReveal direction="up" className="text-center relative z-10">
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">Want to learn more?</h2>
-          <div className="mt-8">
+      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
+        <AuroraBackground />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
+        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
+          <SectionLabel light>Get Started</SectionLabel>
+          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">Want to learn more?</h2>
+          <p className="mt-4 text-blue-100/40 leading-relaxed">See how PreCalIQ transforms your preconstruction workflow.</p>
+          <div className="mt-10">
             <Button href="/contact">Get in Touch</Button>
           </div>
         </AnimatedReveal>
