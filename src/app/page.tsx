@@ -8,7 +8,7 @@ import Button from '@/components/Button';
 import DeviceFrame from '@/components/DeviceFrame';
 import FloatingScreenshot from '@/components/FloatingScreenshot';
 import FeatureShowcase from '@/components/FeatureShowcase';
-import { DashboardMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
+import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
   title: 'PreCalIQ — AI-Powered Preconstruction Platform',
@@ -20,91 +20,93 @@ export default function HomePage() {
   return (
     <div>
       {/* ═══════════ DARK HERO ═══════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 50%, #0A0A1A 100%)' }}>
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #0f1029 40%, #12122A 60%, #0A0A1A 100%)' }}>
         {/* Decorative gradient orbs */}
-        <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full opacity-[0.07] pointer-events-none blur-3xl" style={{ background: '#2563EB' }} />
-        <div className="absolute bottom-[20%] left-[5%] w-[350px] h-[350px] rounded-full opacity-[0.04] pointer-events-none blur-2xl" style={{ background: '#60A5FA' }} />
+        <div className="absolute top-[5%] right-[10%] w-[600px] h-[600px] rounded-full opacity-[0.08] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
+        <div className="absolute bottom-[15%] left-[3%] w-[400px] h-[400px] rounded-full opacity-[0.05] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #60A5FA, transparent 70%)' }} />
+        <div className="absolute top-[40%] left-[40%] w-[300px] h-[300px] rounded-full opacity-[0.03] pointer-events-none blur-3xl" style={{ background: '#818CF8' }} />
 
         {/* Subtle grid overlay */}
-        <div className="absolute inset-0 opacity-[0.03] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
+        <div className="absolute inset-0 opacity-[0.025] pointer-events-none" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
 
-        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-16 md:pt-36 md:pb-28">
-          <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Left: Text */}
-            <div>
-              <AnimatedReveal direction="fade">
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-xs font-medium text-blue-300 mb-10 ring-1 ring-blue-400/20" style={{ background: 'rgba(37,99,235,0.1)' }}>
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" style={{ animationDuration: '2s' }} />
-                    <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
-                  </span>
-                  AI-Powered Preconstruction Intelligence
-                </div>
-              </AnimatedReveal>
+        <div className="relative z-10 max-w-6xl mx-auto px-6 pt-24 pb-8 md:pt-32 md:pb-0">
+          {/* Text content — centered */}
+          <div className="text-center max-w-3xl mx-auto">
+            <AnimatedReveal direction="fade">
+              <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full text-xs font-medium text-blue-300 mb-10 ring-1 ring-blue-400/20" style={{ background: 'rgba(37,99,235,0.1)' }}>
+                <span className="relative flex h-2 w-2">
+                  <span className="absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75 animate-ping" style={{ animationDuration: '2s' }} />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-400" />
+                </span>
+                AI-Powered Preconstruction Intelligence
+              </div>
+            </AnimatedReveal>
 
-              <AnimatedReveal direction="up" delay={80}>
-                <h1 className="text-[2.5rem] sm:text-[3.25rem] md:text-[3.5rem] lg:text-[4rem] font-extrabold leading-[1.06] tracking-[-0.03em] text-white">
-                  From Specs to Bids
-                  <br />
-                  <span className="text-gradient">in Minutes</span>
-                </h1>
-              </AnimatedReveal>
+            <AnimatedReveal direction="up" delay={80}>
+              <h1 className="text-[2.5rem] sm:text-[3.25rem] md:text-[4rem] lg:text-[4.5rem] font-extrabold leading-[1.06] tracking-[-0.03em] text-white">
+                From Specs to Bids
+                <br />
+                <span className="text-gradient">in Minutes</span>
+              </h1>
+            </AnimatedReveal>
 
-              <AnimatedReveal direction="up" delay={200}>
-                <p className="mt-7 text-[1.0625rem] md:text-[1.125rem] text-blue-100/60 max-w-md leading-[1.7]">
-                  The only AI platform that reads your specifications <em className="text-white/90 not-italic font-medium">and</em> your plans, then generates material takeoffs with complete CSI details — automatically.
-                </p>
-              </AnimatedReveal>
+            <AnimatedReveal direction="up" delay={200}>
+              <p className="mt-7 text-[1.0625rem] md:text-[1.125rem] text-blue-100/50 max-w-xl mx-auto leading-[1.7]">
+                The only AI platform that reads your specifications <em className="text-white/90 not-italic font-medium">and</em> your plans, then generates material takeoffs with complete CSI details — automatically.
+              </p>
+            </AnimatedReveal>
 
-              <AnimatedReveal direction="up" delay={350}>
-                <div className="mt-9 flex flex-col sm:flex-row gap-4">
-                  <Button href="/contact">
-                    Request a Demo
-                    <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            <AnimatedReveal direction="up" delay={350}>
+              <div className="mt-9 flex flex-col sm:flex-row gap-4 justify-center">
+                <Button href="/contact">
+                  Request a Demo
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </Button>
+                <Button href="/features" variant="secondary">
+                  Explore Features
+                </Button>
+              </div>
+            </AnimatedReveal>
+
+            <AnimatedReveal direction="fade" delay={500}>
+              <div className="mt-10 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
+                {[
+                  { text: 'SOC 2 Compliant', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
+                  { text: 'No credit card', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
+                  { text: '15-min setup', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+                  { text: 'Cancel anytime', icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z' },
+                ].map((item, i) => (
+                  <span key={i} className="flex items-center gap-2 text-xs text-white/30 font-medium">
+                    <svg className="w-3.5 h-3.5 text-blue-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                     </svg>
-                  </Button>
-                  <Button href="/features" variant="secondary">
-                    Explore Features
-                  </Button>
-                </div>
-              </AnimatedReveal>
-
-              <AnimatedReveal direction="fade" delay={550}>
-                <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3">
-                  {[
-                    { text: 'SOC 2 Compliant', icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z' },
-                    { text: 'No credit card', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-                    { text: '15-min setup', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-                  ].map((item, i) => (
-                    <span key={i} className="flex items-center gap-2 text-xs text-white/30 font-medium">
-                      <svg className="w-3.5 h-3.5 text-blue-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                      </svg>
-                      {item.text}
-                    </span>
-                  ))}
-                </div>
-              </AnimatedReveal>
-            </div>
-
-            {/* Right: Floating Dashboard Screenshot */}
-            <AnimatedReveal direction="left" delay={300}>
-              <FloatingScreenshot glow className="md:translate-y-4">
-                <DeviceFrame>
-                  <DashboardMockup />
-                </DeviceFrame>
-              </FloatingScreenshot>
+                    {item.text}
+                  </span>
+                ))}
+              </div>
             </AnimatedReveal>
           </div>
+
+          {/* Hero Screenshot — large, centered, floating below text */}
+          <AnimatedReveal direction="up" delay={500}>
+            <div className="mt-16 md:mt-20 mx-auto max-w-5xl">
+              <FloatingScreenshot glow float>
+                <DeviceFrame glow dark>
+                  <HeroMockup />
+                </DeviceFrame>
+              </FloatingScreenshot>
+            </div>
+          </AnimatedReveal>
         </div>
 
-        {/* Bottom gradient fade to white */}
-        <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none" style={{ background: 'linear-gradient(to top, #FFFFFF, transparent)' }} />
+        {/* Bottom gradient — smooth multi-step dark→white transition */}
+        <div className="relative h-48 md:h-56 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(10,10,26,0.8) 20%, rgba(15,15,40,0.9) 40%, rgba(30,30,60,0.6) 55%, rgba(200,205,220,0.3) 70%, rgba(250,250,250,0.7) 85%, #FAFAFA 100%)' }} />
       </section>
 
       {/* ═══════════ SOCIAL PROOF ═══════════ */}
-      <section className="py-10 md:py-14 px-6 bg-white border-b border-border">
+      <section className="py-10 md:py-14 px-6 bg-snow border-b border-border">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-center gap-6 md:gap-12">
           <p className="text-xs font-semibold uppercase tracking-[0.15em] text-slate whitespace-nowrap">Trusted by GCs across the US</p>
           <div className="flex items-center gap-8 md:gap-10 flex-wrap justify-center">
@@ -136,7 +138,7 @@ export default function HomePage() {
               { stat: '60%', label: 'Time wasted' },
               { stat: '$50K', label: 'Cost of errors' },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl bg-snow ring-1 ring-border">
+              <div key={i} className="text-center p-6 rounded-2xl bg-snow ring-1 ring-border hover-lift">
                 <div className="text-2xl md:text-3xl font-extrabold text-charcoal tracking-tight">{item.stat}</div>
                 <div className="text-xs text-slate mt-1.5 font-medium uppercase tracking-wide">{item.label}</div>
               </div>
@@ -265,7 +267,7 @@ export default function HomePage() {
               { value: '0', label: 'Missed Specifications', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
             ].map((item, i) => (
               <AnimatedReveal key={i} direction="up" delay={i * 80}>
-                <div className="text-center p-6 rounded-2xl ring-1 ring-white/[0.06] bg-white/[0.03]">
+                <div className="text-center p-6 rounded-2xl ring-1 ring-white/[0.06] bg-white/[0.03] hover:bg-white/[0.06] hover:ring-white/[0.1] transition-all duration-500">
                   <svg className="w-6 h-6 text-accent/40 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
@@ -290,17 +292,8 @@ export default function HomePage() {
 
       {/* ═══════════ CTA (DARK) ═══════════ */}
       <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 60%, #0A0A1A 100%)' }}>
-        {/* Background screenshot at low opacity */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.04]">
-          <div className="w-[800px] max-w-full">
-            <DeviceFrame>
-              <DashboardMockup />
-            </DeviceFrame>
-          </div>
-        </div>
-
         {/* Decorative accent glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none opacity-[0.06]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
 
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
           <SectionLabel light>Get Started</SectionLabel>

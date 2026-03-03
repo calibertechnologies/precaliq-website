@@ -6,7 +6,7 @@ import Button from '@/components/Button';
 import DeviceFrame from '@/components/DeviceFrame';
 import FloatingScreenshot from '@/components/FloatingScreenshot';
 import FeatureShowcase from '@/components/FeatureShowcase';
-import { DashboardMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
+import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
   title: 'Features',
@@ -18,8 +18,9 @@ export default function FeaturesPage() {
   return (
     <div>
       {/* ═══════════ DARK HERO ═══════════ */}
-      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #12122A 50%, #0A0A1A 100%)' }}>
-        <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full opacity-[0.06] pointer-events-none blur-3xl" style={{ background: '#2563EB' }} />
+      <section className="relative overflow-hidden" style={{ background: 'linear-gradient(170deg, #0A0A1A 0%, #0f1029 40%, #12122A 60%, #0A0A1A 100%)' }}>
+        <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full opacity-[0.07] pointer-events-none blur-3xl" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
+        <div className="absolute bottom-[30%] left-[5%] w-[300px] h-[300px] rounded-full opacity-[0.04] pointer-events-none blur-3xl" style={{ background: '#60A5FA' }} />
 
         <div className="relative z-10 max-w-5xl mx-auto px-6 pt-24 pb-8 md:pt-36 md:pb-12 text-center">
           <AnimatedReveal direction="fade">
@@ -38,18 +39,19 @@ export default function FeaturesPage() {
           </AnimatedReveal>
         </div>
 
-        {/* Centered Dashboard Mockup */}
+        {/* Centered HeroMockup */}
         <AnimatedReveal direction="up" delay={300}>
-          <div className="relative z-10 max-w-3xl mx-auto px-6 pb-20">
-            <FloatingScreenshot glow>
-              <DeviceFrame>
-                <DashboardMockup />
+          <div className="relative z-10 max-w-4xl mx-auto px-6 pb-4">
+            <FloatingScreenshot glow float>
+              <DeviceFrame glow dark>
+                <HeroMockup />
               </DeviceFrame>
             </FloatingScreenshot>
           </div>
         </AnimatedReveal>
 
-        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: 'linear-gradient(to top, #FAFAFA, transparent)' }} />
+        {/* Smooth multi-step gradient transition */}
+        <div className="relative h-40 md:h-48 pointer-events-none" style={{ background: 'linear-gradient(to bottom, transparent 0%, rgba(10,10,26,0.8) 20%, rgba(15,15,40,0.9) 40%, rgba(30,30,60,0.6) 55%, rgba(200,205,220,0.3) 70%, rgba(250,250,250,0.7) 85%, #FAFAFA 100%)' }} />
       </section>
 
       {/* ═══════════ FEATURE SHOWCASES ═══════════ */}

@@ -41,7 +41,7 @@ export default function FeatureShowcase({ title, description, details, badge, sc
 
       {/* Screenshot side */}
       <AnimatedReveal direction={reverse ? 'right' : 'left'} className={reverse ? 'md:order-1' : ''}>
-        <div className="screenshot-float rounded-2xl overflow-hidden shadow-xl ring-1 ring-border">
+        <div className="showcase-screenshot screenshot-float rounded-2xl overflow-hidden">
           {screenshot}
         </div>
       </AnimatedReveal>
