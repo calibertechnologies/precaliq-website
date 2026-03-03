@@ -9,7 +9,7 @@ export default function Card({ children, className = '', hover = true, glow = fa
   return (
     <div
       className={`bg-surface rounded-2xl ring-1 ring-border-subtle shadow-card ${
-        hover ? 'hover:shadow-card-hover hover:-translate-y-1 transition-all duration-300 ease-out' : ''
+        hover ? 'hover-lift hover:shadow-card-hover' : ''
       } ${glow ? 'glow-border' : ''} ${className}`}
     >
       {children}

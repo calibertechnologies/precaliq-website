@@ -1,25 +1,100 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import MobileMenu from '@/components/MobileMenu';
 import Logo from '@/components/Logo';
 
+const inter = Inter({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter',
+});
+
+export const viewport: Viewport = {
+  themeColor: '#1F4E79',
+  width: 'device-width',
+  initialScale: 1,
+};
+
 export const metadata: Metadata = {
-  title: 'PreCalIQ — AI-Powered Preconstruction Platform',
-  description: 'PreCalIQ automates construction takeoffs, bid building, and vendor management. Built for GCs who want to bid faster and smarter.',
+  metadataBase: new URL('https://precaliq.com'),
+  title: {
+    default: 'PreCalIQ — AI-Powered Preconstruction Platform',
+    template: '%s — PreCalIQ',
+  },
+  description: 'PreCalIQ automates construction takeoffs, bid building, and vendor management using AI. The only platform that reads both specs and plans. Built for GCs who want to bid faster and smarter.',
+  keywords: ['construction takeoff software', 'AI preconstruction', 'construction estimating', 'material takeoff', 'bid management', 'vendor pricing', 'CSI specification parsing', 'construction AI'],
+  authors: [{ name: 'PreCalIQ', url: 'https://precaliq.com' }],
+  creator: 'PreCalIQ',
+  publisher: 'Caliber Technologies',
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: 'PreCalIQ — AI-Powered Preconstruction Platform',
-    description: 'Automate takeoffs, build bids, manage vendors. Built for general contractors.',
+    description: 'Automate takeoffs, build bids, manage vendors. The only AI platform that reads both specs and plans.',
+    url: 'https://precaliq.com',
+    siteName: 'PreCalIQ',
+    locale: 'en_US',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'PreCalIQ — AI-Powered Preconstruction Platform',
+    description: 'Automate takeoffs, build bids, manage vendors. Built for GCs who want to bid faster.',
+  },
+  alternates: {
+    canonical: 'https://precaliq.com',
   },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body className="antialiased">
+    <html lang="en" className={inter.variable}>
+      <head>
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/icon.svg" />
+      </head>
+      <body>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
+
+        {/* Organization structured data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'SoftwareApplication',
+              name: 'PreCalIQ',
+              applicationCategory: 'BusinessApplication',
+              operatingSystem: 'Web',
+              description: 'AI-powered preconstruction platform that automates construction takeoffs, bid building, and vendor management.',
+              url: 'https://precaliq.com',
+              author: {
+                '@type': 'Organization',
+                name: 'Caliber Technologies',
+                url: 'https://precaliq.com',
+              },
+              offers: {
+                '@type': 'AggregateOffer',
+                lowPrice: '0',
+                highPrice: '299',
+                priceCurrency: 'USD',
+                offerCount: '3',
+              },
+            }),
+          }}
+        />
       </body>
     </html>
   );
@@ -27,75 +102,148 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 bg-cream/80 backdrop-blur-xl border-b border-border-subtle">
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between h-16">
-        <a href="/" className="flex items-center gap-2.5 group">
-          <Logo size={30} />
-          <span className="text-lg font-bold text-navy tracking-tight">
-            Pre<span className="text-navy/30">-</span>Cal<span className="text-navy/30">-</span>IQ
+    <header className="sticky top-0 z-50 border-b border-charcoal/[0.04]" style={{ background: 'rgba(245, 243, 240, 0.85)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)' }}>
+      <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[72px]" aria-label="Main navigation">
+        <a href="/" className="flex items-center gap-2.5 group" aria-label="PreCalIQ home">
+          <Logo size={32} />
+          <span className="text-[1.125rem] font-bold text-charcoal tracking-tight">
+            Pre<span className="text-charcoal/20 font-light">-</span>Cal<span className="text-charcoal/20 font-light">-</span>IQ
           </span>
         </a>
-        <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-          <a href="/features" className="text-charcoal-light hover:text-navy transition-colors duration-200">Features</a>
-          <a href="/pricing" className="text-charcoal-light hover:text-navy transition-colors duration-200">Pricing</a>
-          <a href="/about" className="text-charcoal-light hover:text-navy transition-colors duration-200">About</a>
-          <a href="/blog" className="text-charcoal-light hover:text-navy transition-colors duration-200">Blog</a>
-          <a href="/contact" className="text-charcoal-light hover:text-navy transition-colors duration-200">Contact</a>
+
+        <div className="hidden md:flex items-center gap-1">
+          {[
+            { href: '/features', label: 'Features' },
+            { href: '/pricing', label: 'Pricing' },
+            { href: '/about', label: 'About' },
+            { href: '/blog', label: 'Blog' },
+            { href: '/contact', label: 'Contact' },
+          ].map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="px-4 py-2 text-[0.875rem] font-medium text-charcoal-light hover:text-charcoal rounded-lg hover:bg-charcoal/[0.04] transition-all duration-200"
+            >
+              {link.label}
+            </a>
+          ))}
+        </div>
+
+        <div className="hidden md:flex items-center gap-3">
+          <a
+            href="https://app.precaliq.com/login"
+            className="px-4 py-2 text-[0.875rem] font-medium text-charcoal-light hover:text-charcoal transition-colors duration-200"
+          >
+            Log in
+          </a>
           <a
             href="https://app.precaliq.com"
-            className="px-5 py-2.5 bg-navy text-white rounded-xl text-sm font-semibold hover:bg-navy-light transition-all duration-300 shadow-sm hover:shadow-glow shimmer-hover"
+            className="px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl transition-all duration-300 shadow-sm hover:shadow-glow shimmer-hover"
+            style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
           >
             Get Started
           </a>
-        </nav>
+        </div>
+
         <MobileMenu />
-      </div>
+      </nav>
     </header>
   );
 }
 
 function Footer() {
+  const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-[#141413] text-white/80 relative overflow-hidden">
-      {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(31,78,121,0.05), transparent)' }} />
+    <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0F0F0E, #141413)' }}>
+      {/* Subtle top gradient line */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(200, 150, 78, 0.3), transparent)' }} />
 
-      <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 relative z-10">
-        <div>
-          <div className="flex items-center gap-2.5">
-            <Logo size={28} light />
-            <h3 className="text-lg font-bold text-white tracking-tight">
-              Pre<span className="text-white/30">-</span>Cal<span className="text-white/30">-</span>IQ
-            </h3>
+      <div className="max-w-6xl mx-auto px-6 pt-20 pb-12">
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
+          {/* Brand */}
+          <div className="col-span-2 md:col-span-4">
+            <a href="/" className="inline-flex items-center gap-2.5" aria-label="PreCalIQ home">
+              <Logo size={28} light />
+              <span className="text-lg font-bold text-white tracking-tight">
+                Pre<span className="text-white/20 font-light">-</span>Cal<span className="text-white/20 font-light">-</span>IQ
+              </span>
+            </a>
+            <p className="text-[0.875rem] text-white/35 mt-4 leading-relaxed max-w-xs">
+              The IQ behind your precon. AI-powered preconstruction for general contractors.
+            </p>
           </div>
-          <p className="text-sm text-white/40 mt-3 leading-relaxed">The IQ behind your precon.</p>
-          <p className="text-xs text-white/25 mt-4">A Caliber Technologies Company</p>
-        </div>
-        <div>
-          <h4 className="font-semibold text-xs uppercase tracking-wider text-white/30 mb-4">Product</h4>
-          <div className="space-y-3 text-sm">
-            <a href="/features" className="block text-white/50 hover:text-amber transition-colors duration-200">Features</a>
-            <a href="/pricing" className="block text-white/50 hover:text-amber transition-colors duration-200">Pricing</a>
-            <a href="/contact" className="block text-white/50 hover:text-amber transition-colors duration-200">Request Demo</a>
+
+          {/* Product */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Product</h4>
+            <ul className="space-y-3">
+              {[
+                { href: '/features', label: 'Features' },
+                { href: '/pricing', label: 'Pricing' },
+                { href: '/contact', label: 'Request Demo' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resources */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Resources</h4>
+            <ul className="space-y-3">
+              {[
+                { href: '/blog', label: 'Blog' },
+                { href: '/about', label: 'About' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal */}
+          <div className="md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Legal</h4>
+            <ul className="space-y-3">
+              {[
+                { href: '/privacy', label: 'Privacy Policy' },
+                { href: '/terms', label: 'Terms of Service' },
+              ].map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* CTA */}
+          <div className="col-span-2 md:col-span-2">
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Get Started</h4>
+            <a
+              href="https://app.precaliq.com"
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl shimmer-hover transition-all duration-300"
+              style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+            >
+              Try Free
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
           </div>
         </div>
-        <div>
-          <h4 className="font-semibold text-xs uppercase tracking-wider text-white/30 mb-4">Resources</h4>
-          <div className="space-y-3 text-sm">
-            <a href="/blog" className="block text-white/50 hover:text-amber transition-colors duration-200">Blog</a>
-            <a href="/about" className="block text-white/50 hover:text-amber transition-colors duration-200">About</a>
-          </div>
+
+        {/* Bottom bar */}
+        <div className="mt-16 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-white/20">
+            &copy; {currentYear} PreCalIQ. All rights reserved.
+          </p>
+          <p className="text-xs text-white/15">
+            A Caliber Technologies Company
+          </p>
         </div>
-        <div>
-          <h4 className="font-semibold text-xs uppercase tracking-wider text-white/30 mb-4">Legal</h4>
-          <div className="space-y-3 text-sm">
-            <a href="/privacy" className="block text-white/50 hover:text-amber transition-colors duration-200">Privacy Policy</a>
-            <a href="/terms" className="block text-white/50 hover:text-amber transition-colors duration-200">Terms of Service</a>
-          </div>
-        </div>
-      </div>
-      <div className="border-t border-white/5 py-6 text-center text-xs text-white/25 relative z-10">
-        &copy; {new Date().getFullYear()} PreCalIQ. All rights reserved.
       </div>
     </footer>
   );

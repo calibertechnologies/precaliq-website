@@ -1,263 +1,284 @@
 import type { Metadata } from 'next';
 import AnimatedReveal from '@/components/AnimatedReveal';
+import AnimatedCounter from '@/components/AnimatedCounter';
+import MarqueeStrip from '@/components/MarqueeStrip';
 import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Card from '@/components/Card';
-import StatCard from '@/components/StatCard';
 
 export const metadata: Metadata = {
   title: 'PreCalIQ — AI-Powered Preconstruction Platform',
-};
-
-const icons = {
-  ai: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.455 2.456L21.75 6l-1.036.259a3.375 3.375 0 00-2.455 2.456z" />
-    </svg>
-  ),
-  options: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
-    </svg>
-  ),
-  vendor: (
-    <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-      <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
-    </svg>
-  ),
+  description: 'PreCalIQ automates construction takeoffs, bid building, and vendor management. The only AI platform that reads both specs and plans. From specs to bids in minutes.',
+  alternates: { canonical: 'https://precaliq.com' },
 };
 
 export default function HomePage() {
   return (
     <div>
-      {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden text-white hero-mesh" style={{ background: 'linear-gradient(to bottom right, #0A1E33, #163A5C, #0F2D47)' }}>
-        {/* Decorative floating orbs */}
-        <div className="absolute top-20 left-[10%] w-72 h-72 bg-amber/10 rounded-full blur-3xl animate-float-slow pointer-events-none" />
-        <div className="absolute bottom-10 right-[15%] w-96 h-96 bg-navy-light/10 rounded-full blur-3xl animate-float pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-navy/20 rounded-full blur-3xl pointer-events-none" />
+      {/* ═══════════ HERO ═══════════ */}
+      <section className="relative overflow-hidden hero-mesh" style={{ background: 'linear-gradient(160deg, #0A1E33 0%, #122D4A 30%, #163A5C 60%, #0F2D47 100%)' }}>
+        {/* Morphing gradient blobs */}
+        <div className="absolute top-[10%] left-[5%] w-[500px] h-[500px] animate-morph animate-float-slow opacity-[0.07] pointer-events-none" style={{ background: 'radial-gradient(circle, #C8964E, transparent 70%)' }} />
+        <div className="absolute bottom-[5%] right-[8%] w-[400px] h-[400px] animate-morph animate-float opacity-[0.05] pointer-events-none" style={{ background: 'radial-gradient(circle, #2A6399, transparent 70%)', animationDelay: '-4s' }} />
+        <div className="absolute top-[40%] left-[50%] w-[700px] h-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl opacity-[0.08] pointer-events-none" style={{ background: '#1F4E79' }} />
 
-        <div className="relative z-10 max-w-5xl mx-auto px-6 py-28 md:py-36 text-center">
+        {/* Dot grid overlay */}
+        <div className="absolute inset-0 dot-grid-dark pointer-events-none" />
+
+        <div className="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-28 md:pt-44 md:pb-40">
           <AnimatedReveal direction="fade">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-medium text-white/80 mb-8">
-              <span className="w-1.5 h-1.5 rounded-full bg-amber animate-pulse-glow" />
-              AI-Powered Preconstruction Platform
+            <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full glass text-xs font-medium text-white/60 mb-10">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-amber opacity-75 animate-ping" style={{ animationDuration: '2s' }} />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-amber" />
+              </span>
+              AI-Powered Preconstruction Intelligence
             </div>
           </AnimatedReveal>
-          <AnimatedReveal direction="up" delay={100}>
-            <h1 className="text-4xl sm:text-5xl md:text-[4.75rem] font-extrabold leading-[1.05] tracking-tight">
-              Preconstruction,<br />
-              <span className="text-gradient-amber">Reimagined</span> with AI
+
+          <AnimatedReveal direction="up" delay={80}>
+            <h1 className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.5rem] lg:text-[5.25rem] font-extrabold leading-[1.04] tracking-[-0.02em] text-white max-w-4xl">
+              From Specs to Bids
+              <br />
+              <span className="text-gradient-amber">in Minutes</span>
             </h1>
           </AnimatedReveal>
-          <AnimatedReveal direction="up" delay={250}>
-            <p className="mt-7 text-lg md:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed">
-              PreCalIQ automates material takeoffs from specs and plans, generates multi-option bids, manages vendor pricing, and detects change orders — so your team can bid faster, smarter, and more accurately.
+
+          <AnimatedReveal direction="up" delay={200}>
+            <p className="mt-8 text-[1.125rem] md:text-[1.25rem] text-white/45 max-w-xl leading-[1.7]">
+              The only AI platform that reads your specifications <em className="text-white/60 not-italic font-medium">and</em> your plans, then generates material takeoffs with complete CSI details — automatically.
             </p>
           </AnimatedReveal>
-          <AnimatedReveal direction="up" delay={400}>
-            <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+
+          <AnimatedReveal direction="up" delay={350}>
+            <div className="mt-12 flex flex-col sm:flex-row gap-4">
               <Button href="/contact" variant="primary-light">
                 Request a Demo
+                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
               </Button>
-              <Button href="/features" variant="secondary" className="bg-white/5 text-white ring-white/15 hover:bg-white/10 hover:text-white hover:ring-white/25">
-                See Features
+              <Button href="/features" variant="secondary" className="bg-white/[0.04] text-white/80 ring-white/[0.08] hover:bg-white/[0.08] hover:text-white hover:ring-white/15">
+                Explore Features
               </Button>
             </div>
           </AnimatedReveal>
 
-          {/* Trust bar */}
-          <AnimatedReveal direction="fade" delay={600}>
-            <div className="mt-16 flex flex-wrap items-center justify-center gap-6 text-xs text-white/30 font-medium">
-              <span className="flex items-center gap-1.5">
-                <svg className="w-4 h-4 text-amber/60" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.403 12.652a3 3 0 000-5.304 3 3 0 00-3.75-3.751 3 3 0 00-5.305 0 3 3 0 00-3.751 3.75 3 3 0 000 5.305 3 3 0 003.75 3.751 3 3 0 005.305 0 3 3 0 003.751-3.75zm-2.546-4.46a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" /></svg>
-                SOC 2 Compliant
-              </span>
-              <span className="w-px h-3 bg-white/15" />
-              <span>No credit card required</span>
-              <span className="w-px h-3 bg-white/15" />
-              <span>Setup in 15 minutes</span>
-              <span className="w-px h-3 bg-white/15" />
-              <span>Cancel anytime</span>
+          {/* Trust indicators */}
+          <AnimatedReveal direction="fade" delay={550}>
+            <div className="mt-20 flex flex-wrap items-center gap-x-8 gap-y-3 text-xs text-white/25 font-medium">
+              {['SOC 2 Compliant', 'No credit card required', 'Setup in 15 minutes', 'Cancel anytime'].map((item, i) => (
+                <span key={i} className="flex items-center gap-2">
+                  <span className="w-1 h-1 rounded-full bg-amber/40" />
+                  {item}
+                </span>
+              ))}
             </div>
           </AnimatedReveal>
         </div>
+
+        {/* Bottom gradient fade to cream */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 pointer-events-none" style={{ background: 'linear-gradient(to top, var(--color-cream), transparent)' }} />
       </section>
 
-      {/* ============ PROBLEM ============ */}
-      <Section bg="cream-dark">
-        <AnimatedReveal direction="up" className="text-center">
-          <SectionLabel>The Challenge</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-tight">The Problem with Manual Estimating</h2>
-          <p className="mt-6 text-lg text-charcoal-light max-w-2xl mx-auto leading-relaxed">
-            Construction estimators spend 60% of their time reading specifications and counting items — work that is tedious, error-prone, and expensive. A single missed spec reference can cost <span className="text-amber font-semibold">$50,000</span> or more in rework.
+      {/* ═══════════ PROBLEM STATEMENT ═══════════ */}
+      <Section bg="cream">
+        <AnimatedReveal direction="up" className="max-w-3xl mx-auto text-center">
+          <SectionLabel>The Problem</SectionLabel>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.01em]">
+            Estimators spend 60% of their time on work AI should do
+          </h2>
+          <p className="mt-6 text-[1.0625rem] text-charcoal-light leading-[1.75] max-w-2xl mx-auto">
+            Reading 200-page specs, counting items on plans, cross-referencing CSI codes — tedious, error-prone work. A single missed spec reference can cost
+            <span className="text-charcoal font-semibold"> $50,000+</span> in rework.
           </p>
         </AnimatedReveal>
       </Section>
 
-      {/* ============ 3 DIFFERENTIATORS ============ */}
-      <Section bg="white" wide>
-        <AnimatedReveal direction="up" className="text-center mb-16">
-          <SectionLabel>Why PreCalIQ</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-tight">Why Teams Choose PreCalIQ</h2>
+      {/* ═══════════ THE SOLUTION — 3 PILLARS ═══════════ */}
+      <Section bg="white" wide dots>
+        <AnimatedReveal direction="up" className="text-center mb-20">
+          <SectionLabel>The Solution</SectionLabel>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.01em]">
+            Three capabilities.<br className="hidden sm:block" /> Zero competitors.
+          </h2>
         </AnimatedReveal>
-        <div className="grid md:grid-cols-3 gap-8">
+
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {[
             {
-              icon: icons.ai,
-              title: 'AI-Powered Takeoffs',
-              description: 'Upload specs and plans. PreCalIQ reads every page, cross-references CSI codes, and generates structured takeoffs in minutes — not days.',
-              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(31,78,121,0.05))',
+              number: '01',
+              title: 'We Read Your Specs',
+              description: 'Upload a spec PDF. PreCalIQ identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page.',
+              color: '#1F4E79',
             },
             {
-              icon: icons.options,
-              title: 'Multi-Option Bids',
-              description: 'Automatically generate Standard, Premium, and Budget variants. Compare options side-by-side and build competitive bids with one click.',
-              gradientStyle: 'linear-gradient(to bottom right, rgba(200,150,78,0.1), rgba(200,150,78,0.05))',
+              number: '02',
+              title: 'We Cross-Reference Everything',
+              description: 'Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." PreCalIQ connects them automatically — no manual lookup.',
+              color: '#C8964E',
             },
             {
-              icon: icons.vendor,
-              title: 'Vendor & Change Management',
-              description: 'Send takeoffs to vendors, collect pricing through a secure portal, and detect changes between document revisions automatically.',
-              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(200,150,78,0.05))',
+              number: '03',
+              title: 'We Build Your Bid',
+              description: 'Generate Standard, Premium, and Budget variants. Collect vendor pricing. Assemble professional bid documents. All in one platform.',
+              color: '#1F4E79',
             },
           ].map((item, i) => (
-            <AnimatedReveal key={i} direction="up" delay={i * 120}>
-              <Card className="p-8 h-full group" glow>
-                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-navy mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: item.gradientStyle }}>
-                  {item.icon}
+            <AnimatedReveal key={i} direction="up" delay={i * 100}>
+              <Card className="p-8 md:p-10 h-full group" glow>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-[0.8125rem] font-bold tracking-wider" style={{ color: item.color }}>{item.number}</span>
+                  <div className="flex-1 h-px bg-border-subtle" />
                 </div>
-                <h3 className="text-xl font-bold text-charcoal">{item.title}</h3>
-                <p className="mt-3 text-charcoal-light leading-relaxed">{item.description}</p>
+                <h3 className="text-xl font-bold text-charcoal leading-snug">{item.title}</h3>
+                <p className="mt-4 text-charcoal-light leading-relaxed">{item.description}</p>
               </Card>
             </AnimatedReveal>
           ))}
         </div>
       </Section>
 
-      {/* ============ HOW IT WORKS ============ */}
-      <Section bg="cream" wide>
-        <AnimatedReveal direction="up" className="text-center mb-16">
-          <SectionLabel>How It Works</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-tight">Four Steps to a Winning Bid</h2>
+      {/* ═══════════ HOW IT WORKS ═══════════ */}
+      <Section bg="cream-dark" wide>
+        <AnimatedReveal direction="up" className="text-center mb-20">
+          <SectionLabel>Process</SectionLabel>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.01em]">
+            Four steps to a winning bid
+          </h2>
         </AnimatedReveal>
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5" style={{ background: 'linear-gradient(to right, rgba(31,78,121,0.2), rgba(200,150,78,0.3), rgba(31,78,121,0.2))' }} aria-hidden="true" />
+          <div className="hidden md:block absolute top-10 left-[12.5%] right-[12.5%] h-px" style={{ background: 'linear-gradient(to right, rgba(31,78,121,0.15), rgba(200,150,78,0.25), rgba(31,78,121,0.15))' }} aria-hidden="true" />
+
           {[
-            { step: '1', title: 'Upload Documents', desc: 'Upload spec PDFs and architectural plans. PreCalIQ parses every section and classifies drawings automatically.' },
-            { step: '2', title: 'Generate Takeoffs', desc: 'Select categories (doors, flooring, MEP, etc.) and PreCalIQ generates detailed material takeoffs with AI — cross-referencing specs and plans.' },
-            { step: '3', title: 'Build Your Bid', desc: 'Choose variants per category, add vendor pricing, and generate professional bid documents in PDF or Excel.' },
-            { step: '4', title: 'Track Changes', desc: 'When revisions come in, PreCalIQ detects what changed, estimates cost impact, and helps you issue change orders.' },
+            { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. PreCalIQ parses every section and classifies every sheet.' },
+            { step: '02', title: 'Generate', desc: 'Select categories — doors, flooring, millwork, MEP. AI generates detailed takeoffs cross-referencing specs with plans.' },
+            { step: '03', title: 'Price', desc: 'Send takeoffs to vendors through a secure portal. Collect and compare quotes automatically.' },
+            { step: '04', title: 'Win', desc: 'Build your bid with real-time cost comparisons. Generate professional bid documents in PDF or Excel.' },
           ].map((item, i) => (
-            <AnimatedReveal key={item.step} direction="up" delay={i * 120}>
+            <AnimatedReveal key={item.step} direction="up" delay={i * 100}>
               <div className="text-center relative group">
-                <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center text-lg font-bold mx-auto relative z-10 ring-4 ring-cream shadow-glow group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to bottom right, #1F4E79, #163A5C)' }}>
-                  {item.step}
+                <div
+                  className="w-20 h-20 rounded-2xl flex items-center justify-center mx-auto relative z-10 ring-4 ring-cream-dark group-hover:scale-105 transition-transform duration-500"
+                  style={{ background: 'linear-gradient(160deg, #1F4E79, #163A5C)' }}
+                >
+                  <span className="text-white/90 text-sm font-bold tracking-wider">{item.step}</span>
                 </div>
-                <h3 className="text-lg font-bold text-charcoal mt-5">{item.title}</h3>
-                <p className="text-charcoal-light mt-2 text-sm leading-relaxed">{item.desc}</p>
+                <h3 className="text-lg font-bold text-charcoal mt-6">{item.title}</h3>
+                <p className="text-charcoal-light mt-3 text-sm leading-relaxed">{item.desc}</p>
               </div>
             </AnimatedReveal>
           ))}
         </div>
       </Section>
 
-      {/* ============ COMPARISON ============ */}
+      {/* ═══════════ COMPARISON TABLE ═══════════ */}
       <Section bg="white">
         <AnimatedReveal direction="up" className="text-center mb-14">
           <SectionLabel>Comparison</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-tight">PreCalIQ vs. Traditional Tools</h2>
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.01em]">
+            What others miss, we catch
+          </h2>
         </AnimatedReveal>
+
         <AnimatedReveal direction="scale" delay={100}>
-          <Card hover={false} className="overflow-hidden ring-2 ring-border-subtle">
+          <div className="rounded-2xl ring-1 ring-border-subtle overflow-hidden shadow-elevated">
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-cream-dark">
-                    <th className="text-left py-4 px-6 font-semibold text-charcoal">Feature</th>
-                    <th className="text-center py-4 px-6 font-bold text-navy">PreCalIQ</th>
-                    <th className="text-center py-4 px-6 font-medium text-charcoal-light">PlanSwift</th>
-                    <th className="text-center py-4 px-6 font-medium text-charcoal-light">Bluebeam</th>
+                  <tr className="bg-cream">
+                    <th className="text-left py-4 px-6 font-semibold text-charcoal text-[0.8125rem]">Capability</th>
+                    <th className="text-center py-4 px-6 font-bold text-navy text-[0.8125rem]">PreCalIQ</th>
+                    <th className="text-center py-4 px-6 font-medium text-charcoal-muted text-[0.8125rem]">PlanSwift</th>
+                    <th className="text-center py-4 px-6 font-medium text-charcoal-muted text-[0.8125rem]">Bluebeam</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['AI Spec Reading', true, false, false],
-                    ['Automated Takeoffs', true, false, false],
-                    ['Multi-Option Variants', true, false, false],
-                    ['Vendor Portal', true, false, false],
-                    ['Change Detection', true, false, false],
+                    ['AI Specification Reading', true, false, false],
+                    ['Automated Material Takeoffs', true, false, false],
+                    ['Multi-Option Bid Variants', true, false, false],
+                    ['Vendor Pricing Portal', true, false, false],
+                    ['Change Order Detection', true, false, false],
                     ['Bid Document Generation', true, false, false],
                     ['Plan Markup Tools', false, true, true],
-                    ['On-Screen Takeoff', false, true, true],
+                    ['On-Screen Measurement', false, true, true],
                   ].map(([feature, b, p, bb], i) => (
-                    <tr key={i} className="border-t border-border-subtle hover:bg-cream/50 transition-colors">
-                      <td className="py-3.5 px-6 text-charcoal font-medium">{feature as string}</td>
-                      <td className="text-center py-3.5 px-6">
-                        {b ? (
-                          <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-navy/10 text-navy">
-                            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                          </span>
-                        ) : <span className="text-charcoal-light/30">—</span>}
-                      </td>
-                      <td className="text-center py-3.5 px-6">
-                        {p ? (
-                          <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-charcoal/5 text-charcoal-light">
-                            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                          </span>
-                        ) : <span className="text-charcoal-light/30">—</span>}
-                      </td>
-                      <td className="text-center py-3.5 px-6">
-                        {bb ? (
-                          <span className="inline-flex w-6 h-6 items-center justify-center rounded-full bg-charcoal/5 text-charcoal-light">
-                            <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
-                          </span>
-                        ) : <span className="text-charcoal-light/30">—</span>}
-                      </td>
+                    <tr key={i} className="border-t border-border-subtle">
+                      <td className="py-3.5 px-6 text-charcoal font-medium text-[0.875rem]">{feature as string}</td>
+                      {[b, p, bb].map((val, j) => (
+                        <td key={j} className="text-center py-3.5 px-6">
+                          {val ? (
+                            <span className={`inline-flex w-7 h-7 items-center justify-center rounded-full ${j === 0 ? 'bg-navy/10 text-navy' : 'bg-charcoal/[0.04] text-charcoal-muted'}`}>
+                              <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                            </span>
+                          ) : <span className="text-charcoal/15">—</span>}
+                        </td>
+                      ))}
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-          </Card>
+          </div>
         </AnimatedReveal>
       </Section>
 
-      {/* ============ STATS ============ */}
-      <Section bg="navy" wide>
-        {/* Decorative */}
-        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, transparent, rgba(200,150,78,0.05), transparent)' }} />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
-          {[
-            ['10x', 'Faster Takeoffs'],
-            ['15', 'Takeoff Categories'],
-            ['< 5 min', 'Per Category'],
-            ['$0', 'Missed Specs'],
-          ].map(([stat, label], i) => (
-            <AnimatedReveal key={i} direction="up" delay={i * 100}>
-              <StatCard value={stat} label={label} />
-            </AnimatedReveal>
-          ))}
+      {/* ═══════════ STATS ═══════════ */}
+      <section className="relative overflow-hidden py-24 md:py-32 px-6" style={{ background: 'linear-gradient(160deg, #0F0F0E, #1A1A18, #0F0F0E)' }}>
+        <div className="absolute inset-0 dot-grid-dark pointer-events-none" />
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] rounded-full blur-3xl opacity-[0.06] pointer-events-none" style={{ background: '#C8964E' }} />
+
+        <div className="max-w-6xl mx-auto relative z-10">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+            {[
+              ['10x', 'Faster Takeoffs'],
+              ['15', 'Takeoff Categories'],
+              ['5', 'Minutes Per Category'],
+              ['0', 'Missed Specifications'],
+            ].map(([stat, label], i) => (
+              <AnimatedCounter key={i} value={stat} label={label} />
+            ))}
+          </div>
         </div>
-      </Section>
 
-      {/* ============ CTA ============ */}
-      <section className="relative overflow-hidden py-28 md:py-36 px-6">
-        {/* Gradient background */}
-        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, #ECEAE5, #F5F3F0, #ECEAE5)' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(31,78,121,0.05)' }} />
+        {/* Marquee */}
+        <div className="mt-20 max-w-6xl mx-auto relative z-10">
+          <MarqueeStrip items={[
+            'Interior Doors', 'Exterior Doors', 'Millwork', 'Cabinets', 'Flooring',
+            'Storefront', 'Corner Guards', 'Ceiling Systems', 'Painting', 'Waterproofing',
+            'Roofing', 'MEP Rough-Ins', 'Structural Steel', 'Windows', 'Specialty Hardware',
+          ]} />
+        </div>
+      </section>
 
-        <AnimatedReveal direction="up" className="text-center relative z-10">
+      {/* ═══════════ CTA ═══════════ */}
+      <section className="relative overflow-hidden py-32 md:py-40 px-6 bg-cream">
+        <div className="absolute inset-0 dot-grid pointer-events-none" />
+        {/* Decorative blob */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none opacity-[0.04]" style={{ background: '#1F4E79' }} />
+
+        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
           <SectionLabel>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-tight">Ready to Transform Your Preconstruction?</h2>
-          <p className="mt-5 text-lg text-charcoal-light max-w-xl mx-auto leading-relaxed">
-            Join GCs who are winning more bids with AI-powered estimating.
+          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.01em]">
+            Ready to transform your preconstruction?
+          </h2>
+          <p className="mt-6 text-[1.0625rem] text-charcoal-light leading-[1.75]">
+            Join the GCs who are winning more bids with AI-powered estimating. Start with a free project — no credit card required.
           </p>
-          <div className="mt-10">
+          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/contact">
               Request a Demo
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Button>
+            <Button href="/pricing" variant="secondary">
+              View Pricing
             </Button>
           </div>
         </AnimatedReveal>

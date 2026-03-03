@@ -5,7 +5,11 @@ import SectionLabel from '@/components/SectionLabel';
 import Card from '@/components/Card';
 import Accordion from '@/components/Accordion';
 
-export const metadata: Metadata = { title: 'Contact — PreCalIQ' };
+export const metadata: Metadata = {
+  title: 'Contact',
+  description: 'Request a demo of PreCalIQ. See how AI-powered preconstruction can transform your estimating workflow. We respond within one business day.',
+  alternates: { canonical: 'https://precaliq.com/contact' },
+};
 
 const faqs = [
   {
@@ -30,17 +34,18 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <Section bg="gradient" className="text-center py-8 md:py-12">
+      <Section bg="gradient" className="text-center py-10 md:py-16">
         <AnimatedReveal direction="fade">
           <SectionLabel light>Contact</SectionLabel>
         </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={100}>
-          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-tight tracking-tight">Request a Demo</h1>
+        <AnimatedReveal direction="up" delay={80}>
+          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.02em]">
+            Request a Demo
+          </h1>
         </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={200}>
-          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-            See how PreCalIQ can transform your preconstruction workflow. Fill out the form and we&apos;ll
-            be in touch within one business day.
+        <AnimatedReveal direction="up" delay={180}>
+          <p className="mt-6 text-[1.125rem] text-white/45 max-w-xl mx-auto leading-relaxed">
+            See how PreCalIQ can transform your preconstruction workflow.
           </p>
         </AnimatedReveal>
       </Section>
@@ -59,7 +64,8 @@ export default function ContactPage() {
                     name="name"
                     type="text"
                     required
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    autoComplete="name"
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
                     placeholder="John Smith"
                   />
                 </div>
@@ -70,7 +76,8 @@ export default function ContactPage() {
                     name="email"
                     type="email"
                     required
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    autoComplete="email"
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -81,7 +88,8 @@ export default function ContactPage() {
                     name="company"
                     type="text"
                     required
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    autoComplete="organization"
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
                     placeholder="Acme Construction"
                   />
                 </div>
@@ -102,23 +110,24 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
-                    Tell us about your workflow (optional)
+                    Tell us about your workflow <span className="font-normal text-charcoal-muted">(optional)</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all resize-none text-charcoal placeholder:text-charcoal-light/50"
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all resize-none text-charcoal placeholder:text-charcoal-muted/50"
                     placeholder="What types of projects do you bid on? What tools do you currently use?"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-3.5 bg-navy text-white rounded-xl text-lg font-semibold hover:bg-navy-light transition-all shadow-md hover:shadow-lg cursor-pointer"
+                  className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold transition-all duration-300 shadow-md hover:shadow-glow cursor-pointer shimmer-hover"
+                  style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
                 >
                   Request Demo
                 </button>
-                <p className="text-xs text-charcoal-light/60 text-center">
+                <p className="text-xs text-charcoal-muted text-center">
                   We&apos;ll respond within one business day. No spam, no obligations.
                 </p>
               </form>
@@ -128,7 +137,7 @@ export default function ContactPage() {
           {/* FAQ + Email */}
           <div>
             <AnimatedReveal direction="left">
-              <h2 className="text-2xl font-bold text-charcoal mb-6">Common Questions</h2>
+              <h2 className="text-xl font-bold text-charcoal mb-6">Common Questions</h2>
               <Accordion items={faqs} />
             </AnimatedReveal>
 
@@ -137,7 +146,7 @@ export default function ContactPage() {
                 <h3 className="font-bold text-charcoal">Prefer email?</h3>
                 <p className="mt-2 text-charcoal-light text-sm">
                   Reach us directly at{' '}
-                  <a href="mailto:hello@precaliq.com" className="text-navy hover:text-navy-light underline transition-colors">
+                  <a href="mailto:hello@precaliq.com" className="text-navy hover:text-navy-light underline underline-offset-2 transition-colors">
                     hello@precaliq.com
                   </a>
                 </p>

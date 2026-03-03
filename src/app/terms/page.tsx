@@ -3,7 +3,11 @@ import AnimatedReveal from '@/components/AnimatedReveal';
 import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 
-export const metadata: Metadata = { title: 'Terms of Service — PreCalIQ' };
+export const metadata: Metadata = {
+  title: 'Terms of Service',
+  description: 'PreCalIQ Terms of Service. Review the terms governing your use of the PreCalIQ AI-powered preconstruction platform.',
+  alternates: { canonical: 'https://precaliq.com/terms' },
+};
 
 export default function TermsPage() {
   return (

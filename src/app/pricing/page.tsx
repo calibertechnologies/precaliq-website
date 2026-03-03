@@ -5,14 +5,18 @@ import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Accordion from '@/components/Accordion';
 
-export const metadata: Metadata = { title: 'Pricing — PreCalIQ' };
+export const metadata: Metadata = {
+  title: 'Pricing',
+  description: 'PreCalIQ pricing: Free plan for one project, Professional at $299/month for unlimited projects and 15 categories, Enterprise with custom pricing. Start free, no credit card required.',
+  alternates: { canonical: 'https://precaliq.com/pricing' },
+};
 
 const tiers = [
   {
     name: 'Free',
     price: '$0',
     period: 'forever',
-    description: 'Try PreCalIQ on a single project with limited features.',
+    description: 'Try PreCalIQ on a single project — no credit card required.',
     features: [
       '1 active project',
       '3 takeoff categories',
@@ -28,11 +32,11 @@ const tiers = [
     name: 'Professional',
     price: '$299',
     period: '/month',
-    description: 'Full-featured platform for growing GCs and estimating teams.',
+    description: 'Full platform for growing GCs and estimating teams.',
     features: [
       'Unlimited projects',
       'All 15 takeoff categories',
-      'Multi-option variants (Standard, Premium, Budget)',
+      'Multi-option variants',
       'Vendor portal & pricing',
       'Collaborative bid builder',
       'PDF & Excel bid documents',
@@ -48,7 +52,7 @@ const tiers = [
     name: 'Enterprise',
     price: 'Custom',
     period: '',
-    description: 'For large contractors with advanced security and integration needs.',
+    description: 'For large contractors with advanced needs.',
     features: [
       'Everything in Professional',
       'Unlimited team members',
@@ -57,7 +61,7 @@ const tiers = [
       'Dedicated account manager',
       'On-premise deployment option',
       'Custom AI model training',
-      'SLA with 99.9% uptime guarantee',
+      'SLA with 99.9% uptime',
     ],
     cta: 'Contact Sales',
     href: '/contact',
@@ -96,18 +100,18 @@ export default function PricingPage() {
   return (
     <div>
       {/* Hero */}
-      <Section bg="gradient" className="text-center py-8 md:py-12">
+      <Section bg="gradient" className="text-center py-10 md:py-16">
         <AnimatedReveal direction="fade">
           <SectionLabel light>Pricing</SectionLabel>
         </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={100}>
-          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-tight tracking-tight">
-            Simple, <span className="text-gradient-amber">Transparent</span> Pricing
+        <AnimatedReveal direction="up" delay={80}>
+          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.02em]">
+            Simple, <span className="text-gradient-amber">transparent</span> pricing
           </h1>
         </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={200}>
-          <p className="mt-5 text-lg text-white/60 max-w-2xl mx-auto leading-relaxed">
-            Start free and scale as your team wins more bids.
+        <AnimatedReveal direction="up" delay={180}>
+          <p className="mt-6 text-[1.125rem] text-white/45 max-w-lg mx-auto leading-relaxed">
+            Start free. Scale as your team wins more bids.
           </p>
         </AnimatedReveal>
       </Section>
@@ -117,28 +121,35 @@ export default function PricingPage() {
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {tiers.map((tier, i) => (
             <AnimatedReveal key={tier.name} direction="up" delay={i * 100}>
-              <div className={`relative rounded-2xl ${tier.highlight ? 'p-px' : ''}`} style={tier.highlight ? { background: 'linear-gradient(to bottom right, #1F4E79, #C8964E, #2A6399)' } : undefined}>
+              <div
+                className={`relative rounded-2xl ${tier.highlight ? 'p-px' : ''}`}
+                style={tier.highlight ? { background: 'linear-gradient(160deg, #1F4E79, #C8964E, #2A6399)' } : undefined}
+              >
                 <div
-                  className={`relative rounded-2xl p-8 flex flex-col h-full bg-surface transition-all duration-300 hover:-translate-y-1 ${
+                  className={`relative rounded-2xl p-8 flex flex-col h-full bg-surface transition-all duration-400 ${
                     tier.highlight
                       ? 'shadow-card-hover'
-                      : 'ring-1 ring-border-subtle shadow-card hover:shadow-card-hover'
+                      : 'ring-1 ring-border-subtle shadow-card hover:shadow-card-hover hover:-translate-y-1'
                   }`}
                 >
                   {tier.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-5 py-1.5 rounded-full shadow-glow" style={{ background: 'linear-gradient(to right, #1F4E79, #2A6399)' }}>
+                    <div
+                      className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-5 py-1.5 rounded-full shadow-glow"
+                      style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+                    >
                       Most Popular
                     </div>
                   )}
-                  <h2 className="text-2xl font-bold text-charcoal">{tier.name}</h2>
-                  <div className="mt-4">
+                  <h2 className="text-xl font-bold text-charcoal">{tier.name}</h2>
+                  <div className="mt-5">
                     <span className="text-4xl font-extrabold text-charcoal tracking-tight">{tier.price}</span>
-                    {tier.period && <span className="text-charcoal-light ml-1">{tier.period}</span>}
+                    {tier.period && <span className="text-charcoal-muted ml-1 text-sm">{tier.period}</span>}
                   </div>
                   <p className="mt-3 text-charcoal-light text-sm leading-relaxed">{tier.description}</p>
-                  <ul className="mt-6 space-y-3 flex-1">
+
+                  <ul className="mt-8 space-y-3 flex-1">
                     {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-2.5 text-sm text-charcoal-light">
+                      <li key={feature} className="flex items-start gap-3 text-sm text-charcoal-light">
                         <svg className="w-4 h-4 text-navy mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
@@ -146,7 +157,8 @@ export default function PricingPage() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-8">
+
+                  <div className="mt-10">
                     <Button
                       href={tier.href}
                       variant={tier.highlight ? 'primary' : 'secondary'}
@@ -160,13 +172,20 @@ export default function PricingPage() {
             </AnimatedReveal>
           ))}
         </div>
+
+        {/* Annual savings note */}
+        <AnimatedReveal direction="fade" delay={400}>
+          <p className="text-center text-sm text-charcoal-muted mt-10">
+            Save 20% with annual billing — <span className="text-charcoal font-medium">$239/month</span> billed annually.
+          </p>
+        </AnimatedReveal>
       </Section>
 
       {/* FAQ */}
       <Section bg="cream">
-        <AnimatedReveal direction="up" className="text-center mb-12">
+        <AnimatedReveal direction="up" className="text-center mb-14">
           <SectionLabel>FAQ</SectionLabel>
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal leading-tight">Frequently Asked Questions</h2>
+          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal leading-tight">Common Questions</h2>
         </AnimatedReveal>
         <AnimatedReveal direction="up" delay={100}>
           <div className="max-w-3xl mx-auto">

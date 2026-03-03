@@ -5,8 +5,8 @@ interface SectionLabelProps {
 
 export default function SectionLabel({ children, light = false }: SectionLabelProps) {
   return (
-    <p className={`text-[0.8125rem] font-semibold uppercase tracking-wider mb-4 ${
-      light ? 'text-white/60' : 'text-amber'
+    <p className={`text-xs font-semibold uppercase tracking-[0.2em] mb-5 ${
+      light ? 'text-white/40' : 'text-amber'
     }`}>
       {children}
     </p>

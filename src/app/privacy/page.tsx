@@ -3,7 +3,11 @@ import AnimatedReveal from '@/components/AnimatedReveal';
 import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 
-export const metadata: Metadata = { title: 'Privacy Policy — PreCalIQ' };
+export const metadata: Metadata = {
+  title: 'Privacy Policy',
+  description: 'PreCalIQ Privacy Policy. Learn how we collect, use, and protect your information when using the PreCalIQ preconstruction platform.',
+  alternates: { canonical: 'https://precaliq.com/privacy' },
+};
 
 export default function PrivacyPage() {
   return (
