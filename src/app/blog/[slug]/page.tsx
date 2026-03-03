@@ -9,9 +9,9 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPostBySlug(slug);
-  if (!post) return { title: 'Post Not Found — Bildera' };
+  if (!post) return { title: 'Post Not Found — PreCalIQ' };
   return {
-    title: `${post.title} — Bildera Blog`,
+    title: `${post.title} — PreCalIQ Blog`,
     description: post.excerpt,
     openGraph: {
       title: post.title,
@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </div>
         <hr className="my-12 border-gray-200" />
         <div className="text-center">
-          <h3 className="text-xl font-bold text-gray-900">Ready to see Bildera in action?</h3>
+          <h3 className="text-xl font-bold text-gray-900">Ready to see PreCalIQ in action?</h3>
           <p className="mt-2 text-gray-600">Transform your preconstruction workflow with AI-powered takeoffs.</p>
           <a href="/contact" className="mt-6 inline-block px-8 py-3 bg-[#1F4E79] text-white rounded-lg font-medium hover:bg-[#163a5c] transition">
             Request a Demo

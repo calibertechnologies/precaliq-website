@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Contact — Bildera' };
+export const metadata: Metadata = { title: 'Contact — PreCalIQ' };
 
 const faqs = [
   {
     q: 'How long does a demo take?',
-    a: 'Most demos run 30 minutes. We walk through your workflow, show Bildera on a real spec, and answer questions.',
+    a: 'Most demos run 30 minutes. We walk through your workflow, show PreCalIQ on a real spec, and answer questions.',
   },
   {
     q: 'Do I need to prepare anything?',
@@ -17,7 +17,7 @@ const faqs = [
   },
   {
     q: 'How quickly can I be up and running?',
-    a: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — Bildera runs in your browser.',
+    a: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — PreCalIQ runs in your browser.',
   },
 ];
 
@@ -27,7 +27,7 @@ export default function ContactPage() {
       <div className="max-w-5xl mx-auto">
         <h1 className="text-4xl font-bold text-center text-gray-900">Request a Demo</h1>
         <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
-          See how Bildera can transform your preconstruction workflow. Fill out the form and we&apos;ll
+          See how PreCalIQ can transform your preconstruction workflow. Fill out the form and we&apos;ll
           be in touch within one business day.
         </p>
 
@@ -123,8 +123,8 @@ export default function ContactPage() {
               <h3 className="font-semibold text-gray-900">Prefer email?</h3>
               <p className="mt-2 text-gray-600 text-sm">
                 Reach us directly at{' '}
-                <a href="mailto:hello@bildera.com" className="text-[#1F4E79] underline">
-                  hello@bildera.com
+                <a href="mailto:hello@precaliq.com" className="text-[#1F4E79] underline">
+                  hello@precaliq.com
                 </a>
               </p>
             </div>

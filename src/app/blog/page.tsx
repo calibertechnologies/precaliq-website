@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { blogPosts } from '@/lib/blog-posts';
 
-export const metadata: Metadata = { title: 'Blog — Bildera' };
+export const metadata: Metadata = { title: 'Blog — PreCalIQ' };
 
 export default function BlogPage() {
   return (

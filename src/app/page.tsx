@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Bildera — AI-Powered Preconstruction Platform',
+  title: 'PreCalIQ — AI-Powered Preconstruction Platform',
 };
 
 export default function HomePage() {
@@ -15,7 +15,7 @@ export default function HomePage() {
             <span className="text-[#1F4E79]">Reimagined with AI</span>
           </h1>
           <p className="mt-6 text-xl text-gray-600 max-w-2xl mx-auto">
-            Bildera automates material takeoffs from specs and plans, generates multi-option bids, manages vendor pricing, and detects change orders — so your team can bid faster, smarter, and more accurately.
+            PreCalIQ automates material takeoffs from specs and plans, generates multi-option bids, manages vendor pricing, and detects change orders — so your team can bid faster, smarter, and more accurately.
           </p>
           <div className="mt-8 flex gap-4 justify-center">
             <a href="/contact" className="px-8 py-3 bg-[#1F4E79] text-white rounded-lg text-lg font-medium hover:bg-[#163a5c] transition">
@@ -41,12 +41,12 @@ export default function HomePage() {
       {/* 3 Differentiators */}
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Teams Choose Bildera</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Why Teams Choose PreCalIQ</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 title: 'AI-Powered Takeoffs',
-                description: 'Upload specs and plans. Bildera reads every page, cross-references CSI codes, and generates structured takeoffs in minutes — not days.',
+                description: 'Upload specs and plans. PreCalIQ reads every page, cross-references CSI codes, and generates structured takeoffs in minutes — not days.',
               },
               {
                 title: 'Multi-Option Bids',
@@ -72,10 +72,10 @@ export default function HomePage() {
           <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">How It Works</h2>
           <div className="space-y-8">
             {[
-              { step: '1', title: 'Upload Documents', desc: 'Upload spec PDFs and architectural plans. Bildera parses every section and classifies drawings automatically.' },
-              { step: '2', title: 'Generate Takeoffs', desc: 'Select categories (doors, flooring, MEP, etc.) and Bildera generates detailed material takeoffs with AI — cross-referencing specs and plans.' },
+              { step: '1', title: 'Upload Documents', desc: 'Upload spec PDFs and architectural plans. PreCalIQ parses every section and classifies drawings automatically.' },
+              { step: '2', title: 'Generate Takeoffs', desc: 'Select categories (doors, flooring, MEP, etc.) and PreCalIQ generates detailed material takeoffs with AI — cross-referencing specs and plans.' },
               { step: '3', title: 'Build Your Bid', desc: 'Choose variants per category, add vendor pricing, and generate professional bid documents in PDF or Excel.' },
-              { step: '4', title: 'Track Changes', desc: 'When revisions come in, Bildera detects what changed, estimates cost impact, and helps you issue change orders.' },
+              { step: '4', title: 'Track Changes', desc: 'When revisions come in, PreCalIQ detects what changed, estimates cost impact, and helps you issue change orders.' },
             ].map((item) => (
               <div key={item.step} className="flex gap-6 items-start">
                 <div className="w-10 h-10 bg-[#1F4E79] text-white rounded-full flex items-center justify-center font-bold shrink-0">
@@ -94,13 +94,13 @@ export default function HomePage() {
       {/* Competitor Comparison */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Bildera vs. Traditional Tools</h2>
+          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">PreCalIQ vs. Traditional Tools</h2>
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
                 <tr className="border-b">
                   <th className="text-left py-3 px-4">Feature</th>
-                  <th className="text-center py-3 px-4">Bildera</th>
+                  <th className="text-center py-3 px-4">PreCalIQ</th>
                   <th className="text-center py-3 px-4">PlanSwift</th>
                   <th className="text-center py-3 px-4">Bluebeam</th>
                 </tr>

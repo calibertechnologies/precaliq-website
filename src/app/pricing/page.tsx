@@ -1,13 +1,13 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Pricing — Bildera' };
+export const metadata: Metadata = { title: 'Pricing — PreCalIQ' };
 
 const tiers = [
   {
     name: 'Free',
     price: '$0',
     period: 'forever',
-    description: 'Try Bildera on a single project with limited features.',
+    description: 'Try PreCalIQ on a single project with limited features.',
     features: [
       '1 active project',
       '3 takeoff categories',
@@ -16,7 +16,7 @@ const tiers = [
       'Community support',
     ],
     cta: 'Get Started Free',
-    href: 'https://app.bildera.com/register',
+    href: 'https://app.precaliq.com/register',
     highlight: false,
   },
   {
@@ -62,8 +62,8 @@ const tiers = [
 
 const faqs = [
   {
-    q: 'Can I try Bildera before committing?',
-    a: "Yes. The Free plan lets you test Bildera on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
+    q: 'Can I try PreCalIQ before committing?',
+    a: "Yes. The Free plan lets you test PreCalIQ on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
   },
   {
     q: 'What counts as a "project"?',
@@ -71,7 +71,7 @@ const faqs = [
   },
   {
     q: 'How does vendor pricing work?',
-    a: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. Bildera parses the pricing and matches it to your takeoff items automatically.',
+    a: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. PreCalIQ parses the pricing and matches it to your takeoff items automatically.',
   },
   {
     q: 'Can I add more team members on the Professional plan?',
@@ -82,8 +82,8 @@ const faqs = [
     a: 'Yes. Annual billing saves 20% — $239/month billed annually ($2,868/year) instead of $299/month.',
   },
   {
-    q: 'What file formats does Bildera accept?',
-    a: 'Bildera accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
+    q: 'What file formats does PreCalIQ accept?',
+    a: 'PreCalIQ accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
   },
 ];
 

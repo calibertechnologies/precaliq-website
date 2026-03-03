@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 
-export const metadata: Metadata = { title: 'Features — Bildera' };
+export const metadata: Metadata = { title: 'Features — PreCalIQ' };
 
 const features = [
   {
     title: 'AI Specification Parsing',
-    description: 'Upload spec PDFs and Bildera reads every section — identifying manufacturers, materials, finishes, fire ratings, hardware sets, and standards. Specs are organized by CSI division and cross-referenced during takeoff generation.',
+    description: 'Upload spec PDFs and PreCalIQ reads every section — identifying manufacturers, materials, finishes, fire ratings, hardware sets, and standards. Specs are organized by CSI division and cross-referenced during takeoff generation.',
   },
   {
     title: 'Architectural Plan Analysis',
-    description: 'Upload architectural plans and Bildera classifies sheets (door schedules, finish schedules, floor plans), extracts door and room data, and combines plan data with specs for complete takeoffs.',
+    description: 'Upload architectural plans and PreCalIQ classifies sheets (door schedules, finish schedules, floor plans), extracts door and room data, and combines plan data with specs for complete takeoffs.',
   },
   {
     title: '15-Category Takeoffs',
@@ -33,7 +33,7 @@ const features = [
   },
   {
     title: 'Change Order Detection',
-    description: 'Upload a revised spec or plan and Bildera compares it to the original, identifying additions, removals, and modifications. Each change includes estimated cost impact.',
+    description: 'Upload a revised spec or plan and PreCalIQ compares it to the original, identifying additions, removals, and modifications. Each change includes estimated cost impact.',
   },
   {
     title: 'Excel Export',
