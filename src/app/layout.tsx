@@ -58,7 +58,7 @@ function Footer() {
   return (
     <footer className="bg-[#141413] text-white/80 relative overflow-hidden">
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-navy/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to bottom, rgba(31,78,121,0.05), transparent)' }} />
 
       <div className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 relative z-10">
         <div>

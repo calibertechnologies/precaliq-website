@@ -143,7 +143,7 @@ export default function FeaturesPage() {
             <AnimatedReveal key={i} direction="up" delay={i * 60}>
               <Card className="p-7 h-full group" glow>
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-navy/10 to-amber/5 flex items-center justify-center text-navy shrink-0 group-hover:scale-110 transition-transform duration-300">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center text-navy shrink-0 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(200,150,78,0.05))' }}>
                     {feature.icon}
                   </div>
                   <div className="flex-1 min-w-0">
@@ -163,8 +163,8 @@ export default function FeaturesPage() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-cream to-cream-dark" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-navy/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, #ECEAE5, #F5F3F0, #ECEAE5)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(31,78,121,0.05)' }} />
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <SectionLabel>Ready?</SectionLabel>
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">See PreCalIQ in Action</h2>

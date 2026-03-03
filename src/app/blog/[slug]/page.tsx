@@ -80,7 +80,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                       <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                           <thead>
-                            <tr className="bg-gradient-to-r from-cream to-cream-dark">
+                            <tr className="bg-cream-dark">
                               {headers.map((h, j) => (
                                 <th key={j} className="text-left py-3 px-4 font-semibold text-charcoal">{h}</th>
                               ))}
@@ -131,8 +131,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
       {/* CTA */}
       <section className="relative overflow-hidden py-20 px-6">
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-cream to-cream-dark" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-navy/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, #ECEAE5, #F5F3F0, #ECEAE5)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(31,78,121,0.05)' }} />
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <SectionLabel>Next Step</SectionLabel>
           <h3 className="text-2xl md:text-3xl font-extrabold text-charcoal">Ready to see PreCalIQ in action?</h3>

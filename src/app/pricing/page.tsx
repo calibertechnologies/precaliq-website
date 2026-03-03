@@ -117,7 +117,7 @@ export default function PricingPage() {
         <div className="grid md:grid-cols-3 gap-6 items-start">
           {tiers.map((tier, i) => (
             <AnimatedReveal key={tier.name} direction="up" delay={i * 100}>
-              <div className={`relative rounded-2xl ${tier.highlight ? 'p-px bg-gradient-to-br from-navy via-amber to-navy-light' : ''}`}>
+              <div className={`relative rounded-2xl ${tier.highlight ? 'p-px' : ''}`} style={tier.highlight ? { background: 'linear-gradient(to bottom right, #1F4E79, #C8964E, #2A6399)' } : undefined}>
                 <div
                   className={`relative rounded-2xl p-8 flex flex-col h-full bg-surface transition-all duration-300 hover:-translate-y-1 ${
                     tier.highlight
@@ -126,7 +126,7 @@ export default function PricingPage() {
                   }`}
                 >
                   {tier.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-gradient-to-r from-navy to-navy-light text-white text-xs font-semibold px-5 py-1.5 rounded-full shadow-glow">
+                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-5 py-1.5 rounded-full shadow-glow" style={{ background: 'linear-gradient(to right, #1F4E79, #2A6399)' }}>
                       Most Popular
                     </div>
                   )}

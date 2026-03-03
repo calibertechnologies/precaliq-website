@@ -32,7 +32,7 @@ export default function HomePage() {
   return (
     <div>
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-[#0A1E33] via-navy-dark to-[#0F2D47] text-white hero-mesh">
+      <section className="relative overflow-hidden text-white hero-mesh" style={{ background: 'linear-gradient(to bottom right, #0A1E33, #163A5C, #0F2D47)' }}>
         {/* Decorative floating orbs */}
         <div className="absolute top-20 left-[10%] w-72 h-72 bg-amber/10 rounded-full blur-3xl animate-float-slow pointer-events-none" />
         <div className="absolute bottom-10 right-[15%] w-96 h-96 bg-navy-light/10 rounded-full blur-3xl animate-float pointer-events-none" />
@@ -108,24 +108,24 @@ export default function HomePage() {
               icon: icons.ai,
               title: 'AI-Powered Takeoffs',
               description: 'Upload specs and plans. PreCalIQ reads every page, cross-references CSI codes, and generates structured takeoffs in minutes — not days.',
-              gradient: 'from-navy/10 to-navy/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(31,78,121,0.05))',
             },
             {
               icon: icons.options,
               title: 'Multi-Option Bids',
               description: 'Automatically generate Standard, Premium, and Budget variants. Compare options side-by-side and build competitive bids with one click.',
-              gradient: 'from-amber/10 to-amber/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(200,150,78,0.1), rgba(200,150,78,0.05))',
             },
             {
               icon: icons.vendor,
               title: 'Vendor & Change Management',
               description: 'Send takeoffs to vendors, collect pricing through a secure portal, and detect changes between document revisions automatically.',
-              gradient: 'from-navy/10 to-amber/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(200,150,78,0.05))',
             },
           ].map((item, i) => (
             <AnimatedReveal key={i} direction="up" delay={i * 120}>
               <Card className="p-8 h-full group" glow>
-                <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${item.gradient} flex items-center justify-center text-navy mb-5 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="w-14 h-14 rounded-xl flex items-center justify-center text-navy mb-5 group-hover:scale-110 transition-transform duration-300" style={{ background: item.gradientStyle }}>
                   {item.icon}
                 </div>
                 <h3 className="text-xl font-bold text-charcoal">{item.title}</h3>
@@ -144,7 +144,7 @@ export default function HomePage() {
         </AnimatedReveal>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
           {/* Connecting line */}
-          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gradient-to-r from-navy/20 via-amber/30 to-navy/20" aria-hidden="true" />
+          <div className="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5" style={{ background: 'linear-gradient(to right, rgba(31,78,121,0.2), rgba(200,150,78,0.3), rgba(31,78,121,0.2))' }} aria-hidden="true" />
           {[
             { step: '1', title: 'Upload Documents', desc: 'Upload spec PDFs and architectural plans. PreCalIQ parses every section and classifies drawings automatically.' },
             { step: '2', title: 'Generate Takeoffs', desc: 'Select categories (doors, flooring, MEP, etc.) and PreCalIQ generates detailed material takeoffs with AI — cross-referencing specs and plans.' },
@@ -153,7 +153,7 @@ export default function HomePage() {
           ].map((item, i) => (
             <AnimatedReveal key={item.step} direction="up" delay={i * 120}>
               <div className="text-center relative group">
-                <div className="w-16 h-16 bg-gradient-to-br from-navy to-navy-dark text-white rounded-2xl flex items-center justify-center text-lg font-bold mx-auto relative z-10 ring-4 ring-cream shadow-glow group-hover:scale-110 transition-transform duration-300">
+                <div className="w-16 h-16 text-white rounded-2xl flex items-center justify-center text-lg font-bold mx-auto relative z-10 ring-4 ring-cream shadow-glow group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to bottom right, #1F4E79, #163A5C)' }}>
                   {item.step}
                 </div>
                 <h3 className="text-lg font-bold text-charcoal mt-5">{item.title}</h3>
@@ -175,7 +175,7 @@ export default function HomePage() {
             <div className="overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
-                  <tr className="bg-gradient-to-r from-cream to-cream-dark">
+                  <tr className="bg-cream-dark">
                     <th className="text-left py-4 px-6 font-semibold text-charcoal">Feature</th>
                     <th className="text-center py-4 px-6 font-bold text-navy">PreCalIQ</th>
                     <th className="text-center py-4 px-6 font-medium text-charcoal-light">PlanSwift</th>
@@ -228,7 +228,7 @@ export default function HomePage() {
       {/* ============ STATS ============ */}
       <Section bg="navy" wide>
         {/* Decorative */}
-        <div className="absolute inset-0 bg-gradient-to-r from-navy/0 via-amber/5 to-navy/0 pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to right, transparent, rgba(200,150,78,0.05), transparent)' }} />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 relative z-10">
           {[
             ['10x', 'Faster Takeoffs'],
@@ -246,8 +246,8 @@ export default function HomePage() {
       {/* ============ CTA ============ */}
       <section className="relative overflow-hidden py-28 md:py-36 px-6">
         {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-cream to-cream-dark" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-navy/5 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, #ECEAE5, #F5F3F0, #ECEAE5)' }} />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-3xl pointer-events-none" style={{ background: 'rgba(31,78,121,0.05)' }} />
 
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <SectionLabel>Get Started</SectionLabel>

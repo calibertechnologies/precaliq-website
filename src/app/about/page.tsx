@@ -43,7 +43,7 @@ export default function AboutPage() {
         </AnimatedReveal>
         <AnimatedReveal direction="up" delay={200}>
           <div className="mt-10 relative rounded-2xl overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-navy to-amber opacity-10" />
+            <div className="absolute inset-0 opacity-10" style={{ background: 'linear-gradient(to right, #1F4E79, #C8964E)' }} />
             <div className="relative bg-cream-dark/80 backdrop-blur-sm rounded-2xl p-8 border-l-4 border-amber">
               <p className="text-xl text-charcoal italic leading-relaxed font-medium">
                 &ldquo;AI won&apos;t replace construction estimators — but estimators who use AI will replace
@@ -71,24 +71,24 @@ export default function AboutPage() {
               syllable: 'Pre',
               meaning: 'Preconstruction',
               description: 'Every GC, estimator, and project exec knows "precon" is the phase that determines whether a project succeeds or fails. It\'s the most critical and underserved phase in construction.',
-              gradient: 'from-navy/10 to-navy/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(31,78,121,0.05))',
             },
             {
               syllable: 'Cal',
               meaning: 'Calibration',
               description: 'In construction, calibration means precision — getting quantities right, specs aligned, costs accurate. It also ties directly back to our parent company, Caliber Technologies, reinforcing the lineage.',
-              gradient: 'from-amber/10 to-amber/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(200,150,78,0.1), rgba(200,150,78,0.05))',
             },
             {
               syllable: 'IQ',
               meaning: 'Intelligence',
               description: 'The product doesn\'t just digitize preconstruction — it makes it smarter. It reads specs, interprets plans, and generates takeoffs that would take a human estimator days.',
-              gradient: 'from-navy/10 to-amber/5',
+              gradientStyle: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(200,150,78,0.05))',
             },
           ].map((item, i) => (
             <AnimatedReveal key={item.syllable} direction="up" delay={i * 100}>
               <Card className="p-8 h-full group" glow>
-                <div className={`inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl mb-4 group-hover:scale-110 transition-transform duration-300" style={{ background: item.gradientStyle }}>
                   <span className="text-2xl font-extrabold text-navy">{item.syllable}</span>
                 </div>
                 <p className="text-sm font-semibold text-amber uppercase tracking-wide">{item.meaning}</p>
@@ -162,7 +162,7 @@ export default function AboutPage() {
           ].map((item, i) => (
             <AnimatedReveal key={item.role} direction="up" delay={i * 80}>
               <Card className="p-6 flex gap-5 items-start group">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-navy/10 to-amber/10 flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform duration-300" style={{ background: 'linear-gradient(to bottom right, rgba(31,78,121,0.1), rgba(200,150,78,0.1))' }}>
                   <svg className="w-5 h-5 text-navy" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
@@ -194,7 +194,7 @@ export default function AboutPage() {
       {/* Caliber Technologies */}
       <Section bg="white">
         <AnimatedReveal direction="scale">
-          <div className="relative rounded-2xl overflow-hidden p-px bg-gradient-to-br from-navy/20 via-amber/20 to-navy/20">
+          <div className="relative rounded-2xl overflow-hidden p-px" style={{ background: 'linear-gradient(to bottom right, rgba(31,78,121,0.2), rgba(200,150,78,0.2), rgba(31,78,121,0.2))' }}>
             <div className="bg-surface rounded-2xl p-12 text-center">
               <p className="text-xs text-amber uppercase tracking-wider font-semibold">A Company by</p>
               <p className="mt-3 text-3xl font-extrabold text-gradient-navy inline-block">Caliber Technologies</p>
@@ -209,7 +209,7 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="relative overflow-hidden py-24 px-6">
-        <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-cream to-cream-dark" />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom right, #ECEAE5, #F5F3F0, #ECEAE5)' }} />
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">Want to Learn More?</h2>
           <div className="mt-8">
