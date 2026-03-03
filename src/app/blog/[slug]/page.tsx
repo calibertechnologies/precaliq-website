@@ -37,7 +37,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       {/* Hero */}
       <Section bg="gradient" className="py-8 md:py-12">
         <AnimatedReveal direction="fade">
-          <a href="/blog" className="text-sm text-white/60 hover:text-white/90 transition-colors inline-flex items-center gap-1.5">
+          <a href="/blog" className="inline-flex items-center gap-1.5 text-sm text-white/50 hover:text-white/80 transition-colors duration-200">
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
             </svg>
@@ -45,20 +45,20 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </a>
         </AnimatedReveal>
         <AnimatedReveal direction="up" delay={100}>
-          <p className="mt-6 text-sm text-white/40 font-medium uppercase tracking-wide">{post.date}</p>
+          <p className="mt-6 text-sm text-amber/70 font-medium uppercase tracking-wide">{post.date}</p>
           <h1 className="mt-3 text-3xl md:text-[2.75rem] font-extrabold leading-tight tracking-tight">{post.title}</h1>
-          <p className="mt-4 text-lg text-white/60 leading-relaxed max-w-2xl">{post.excerpt}</p>
+          <p className="mt-4 text-lg text-white/50 leading-relaxed max-w-2xl">{post.excerpt}</p>
         </AnimatedReveal>
       </Section>
 
       {/* Article content */}
       <Section bg="white">
         <AnimatedReveal direction="up">
-          <article className="max-w-none">
+          <article className="prose-rich max-w-none">
             {post.content.split('\n\n').map((block, i) => {
               if (block.startsWith('## ')) {
                 return (
-                  <h2 key={i} className="text-2xl font-bold text-charcoal mt-12 mb-4">
+                  <h2 key={i} className="text-2xl font-extrabold text-charcoal mt-12 mb-4">
                     {block.replace('## ', '')}
                   </h2>
                 );
@@ -76,11 +76,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 const dataRows = rows.slice(1).map((r) => r.split('|').filter(Boolean).map((c) => c.trim()));
                 return (
                   <div key={i} className="my-8">
-                    <Card hover={false} className="overflow-hidden">
+                    <Card hover={false} className="overflow-hidden ring-2 ring-border-subtle">
                       <div className="overflow-x-auto">
                         <table className="w-full text-sm">
                           <thead>
-                            <tr className="bg-cream">
+                            <tr className="bg-gradient-to-r from-cream to-cream-dark">
                               {headers.map((h, j) => (
                                 <th key={j} className="text-left py-3 px-4 font-semibold text-charcoal">{h}</th>
                               ))}
@@ -130,10 +130,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       </Section>
 
       {/* CTA */}
-      <section className="py-20 px-6 bg-gradient-to-br from-cream-dark via-cream to-cream-dark">
-        <AnimatedReveal direction="up" className="text-center">
+      <section className="relative overflow-hidden py-20 px-6">
+        <div className="absolute inset-0 bg-gradient-to-br from-cream-dark via-cream to-cream-dark" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-navy/5 rounded-full blur-3xl pointer-events-none" />
+        <AnimatedReveal direction="up" className="text-center relative z-10">
           <SectionLabel>Next Step</SectionLabel>
-          <h3 className="text-2xl md:text-3xl font-bold text-charcoal">Ready to see PreCalIQ in action?</h3>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-charcoal">Ready to see PreCalIQ in action?</h3>
           <p className="mt-3 text-charcoal-light leading-relaxed">Transform your preconstruction workflow with AI-powered takeoffs.</p>
           <div className="mt-8">
             <Button href="/contact">Request a Demo</Button>
