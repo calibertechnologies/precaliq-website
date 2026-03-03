@@ -27,7 +27,6 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
     return () => observer.disconnect();
   }, []);
 
-  // Parse numeric part and suffix
   const match = value.match(/^([<$]?)(\d+)(.*)/);
   const prefix = match?.[1] || '';
   const numPart = match ? parseInt(match[2], 10) : 0;
@@ -44,7 +43,6 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
     const timer = setInterval(() => {
       current++;
       const progress = current / steps;
-      // Ease out quad
       const eased = 1 - (1 - progress) * (1 - progress);
       setCount(Math.round(eased * numPart));
       if (current >= steps) clearInterval(timer);
@@ -55,14 +53,14 @@ export default function AnimatedCounter({ value, label }: AnimatedCounterProps) 
   return (
     <div ref={ref} className="text-center">
       <div
-        className={`text-5xl md:text-6xl font-extrabold tracking-tight text-gradient-amber inline-block transition-all duration-700 ${
+        className={`text-5xl md:text-6xl font-extrabold tracking-tight text-gradient inline-block transition-all duration-700 ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
         }`}
       >
         {match ? `${prefix}${count}${suffix}` : value}
       </div>
       <div
-        className={`text-[0.8125rem] text-white/40 mt-3 font-medium tracking-wide uppercase transition-all duration-700 delay-200 ${
+        className={`text-[0.8125rem] text-white/35 mt-3 font-medium tracking-wide uppercase transition-all duration-700 delay-200 ${
           visible ? 'opacity-100' : 'opacity-0'
         }`}
       >

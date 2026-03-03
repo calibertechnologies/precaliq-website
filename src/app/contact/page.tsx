@@ -34,24 +34,26 @@ export default function ContactPage() {
   return (
     <div>
       {/* Hero */}
-      <Section bg="gradient" className="text-center py-10 md:py-16">
-        <AnimatedReveal direction="fade">
-          <SectionLabel light>Contact</SectionLabel>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={80}>
-          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.02em]">
-            Request a Demo
-          </h1>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={180}>
-          <p className="mt-6 text-[1.125rem] text-white/45 max-w-xl mx-auto leading-relaxed">
-            See how PreCalIQ can transform your preconstruction workflow.
-          </p>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedReveal direction="fade">
+            <SectionLabel>Contact</SectionLabel>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={80}>
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+              Request a Demo
+            </h1>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={180}>
+            <p className="mt-6 text-[1.125rem] text-graphite max-w-xl mx-auto leading-relaxed">
+              See how PreCalIQ can transform your preconstruction workflow.
+            </p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
       {/* Form + FAQ */}
-      <Section bg="white" wide>
+      <Section bg="snow" wide>
         <div className="grid md:grid-cols-2 gap-16">
           {/* Form */}
           <AnimatedReveal direction="right">
@@ -65,7 +67,7 @@ export default function ContactPage() {
                     type="text"
                     required
                     autoComplete="name"
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
+                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
                     placeholder="John Smith"
                   />
                 </div>
@@ -77,7 +79,7 @@ export default function ContactPage() {
                     type="email"
                     required
                     autoComplete="email"
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
+                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
                     placeholder="john@company.com"
                   />
                 </div>
@@ -89,7 +91,7 @@ export default function ContactPage() {
                     type="text"
                     required
                     autoComplete="organization"
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-muted/50"
+                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
                     placeholder="Acme Construction"
                   />
                 </div>
@@ -98,7 +100,7 @@ export default function ContactPage() {
                   <select
                     id="role"
                     name="role"
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal"
+                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal"
                   >
                     <option value="">Select your role</option>
                     <option value="estimator">Estimator</option>
@@ -110,24 +112,23 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
-                    Tell us about your workflow <span className="font-normal text-charcoal-muted">(optional)</span>
+                    Tell us about your workflow <span className="font-normal text-slate">(optional)</span>
                   </label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
-                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all resize-none text-charcoal placeholder:text-charcoal-muted/50"
+                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all resize-none text-charcoal placeholder:text-slate/50"
                     placeholder="What types of projects do you bid on? What tools do you currently use?"
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold transition-all duration-300 shadow-md hover:shadow-glow cursor-pointer shimmer-hover"
-                  style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+                  className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent cursor-pointer"
                 >
                   Request Demo
                 </button>
-                <p className="text-xs text-charcoal-muted text-center">
+                <p className="text-xs text-slate text-center">
                   We&apos;ll respond within one business day. No spam, no obligations.
                 </p>
               </form>
@@ -144,9 +145,9 @@ export default function ContactPage() {
             <AnimatedReveal direction="left" delay={200}>
               <Card hover={false} className="mt-8 p-6">
                 <h3 className="font-bold text-charcoal">Prefer email?</h3>
-                <p className="mt-2 text-charcoal-light text-sm">
+                <p className="mt-2 text-graphite text-sm">
                   Reach us directly at{' '}
-                  <a href="mailto:hello@precaliq.com" className="text-navy hover:text-navy-light underline underline-offset-2 transition-colors">
+                  <a href="mailto:hello@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2 transition-colors">
                     hello@precaliq.com
                   </a>
                 </p>

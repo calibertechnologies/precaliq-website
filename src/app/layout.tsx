@@ -11,7 +11,7 @@ const inter = Inter({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#1F4E79',
+  themeColor: '#1D1D1F',
   width: 'device-width',
   initialScale: 1,
 };
@@ -60,15 +60,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={inter.variable}>
       <head>
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/icon.svg" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
       <body>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
 
-        {/* Organization structured data */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -102,12 +101,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-charcoal/[0.04]" style={{ background: 'rgba(245, 243, 240, 0.85)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)' }}>
+    <header
+      className="sticky top-0 z-50 border-b border-border"
+      style={{ background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)' }}
+    >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[72px]" aria-label="Main navigation">
         <a href="/" className="flex items-center gap-2.5 group" aria-label="PreCalIQ home">
           <Logo size={32} />
           <span className="text-[1.125rem] font-bold text-charcoal tracking-tight">
-            Pre<span className="text-charcoal/20 font-light">-</span>Cal<span className="text-charcoal/20 font-light">-</span>IQ
+            Pre<span className="text-stone font-light">-</span>Cal<span className="text-stone font-light">-</span>IQ
           </span>
         </a>
 
@@ -122,7 +124,7 @@ function Header() {
             <a
               key={link.href}
               href={link.href}
-              className="px-4 py-2 text-[0.875rem] font-medium text-charcoal-light hover:text-charcoal rounded-lg hover:bg-charcoal/[0.04] transition-all duration-200"
+              className="px-4 py-2 text-[0.875rem] font-medium text-graphite hover:text-charcoal rounded-lg hover:bg-smoke transition-all duration-200"
             >
               {link.label}
             </a>
@@ -132,14 +134,13 @@ function Header() {
         <div className="hidden md:flex items-center gap-3">
           <a
             href="https://app.precaliq.com/login"
-            className="px-4 py-2 text-[0.875rem] font-medium text-charcoal-light hover:text-charcoal transition-colors duration-200"
+            className="px-4 py-2 text-[0.875rem] font-medium text-graphite hover:text-charcoal transition-colors duration-200"
           >
             Log in
           </a>
           <a
             href="https://app.precaliq.com"
-            className="px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl transition-all duration-300 shadow-sm hover:shadow-glow shimmer-hover"
-            style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+            className="px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent"
           >
             Get Started
           </a>
@@ -154,9 +155,9 @@ function Header() {
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="relative overflow-hidden" style={{ background: 'linear-gradient(to bottom, #0F0F0E, #141413)' }}>
-      {/* Subtle top gradient line */}
-      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(200, 150, 78, 0.3), transparent)' }} />
+    <footer className="relative overflow-hidden" style={{ background: '#0D0D0D' }}>
+      {/* Subtle top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: 'linear-gradient(to right, transparent, rgba(37, 99, 235, 0.2), transparent)' }} />
 
       <div className="max-w-6xl mx-auto px-6 pt-20 pb-12">
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
@@ -168,14 +169,14 @@ function Footer() {
                 Pre<span className="text-white/20 font-light">-</span>Cal<span className="text-white/20 font-light">-</span>IQ
               </span>
             </a>
-            <p className="text-[0.875rem] text-white/35 mt-4 leading-relaxed max-w-xs">
+            <p className="text-[0.875rem] text-white/30 mt-4 leading-relaxed max-w-xs">
               The IQ behind your precon. AI-powered preconstruction for general contractors.
             </p>
           </div>
 
           {/* Product */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Product</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/20 mb-5">Product</h4>
             <ul className="space-y-3">
               {[
                 { href: '/features', label: 'Features' },
@@ -183,7 +184,7 @@ function Footer() {
                 { href: '/contact', label: 'Request Demo' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                  <a href={link.href} className="text-[0.875rem] text-white/35 hover:text-white/70 transition-colors duration-200">{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -191,14 +192,14 @@ function Footer() {
 
           {/* Resources */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Resources</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/20 mb-5">Resources</h4>
             <ul className="space-y-3">
               {[
                 { href: '/blog', label: 'Blog' },
                 { href: '/about', label: 'About' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                  <a href={link.href} className="text-[0.875rem] text-white/35 hover:text-white/70 transition-colors duration-200">{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -206,14 +207,14 @@ function Footer() {
 
           {/* Legal */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Legal</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/20 mb-5">Legal</h4>
             <ul className="space-y-3">
               {[
                 { href: '/privacy', label: 'Privacy Policy' },
                 { href: '/terms', label: 'Terms of Service' },
               ].map((link) => (
                 <li key={link.href}>
-                  <a href={link.href} className="text-[0.875rem] text-white/40 hover:text-amber transition-colors duration-200">{link.label}</a>
+                  <a href={link.href} className="text-[0.875rem] text-white/35 hover:text-white/70 transition-colors duration-200">{link.label}</a>
                 </li>
               ))}
             </ul>
@@ -221,11 +222,10 @@ function Footer() {
 
           {/* CTA */}
           <div className="col-span-2 md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/25 mb-5">Get Started</h4>
+            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/20 mb-5">Get Started</h4>
             <a
               href="https://app.precaliq.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl shimmer-hover transition-all duration-300"
-              style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+              className="inline-flex items-center gap-2 px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl bg-accent hover:bg-accent-hover transition-all duration-300"
             >
               Try Free
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -236,7 +236,7 @@ function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 pt-6 border-t border-white/[0.04] flex flex-col md:flex-row items-center justify-between gap-4">
+        <div className="mt-16 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
             &copy; {currentYear} PreCalIQ. All rights reserved.
           </p>

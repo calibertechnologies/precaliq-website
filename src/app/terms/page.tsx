@@ -12,21 +12,23 @@ export const metadata: Metadata = {
 export default function TermsPage() {
   return (
     <div>
-      <Section bg="gradient" className="text-center py-8 md:py-10">
-        <AnimatedReveal direction="fade">
-          <SectionLabel light>Legal</SectionLabel>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={100}>
-          <h1 className="text-4xl md:text-[3rem] font-extrabold leading-tight tracking-tight">Terms of Service</h1>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={200}>
-          <p className="mt-4 text-sm text-white/50">Last updated: March 1, 2026</p>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative overflow-hidden bg-white py-20 md:py-28 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedReveal direction="fade">
+            <SectionLabel>Legal</SectionLabel>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={100}>
+            <h1 className="text-4xl md:text-[3rem] font-extrabold leading-tight tracking-[-0.02em] text-charcoal">Terms of Service</h1>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={200}>
+            <p className="mt-4 text-sm text-slate">Last updated: March 1, 2026</p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
-      <Section bg="white">
+      <Section bg="snow">
         <AnimatedReveal direction="up">
-          <div className="prose-rich space-y-8 text-charcoal-light leading-relaxed text-[1.0625rem]">
+          <div className="prose-rich space-y-8 text-graphite leading-relaxed text-[1.0625rem]">
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">1. Acceptance of Terms</h2>
               <p>
@@ -112,7 +114,7 @@ export default function TermsPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">12. Contact</h2>
               <p>
-                For questions about these Terms, contact us at <a href="mailto:legal@precaliq.com" className="text-navy hover:text-navy-light underline">legal@precaliq.com</a>.
+                For questions about these Terms, contact us at <a href="mailto:legal@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2">legal@precaliq.com</a>.
               </p>
             </div>
           </div>

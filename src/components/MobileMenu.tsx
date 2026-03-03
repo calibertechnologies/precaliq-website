@@ -13,7 +13,6 @@ const links = [
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -28,7 +27,7 @@ export default function MobileMenu() {
       <button
         type="button"
         onClick={() => setOpen(!open)}
-        className="p-2 text-charcoal-light hover:text-charcoal transition-colors cursor-pointer relative z-50"
+        className="p-2 text-graphite hover:text-charcoal transition-colors cursor-pointer relative z-50"
         aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
       >
@@ -39,18 +38,16 @@ export default function MobileMenu() {
         </div>
       </button>
 
-      {/* Overlay */}
       <div
-        className={`fixed inset-0 bg-charcoal/30 backdrop-blur-sm z-40 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-ink/20 backdrop-blur-sm z-40 transition-opacity duration-300 ${
           open ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         onClick={() => setOpen(false)}
         aria-hidden="true"
       />
 
-      {/* Menu panel */}
       <div
-        className={`fixed top-[72px] left-0 right-0 bottom-0 bg-cream z-40 transition-transform duration-400 ease-out ${
+        className={`fixed top-[72px] left-0 right-0 bottom-0 bg-white z-40 transition-transform duration-400 ease-out ${
           open ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
@@ -59,7 +56,7 @@ export default function MobileMenu() {
             <a
               key={link.href}
               href={link.href}
-              className="py-4 px-2 text-lg font-medium text-charcoal border-b border-border-subtle transition-colors"
+              className="py-4 px-2 text-lg font-medium text-charcoal border-b border-border transition-colors"
               onClick={() => setOpen(false)}
               style={{ animationDelay: `${i * 50}ms` }}
             >
@@ -69,15 +66,14 @@ export default function MobileMenu() {
           <div className="mt-8 flex flex-col gap-3">
             <a
               href="https://app.precaliq.com/login"
-              className="py-3 px-4 text-center text-charcoal-light font-medium rounded-xl ring-1 ring-border-subtle"
+              className="py-3 px-4 text-center text-graphite font-medium rounded-xl ring-1 ring-border"
               onClick={() => setOpen(false)}
             >
               Log in
             </a>
             <a
               href="https://app.precaliq.com"
-              className="py-3 px-4 text-white text-center font-semibold rounded-xl shimmer-hover"
-              style={{ background: 'linear-gradient(135deg, #1F4E79, #2A6399)' }}
+              className="py-3 px-4 text-white text-center font-semibold rounded-xl bg-accent hover:bg-accent-hover transition-colors"
               onClick={() => setOpen(false)}
             >
               Get Started Free

@@ -12,21 +12,23 @@ export const metadata: Metadata = {
 export default function PrivacyPage() {
   return (
     <div>
-      <Section bg="gradient" className="text-center py-8 md:py-10">
-        <AnimatedReveal direction="fade">
-          <SectionLabel light>Legal</SectionLabel>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={100}>
-          <h1 className="text-4xl md:text-[3rem] font-extrabold leading-tight tracking-tight">Privacy Policy</h1>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={200}>
-          <p className="mt-4 text-sm text-white/50">Last updated: March 1, 2026</p>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative overflow-hidden bg-white py-20 md:py-28 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedReveal direction="fade">
+            <SectionLabel>Legal</SectionLabel>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={100}>
+            <h1 className="text-4xl md:text-[3rem] font-extrabold leading-tight tracking-[-0.02em] text-charcoal">Privacy Policy</h1>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={200}>
+            <p className="mt-4 text-sm text-slate">Last updated: March 1, 2026</p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
-      <Section bg="white">
+      <Section bg="snow">
         <AnimatedReveal direction="up">
-          <div className="prose-rich space-y-8 text-charcoal-light leading-relaxed text-[1.0625rem]">
+          <div className="prose-rich space-y-8 text-graphite leading-relaxed text-[1.0625rem]">
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">1. Introduction</h2>
               <p>
@@ -75,7 +77,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">6. Your Rights</h2>
               <p>
-                You may request access to, correction of, or deletion of your personal data at any time by contacting us at <a href="mailto:privacy@precaliq.com" className="text-navy hover:text-navy-light underline">privacy@precaliq.com</a>. You may export or delete your project data through the platform&apos;s settings at any time.
+                You may request access to, correction of, or deletion of your personal data at any time by contacting us at <a href="mailto:privacy@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2">privacy@precaliq.com</a>. You may export or delete your project data through the platform&apos;s settings at any time.
               </p>
             </div>
 
@@ -103,7 +105,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">10. Contact Us</h2>
               <p>
-                If you have questions about this Privacy Policy, contact us at <a href="mailto:privacy@precaliq.com" className="text-navy hover:text-navy-light underline">privacy@precaliq.com</a> or by mail at Caliber Technologies, PreCalIQ Privacy, United States.
+                If you have questions about this Privacy Policy, contact us at <a href="mailto:privacy@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2">privacy@precaliq.com</a> or by mail at Caliber Technologies, PreCalIQ Privacy, United States.
               </p>
             </div>
           </div>

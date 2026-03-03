@@ -21,7 +21,7 @@ export default function Accordion({ items }: AccordionProps) {
         return (
           <div
             key={i}
-            className="bg-surface rounded-xl ring-1 ring-border-subtle overflow-hidden"
+            className="bg-white rounded-xl ring-1 ring-border overflow-hidden"
           >
             <button
               type="button"
@@ -30,7 +30,7 @@ export default function Accordion({ items }: AccordionProps) {
             >
               <span className="font-semibold text-charcoal pr-4">{item.question}</span>
               <svg
-                className={`w-5 h-5 text-charcoal-light shrink-0 transition-transform duration-300 ${
+                className={`w-5 h-5 text-slate shrink-0 transition-transform duration-300 ${
                   isOpen ? 'rotate-180' : ''
                 }`}
                 fill="none"
@@ -46,7 +46,7 @@ export default function Accordion({ items }: AccordionProps) {
               data-open={isOpen ? 'true' : 'false'}
             >
               <div>
-                <div className="px-6 pb-4 text-charcoal-light leading-relaxed">
+                <div className="px-6 pb-4 text-graphite leading-relaxed">
                   {item.answer}
                 </div>
               </div>

@@ -15,29 +15,32 @@ export default function AboutPage() {
   return (
     <div>
       {/* Hero */}
-      <Section bg="gradient" className="text-center py-10 md:py-16">
-        <AnimatedReveal direction="fade">
-          <SectionLabel light>Our Story</SectionLabel>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={80}>
-          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.02em]">
-            The IQ behind<br className="hidden sm:block" />
-            <span className="text-gradient-amber">your precon</span>
-          </h1>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={180}>
-          <p className="mt-6 text-[1.125rem] text-white/45 max-w-xl mx-auto leading-relaxed">
-            Built by estimators, for estimators. AI that understands construction.
-          </p>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
+        <div className="absolute top-[30%] right-[5%] w-[300px] h-[300px] rounded-full opacity-[0.03] pointer-events-none" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedReveal direction="fade">
+            <SectionLabel>Our Story</SectionLabel>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={80}>
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+              The IQ behind<br className="hidden sm:block" />
+              <span className="text-gradient">your precon</span>
+            </h1>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={180}>
+            <p className="mt-6 text-[1.125rem] text-graphite max-w-xl mx-auto leading-relaxed">
+              Built by estimators, for estimators. AI that understands construction.
+            </p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
       {/* Mission */}
-      <Section bg="white">
+      <Section bg="snow">
         <AnimatedReveal direction="up">
           <SectionLabel>Mission</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Why PreCalIQ?</h2>
-          <p className="text-charcoal-light leading-[1.75] text-[1.0625rem]">
+          <p className="text-graphite leading-[1.75] text-[1.0625rem]">
             In construction, the difference between a winning bid and a losing one comes down to
             calibration — getting the quantities, specs, and costs dialed in with precision.
             PreCalIQ was built because we believe AI can bring a new level of intelligence to
@@ -50,7 +53,7 @@ export default function AboutPage() {
         {/* Pull quote */}
         <AnimatedReveal direction="up" delay={150}>
           <div className="mt-12 relative">
-            <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full" style={{ background: 'linear-gradient(to bottom, #C8964E, #1F4E79)' }} />
+            <div className="absolute left-0 top-0 bottom-0 w-[3px] rounded-full bg-accent" />
             <blockquote className="pl-8 py-2">
               <p className="text-xl md:text-2xl text-charcoal italic leading-relaxed font-medium">
                 &ldquo;AI won&apos;t replace construction estimators — but estimators who use AI will replace
@@ -62,11 +65,11 @@ export default function AboutPage() {
       </Section>
 
       {/* The Name */}
-      <Section bg="cream" wide>
+      <Section bg="white" wide>
         <AnimatedReveal direction="up" className="text-center mb-14">
           <SectionLabel>Brand</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug">The Name</h2>
-          <p className="mt-4 text-charcoal-light max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-graphite max-w-2xl mx-auto leading-relaxed">
             PreCalIQ brings intelligence to preconstruction. The name says exactly what we do.
           </p>
         </AnimatedReveal>
@@ -90,13 +93,13 @@ export default function AboutPage() {
             },
           ].map((item, i) => (
             <AnimatedReveal key={item.syllable} direction="up" delay={i * 100}>
-              <Card className="p-8 h-full group" glow>
+              <Card className="p-8 h-full group">
                 <div className="flex items-center gap-3 mb-5">
-                  <span className="text-2xl font-extrabold text-navy">{item.syllable}</span>
-                  <div className="flex-1 h-px bg-border-subtle" />
+                  <span className="text-2xl font-extrabold text-charcoal">{item.syllable}</span>
+                  <div className="flex-1 h-px bg-border" />
                 </div>
-                <p className="text-xs font-bold uppercase tracking-[0.2em] text-amber">{item.meaning}</p>
-                <p className="mt-4 text-charcoal-light leading-relaxed text-sm">{item.description}</p>
+                <p className="text-xs font-bold uppercase tracking-[0.2em] text-accent">{item.meaning}</p>
+                <p className="mt-4 text-graphite leading-relaxed text-sm">{item.description}</p>
               </Card>
             </AnimatedReveal>
           ))}
@@ -104,11 +107,11 @@ export default function AboutPage() {
       </Section>
 
       {/* Origin Story */}
-      <Section bg="white">
+      <Section bg="snow">
         <AnimatedReveal direction="up">
           <SectionLabel>Origin</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Story</h2>
-          <div className="space-y-5 text-charcoal-light leading-[1.75] text-[1.0625rem]">
+          <div className="space-y-5 text-graphite leading-[1.75] text-[1.0625rem]">
             <p>
               PreCalIQ was born out of frustration. Our founders spent years working in preconstruction
               for general contractors — reading specifications page by page, manually counting doors
@@ -127,11 +130,11 @@ export default function AboutPage() {
       </Section>
 
       {/* Philosophy */}
-      <Section bg="cream">
+      <Section bg="white">
         <AnimatedReveal direction="up">
           <SectionLabel>Philosophy</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">What We Believe</h2>
-          <div className="space-y-5 text-charcoal-light leading-[1.75] text-[1.0625rem]">
+          <div className="space-y-5 text-graphite leading-[1.75] text-[1.0625rem]">
             <p>
               AI won&apos;t replace construction estimators — but estimators who use AI will replace
               those who don&apos;t. We believe the best technology augments human expertise rather
@@ -149,7 +152,7 @@ export default function AboutPage() {
       </Section>
 
       {/* Who It's For */}
-      <Section bg="white" wide>
+      <Section bg="snow" wide>
         <AnimatedReveal direction="up" className="text-center mb-14">
           <SectionLabel>Audience</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug">Who It&apos;s For</h2>
@@ -163,14 +166,14 @@ export default function AboutPage() {
           ].map((item, i) => (
             <AnimatedReveal key={item.role} direction="up" delay={i * 80}>
               <Card className="p-6 flex gap-5 items-start group">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform duration-300" style={{ background: 'linear-gradient(160deg, rgba(31,78,121,0.08), rgba(200,150,78,0.06))' }}>
-                  <svg className="w-5 h-5 text-navy" fill="currentColor" viewBox="0 0 20 20">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 bg-accent-soft group-hover:scale-105 transition-transform duration-300">
+                  <svg className="w-5 h-5 text-accent" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </div>
                 <div>
                   <p className="font-bold text-charcoal text-lg">{item.role}</p>
-                  <p className="text-charcoal-light text-sm mt-1 leading-relaxed">{item.desc}</p>
+                  <p className="text-graphite text-sm mt-1 leading-relaxed">{item.desc}</p>
                 </div>
               </Card>
             </AnimatedReveal>
@@ -179,11 +182,11 @@ export default function AboutPage() {
       </Section>
 
       {/* Team */}
-      <Section bg="cream">
+      <Section bg="white">
         <AnimatedReveal direction="up">
           <SectionLabel>Team</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Team</h2>
-          <p className="text-charcoal-light leading-[1.75] text-[1.0625rem]">
+          <p className="text-graphite leading-[1.75] text-[1.0625rem]">
             PreCalIQ is built by a small, focused team of engineers and construction professionals
             who have collectively spent decades in preconstruction, commercial contracting, and
             software development. We&apos;re headquartered in the United States and work closely
@@ -193,13 +196,13 @@ export default function AboutPage() {
       </Section>
 
       {/* Caliber Technologies */}
-      <Section bg="white">
+      <Section bg="snow">
         <AnimatedReveal direction="scale">
-          <div className="relative rounded-2xl overflow-hidden p-px" style={{ background: 'linear-gradient(160deg, rgba(31,78,121,0.15), rgba(200,150,78,0.15), rgba(31,78,121,0.15))' }}>
-            <div className="bg-surface rounded-2xl p-12 text-center">
-              <p className="text-xs text-amber uppercase tracking-[0.2em] font-semibold">A Company by</p>
-              <p className="mt-3 text-3xl font-extrabold text-gradient-navy inline-block">Caliber Technologies</p>
-              <p className="mt-4 text-charcoal-light max-w-lg mx-auto leading-relaxed">
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-border">
+            <div className="bg-white rounded-2xl p-12 text-center">
+              <p className="text-xs text-accent uppercase tracking-[0.2em] font-semibold">A Company by</p>
+              <p className="mt-3 text-3xl font-extrabold text-charcoal inline-block">Caliber Technologies</p>
+              <p className="mt-4 text-graphite max-w-lg mx-auto leading-relaxed">
                 PreCalIQ is developed and operated by Caliber Technologies — a technology company
                 focused on building AI-powered tools for the construction industry.
               </p>
@@ -209,8 +212,7 @@ export default function AboutPage() {
       </Section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-28 px-6 bg-cream">
-        <div className="absolute inset-0 dot-grid pointer-events-none" />
+      <section className="relative overflow-hidden py-28 px-6 bg-white">
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">Want to learn more?</h2>
           <div className="mt-8">

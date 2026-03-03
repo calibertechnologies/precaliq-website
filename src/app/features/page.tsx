@@ -82,30 +82,33 @@ export default function FeaturesPage() {
   return (
     <div>
       {/* Hero */}
-      <Section bg="gradient" className="text-center py-10 md:py-16">
-        <AnimatedReveal direction="fade">
-          <SectionLabel light>Platform</SectionLabel>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={80}>
-          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.02em]">
-            Everything you need to<br className="hidden sm:block" />
-            <span className="text-gradient-amber">win more bids</span>
-          </h1>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={180}>
-          <p className="mt-6 text-[1.125rem] text-white/45 max-w-xl mx-auto leading-relaxed">
-            From specification parsing to bid delivery — a complete preconstruction workflow, powered by AI.
-          </p>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative overflow-hidden bg-white py-24 md:py-36 px-6">
+        <div className="absolute top-[20%] right-[10%] w-[300px] h-[300px] rounded-full opacity-[0.03] pointer-events-none" style={{ background: 'radial-gradient(circle, #2563EB, transparent 70%)' }} />
+        <div className="max-w-4xl mx-auto text-center">
+          <AnimatedReveal direction="fade">
+            <SectionLabel>Platform</SectionLabel>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={80}>
+            <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-[1.08] tracking-[-0.03em] text-charcoal">
+              Everything you need to<br className="hidden sm:block" />
+              <span className="text-gradient">win more bids</span>
+            </h1>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={180}>
+            <p className="mt-6 text-[1.125rem] text-graphite max-w-xl mx-auto leading-relaxed">
+              From specification parsing to bid delivery — a complete preconstruction workflow, powered by AI.
+            </p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
       {/* Feature Groups */}
       {featureGroups.map((group, gi) => (
-        <Section key={group.label} bg={gi % 2 === 0 ? 'white' : 'cream'} wide dots={gi === 0}>
+        <Section key={group.label} bg={gi % 2 === 0 ? 'snow' : 'white'} wide>
           <AnimatedReveal direction="up" className="mb-14">
             <div className="flex items-center gap-4 mb-4">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber">{group.label}</span>
-              <div className="flex-1 h-px bg-border-subtle" />
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent">{group.label}</span>
+              <div className="flex-1 h-px bg-border" />
             </div>
             <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug">{group.headline}</h2>
           </AnimatedReveal>
@@ -113,10 +116,10 @@ export default function FeaturesPage() {
           <div className="grid md:grid-cols-2 gap-6">
             {group.features.map((feature, fi) => (
               <AnimatedReveal key={fi} direction="up" delay={fi * 100}>
-                <Card className="p-8 h-full group" glow>
+                <Card className="p-8 h-full group">
                   <h3 className="text-lg font-bold text-charcoal leading-snug">{feature.title}</h3>
-                  <p className="mt-4 text-charcoal-light leading-relaxed">{feature.description}</p>
-                  <p className="mt-4 text-sm text-charcoal-muted leading-relaxed border-t border-border-subtle pt-4">
+                  <p className="mt-4 text-graphite leading-relaxed">{feature.description}</p>
+                  <p className="mt-4 text-sm text-slate leading-relaxed border-t border-border pt-4">
                     {feature.detail}
                   </p>
                 </Card>
@@ -126,14 +129,14 @@ export default function FeaturesPage() {
         </Section>
       ))}
 
-      {/* Excel Export standalone callout */}
-      <Section bg="cream-dark">
+      {/* Excel Export callout */}
+      <Section bg="smoke">
         <AnimatedReveal direction="scale">
-          <div className="relative rounded-2xl p-px overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(31,78,121,0.2), rgba(200,150,78,0.2), rgba(31,78,121,0.2))' }}>
-            <div className="bg-surface rounded-2xl p-10 md:p-14 text-center">
-              <span className="text-xs font-bold tracking-[0.2em] uppercase text-amber">Export</span>
+          <div className="relative rounded-2xl overflow-hidden ring-1 ring-border">
+            <div className="bg-white rounded-2xl p-10 md:p-14 text-center">
+              <span className="text-xs font-bold tracking-[0.2em] uppercase text-accent">Export</span>
               <h3 className="mt-4 text-2xl font-extrabold text-charcoal">Excel-native output</h3>
-              <p className="mt-4 text-charcoal-light max-w-lg mx-auto leading-relaxed">
+              <p className="mt-4 text-graphite max-w-lg mx-auto leading-relaxed">
                 Every takeoff, variant comparison, and bid package exports to professionally formatted Excel workbooks — ready for submission or further analysis.
               </p>
             </div>
@@ -142,11 +145,10 @@ export default function FeaturesPage() {
       </Section>
 
       {/* CTA */}
-      <section className="relative overflow-hidden py-28 px-6 bg-cream">
-        <div className="absolute inset-0 dot-grid pointer-events-none" />
+      <section className="relative overflow-hidden py-28 px-6 bg-snow">
         <AnimatedReveal direction="up" className="text-center relative z-10">
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal">See PreCalIQ in action</h2>
-          <p className="mt-4 text-charcoal-light">Book a 30-minute demo with your own spec documents.</p>
+          <p className="mt-4 text-graphite">Book a 30-minute demo with your own spec documents.</p>
           <div className="mt-8">
             <Button href="/contact">
               Request a Demo

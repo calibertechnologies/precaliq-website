@@ -1,4 +1,4 @@
-type BgVariant = 'cream' | 'white' | 'cream-dark' | 'navy' | 'gradient' | 'dark';
+type BgVariant = 'white' | 'snow' | 'smoke' | 'dark' | 'accent';
 
 interface SectionProps {
   children: React.ReactNode;
@@ -6,34 +6,26 @@ interface SectionProps {
   className?: string;
   wide?: boolean;
   id?: string;
-  dots?: boolean;
-  grain?: boolean;
 }
 
 const bgStyles: Record<BgVariant, { className: string; style?: React.CSSProperties }> = {
-  cream: { className: 'bg-cream' },
-  white: { className: 'bg-surface' },
-  'cream-dark': { className: 'bg-cream-dark' },
-  navy: {
-    className: 'text-white relative overflow-hidden',
-    style: { background: 'linear-gradient(160deg, #1F4E79, #163A5C, #0F2D47)' },
-  },
-  gradient: {
-    className: 'text-white relative overflow-hidden hero-mesh',
-    style: { background: 'linear-gradient(160deg, #0A1E33 0%, #163A5C 40%, #0F2D47 100%)' },
-  },
+  white: { className: 'bg-white' },
+  snow: { className: 'bg-snow' },
+  smoke: { className: 'bg-smoke' },
   dark: {
     className: 'text-white relative overflow-hidden',
-    style: { background: 'linear-gradient(160deg, #0F0F0E, #1A1A18)' },
+    style: { background: '#0D0D0D' },
+  },
+  accent: {
+    className: 'text-white relative overflow-hidden',
+    style: { background: 'linear-gradient(160deg, #1D1D1F, #2563EB 150%)' },
   },
 };
 
-export default function Section({ children, bg = 'cream', className = '', wide = false, id, dots = false, grain: showGrain = false }: SectionProps) {
+export default function Section({ children, bg = 'white', className = '', wide = false, id }: SectionProps) {
   const { className: bgClass, style } = bgStyles[bg];
-  const dotsClass = dots ? (bg === 'navy' || bg === 'gradient' || bg === 'dark' ? 'dot-grid-dark' : 'dot-grid') : '';
-  const grainClass = showGrain ? 'grain' : '';
   return (
-    <section id={id} className={`py-24 md:py-32 px-6 ${bgClass} ${dotsClass} ${grainClass}`} style={style}>
+    <section id={id} className={`py-24 md:py-36 px-6 ${bgClass}`} style={style}>
       <div className={`mx-auto relative z-10 ${wide ? 'max-w-6xl' : 'max-w-4xl'} ${className}`}>
         {children}
       </div>
