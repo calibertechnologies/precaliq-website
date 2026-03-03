@@ -1,4 +1,9 @@
 import type { Metadata } from 'next';
+import AnimatedReveal from '@/components/AnimatedReveal';
+import Section from '@/components/Section';
+import SectionLabel from '@/components/SectionLabel';
+import Button from '@/components/Button';
+import Accordion from '@/components/Accordion';
 
 export const metadata: Metadata = { title: 'Pricing — PreCalIQ' };
 
@@ -62,95 +67,109 @@ const tiers = [
 
 const faqs = [
   {
-    q: 'Can I try PreCalIQ before committing?',
-    a: "Yes. The Free plan lets you test PreCalIQ on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
+    question: 'Can I try PreCalIQ before committing?',
+    answer: "Yes. The Free plan lets you test PreCalIQ on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
   },
   {
-    q: 'What counts as a "project"?',
-    a: 'A project corresponds to a single construction bid or job. Each project can contain multiple spec documents, plan sets, takeoffs, vendor quotes, and bid sessions.',
+    question: 'What counts as a "project"?',
+    answer: 'A project corresponds to a single construction bid or job. Each project can contain multiple spec documents, plan sets, takeoffs, vendor quotes, and bid sessions.',
   },
   {
-    q: 'How does vendor pricing work?',
-    a: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. PreCalIQ parses the pricing and matches it to your takeoff items automatically.',
+    question: 'How does vendor pricing work?',
+    answer: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. PreCalIQ parses the pricing and matches it to your takeoff items automatically.',
   },
   {
-    q: 'Can I add more team members on the Professional plan?',
-    a: 'Professional includes up to 10 team members. If you need more, contact us about the Enterprise plan, which supports unlimited users.',
+    question: 'Can I add more team members on the Professional plan?',
+    answer: 'Professional includes up to 10 team members. If you need more, contact us about the Enterprise plan, which supports unlimited users.',
   },
   {
-    q: 'Do you offer annual billing?',
-    a: 'Yes. Annual billing saves 20% — $239/month billed annually ($2,868/year) instead of $299/month.',
+    question: 'Do you offer annual billing?',
+    answer: 'Yes. Annual billing saves 20% — $239/month billed annually ($2,868/year) instead of $299/month.',
   },
   {
-    q: 'What file formats does PreCalIQ accept?',
-    a: 'PreCalIQ accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
+    question: 'What file formats does PreCalIQ accept?',
+    answer: 'PreCalIQ accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
   },
 ];
 
 export default function PricingPage() {
   return (
-    <div className="py-20 px-6">
-      <div className="max-w-6xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-900">Simple, Transparent Pricing</h1>
-        <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
-          Start free and scale as your team wins more bids.
-        </p>
+    <div>
+      {/* Hero */}
+      <Section bg="gradient" className="text-center py-8 md:py-12">
+        <AnimatedReveal direction="fade">
+          <SectionLabel light>Pricing</SectionLabel>
+        </AnimatedReveal>
+        <AnimatedReveal direction="up" delay={100}>
+          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-tight tracking-tight">
+            Simple, Transparent Pricing
+          </h1>
+        </AnimatedReveal>
+        <AnimatedReveal direction="up" delay={200}>
+          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            Start free and scale as your team wins more bids.
+          </p>
+        </AnimatedReveal>
+      </Section>
 
-        {/* Tiers */}
-        <div className="mt-16 grid md:grid-cols-3 gap-8">
-          {tiers.map((tier) => (
-            <div
-              key={tier.name}
-              className={`rounded-xl border p-8 flex flex-col ${
-                tier.highlight ? 'border-[#1F4E79] ring-2 ring-[#1F4E79] relative' : ''
-              }`}
-            >
-              {tier.highlight && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1F4E79] text-white text-xs font-semibold px-3 py-1 rounded-full">
-                  Most Popular
-                </div>
-              )}
-              <h2 className="text-2xl font-bold text-gray-900">{tier.name}</h2>
-              <div className="mt-4">
-                <span className="text-4xl font-bold text-gray-900">{tier.price}</span>
-                {tier.period && <span className="text-gray-500 ml-1">{tier.period}</span>}
-              </div>
-              <p className="mt-3 text-gray-600 text-sm">{tier.description}</p>
-              <ul className="mt-6 space-y-3 flex-1">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-gray-700">
-                    <span className="text-[#1F4E79] font-bold mt-0.5">&#10003;</span>
-                    {feature}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={tier.href}
-                className={`mt-8 block text-center px-6 py-3 rounded-lg font-medium transition ${
+      {/* Tiers */}
+      <Section bg="white" wide>
+        <div className="grid md:grid-cols-3 gap-6">
+          {tiers.map((tier, i) => (
+            <AnimatedReveal key={tier.name} direction="up" delay={i * 100}>
+              <div
+                className={`relative rounded-2xl p-8 flex flex-col h-full bg-surface ring-1 transition-all duration-300 hover:-translate-y-0.5 ${
                   tier.highlight
-                    ? 'bg-[#1F4E79] text-white hover:bg-[#163a5c]'
-                    : 'border border-gray-300 text-gray-700 hover:bg-gray-50'
+                    ? 'ring-2 ring-navy shadow-card-hover'
+                    : 'ring-border-subtle shadow-card hover:shadow-card-hover'
                 }`}
               >
-                {tier.cta}
-              </a>
-            </div>
+                {tier.highlight && (
+                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-navy text-white text-xs font-semibold px-4 py-1.5 rounded-full shadow-md">
+                    Most Popular
+                  </div>
+                )}
+                <h2 className="text-2xl font-bold text-charcoal">{tier.name}</h2>
+                <div className="mt-4">
+                  <span className="text-4xl font-extrabold text-charcoal tracking-tight">{tier.price}</span>
+                  {tier.period && <span className="text-charcoal-light ml-1">{tier.period}</span>}
+                </div>
+                <p className="mt-3 text-charcoal-light text-sm leading-relaxed">{tier.description}</p>
+                <ul className="mt-6 space-y-3 flex-1">
+                  {tier.features.map((feature) => (
+                    <li key={feature} className="flex items-start gap-2.5 text-sm text-charcoal-light">
+                      <span className="text-navy font-bold mt-0.5 shrink-0">&#10003;</span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-8">
+                  <Button
+                    href={tier.href}
+                    variant={tier.highlight ? 'primary' : 'secondary'}
+                    className="w-full"
+                  >
+                    {tier.cta}
+                  </Button>
+                </div>
+              </div>
+            </AnimatedReveal>
           ))}
         </div>
+      </Section>
 
-        {/* FAQ */}
-        <div className="mt-24 max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">Frequently Asked Questions</h2>
-          <div className="space-y-8">
-            {faqs.map((faq) => (
-              <div key={faq.q}>
-                <h3 className="text-lg font-semibold text-gray-900">{faq.q}</h3>
-                <p className="mt-2 text-gray-600">{faq.a}</p>
-              </div>
-            ))}
+      {/* FAQ */}
+      <Section bg="cream">
+        <AnimatedReveal direction="up" className="text-center mb-12">
+          <SectionLabel>FAQ</SectionLabel>
+          <h2 className="text-3xl md:text-[2.5rem] font-bold text-charcoal leading-tight">Frequently Asked Questions</h2>
+        </AnimatedReveal>
+        <AnimatedReveal direction="up" delay={100}>
+          <div className="max-w-3xl mx-auto">
+            <Accordion items={faqs} />
           </div>
-        </div>
-      </div>
+        </AnimatedReveal>
+      </Section>
     </div>
   );
 }

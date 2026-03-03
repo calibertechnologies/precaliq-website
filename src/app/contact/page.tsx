@@ -1,136 +1,151 @@
 import type { Metadata } from 'next';
+import AnimatedReveal from '@/components/AnimatedReveal';
+import Section from '@/components/Section';
+import SectionLabel from '@/components/SectionLabel';
+import Card from '@/components/Card';
+import Accordion from '@/components/Accordion';
 
 export const metadata: Metadata = { title: 'Contact — PreCalIQ' };
 
 const faqs = [
   {
-    q: 'How long does a demo take?',
-    a: 'Most demos run 30 minutes. We walk through your workflow, show PreCalIQ on a real spec, and answer questions.',
+    question: 'How long does a demo take?',
+    answer: 'Most demos run 30 minutes. We walk through your workflow, show PreCalIQ on a real spec, and answer questions.',
   },
   {
-    q: 'Do I need to prepare anything?',
-    a: 'No preparation needed. If you have a spec PDF you\'d like us to demo with, we\'re happy to use it — but it\'s not required.',
+    question: 'Do I need to prepare anything?',
+    answer: 'No preparation needed. If you have a spec PDF you\'d like us to demo with, we\'re happy to use it — but it\'s not required.',
   },
   {
-    q: 'Is there a free plan?',
-    a: 'Yes. After the demo, you can start with the Free plan — one project, three categories, no credit card required.',
+    question: 'Is there a free plan?',
+    answer: 'Yes. After the demo, you can start with the Free plan — one project, three categories, no credit card required.',
   },
   {
-    q: 'How quickly can I be up and running?',
-    a: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — PreCalIQ runs in your browser.',
+    question: 'How quickly can I be up and running?',
+    answer: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — PreCalIQ runs in your browser.',
   },
 ];
 
 export default function ContactPage() {
   return (
-    <div className="py-20 px-6">
-      <div className="max-w-5xl mx-auto">
-        <h1 className="text-4xl font-bold text-center text-gray-900">Request a Demo</h1>
-        <p className="mt-4 text-center text-lg text-gray-600 max-w-2xl mx-auto">
-          See how PreCalIQ can transform your preconstruction workflow. Fill out the form and we&apos;ll
-          be in touch within one business day.
-        </p>
+    <div>
+      {/* Hero */}
+      <Section bg="gradient" className="text-center py-8 md:py-12">
+        <AnimatedReveal direction="fade">
+          <SectionLabel light>Contact</SectionLabel>
+        </AnimatedReveal>
+        <AnimatedReveal direction="up" delay={100}>
+          <h1 className="text-4xl md:text-[3.5rem] font-extrabold leading-tight tracking-tight">Request a Demo</h1>
+        </AnimatedReveal>
+        <AnimatedReveal direction="up" delay={200}>
+          <p className="mt-5 text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
+            See how PreCalIQ can transform your preconstruction workflow. Fill out the form and we&apos;ll
+            be in touch within one business day.
+          </p>
+        </AnimatedReveal>
+      </Section>
 
-        <div className="mt-16 grid md:grid-cols-2 gap-16">
+      {/* Form + FAQ */}
+      <Section bg="white" wide>
+        <div className="grid md:grid-cols-2 gap-16">
           {/* Form */}
-          <div>
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1F4E79] focus:border-transparent outline-none"
-                  placeholder="John Smith"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Work Email</label>
-                <input
-                  id="email"
-                  name="email"
-                  type="email"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1F4E79] focus:border-transparent outline-none"
-                  placeholder="john@company.com"
-                />
-              </div>
-              <div>
-                <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">Company</label>
-                <input
-                  id="company"
-                  name="company"
-                  type="text"
-                  required
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1F4E79] focus:border-transparent outline-none"
-                  placeholder="Acme Construction"
-                />
-              </div>
-              <div>
-                <label htmlFor="role" className="block text-sm font-medium text-gray-700 mb-1">Role</label>
-                <select
-                  id="role"
-                  name="role"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1F4E79] focus:border-transparent outline-none bg-white"
-                >
-                  <option value="">Select your role</option>
-                  <option value="estimator">Estimator</option>
-                  <option value="project-manager">Project Manager</option>
-                  <option value="preconstruction-manager">Preconstruction Manager</option>
-                  <option value="owner">Owner / Executive</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-                  Tell us about your workflow (optional)
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#1F4E79] focus:border-transparent outline-none resize-none"
-                  placeholder="What types of projects do you bid on? What tools do you currently use?"
-                />
-              </div>
-              <button
-                type="submit"
-                className="w-full px-8 py-3 bg-[#1F4E79] text-white rounded-lg text-lg font-medium hover:bg-[#163a5c] transition"
-              >
-                Request Demo
-              </button>
-              <p className="text-xs text-gray-400 text-center">
-                We&apos;ll respond within one business day. No spam, no obligations.
-              </p>
-            </form>
-          </div>
-
-          {/* FAQ */}
-          <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-8">Common Questions</h2>
-            <div className="space-y-6">
-              {faqs.map((faq) => (
-                <div key={faq.q}>
-                  <h3 className="font-semibold text-gray-900">{faq.q}</h3>
-                  <p className="mt-1 text-gray-600 text-sm">{faq.a}</p>
+          <AnimatedReveal direction="right">
+            <Card hover={false} className="p-8">
+              <form className="space-y-5">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-1.5">Full Name</label>
+                  <input
+                    id="name"
+                    name="name"
+                    type="text"
+                    required
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    placeholder="John Smith"
+                  />
                 </div>
-              ))}
-            </div>
+                <div>
+                  <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-1.5">Work Email</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    required
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    placeholder="john@company.com"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-1.5">Company</label>
+                  <input
+                    id="company"
+                    name="company"
+                    type="text"
+                    required
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal placeholder:text-charcoal-light/50"
+                    placeholder="Acme Construction"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="role" className="block text-sm font-semibold text-charcoal mb-1.5">Role</label>
+                  <select
+                    id="role"
+                    name="role"
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all text-charcoal"
+                  >
+                    <option value="">Select your role</option>
+                    <option value="estimator">Estimator</option>
+                    <option value="project-manager">Project Manager</option>
+                    <option value="preconstruction-manager">Preconstruction Manager</option>
+                    <option value="owner">Owner / Executive</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div>
+                  <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
+                    Tell us about your workflow (optional)
+                  </label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows={4}
+                    className="w-full px-4 py-3 bg-cream ring-1 ring-border-subtle rounded-xl focus:ring-2 focus:ring-navy focus:bg-surface outline-none transition-all resize-none text-charcoal placeholder:text-charcoal-light/50"
+                    placeholder="What types of projects do you bid on? What tools do you currently use?"
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="w-full px-8 py-3.5 bg-navy text-white rounded-xl text-lg font-semibold hover:bg-navy-light transition-all shadow-md hover:shadow-lg cursor-pointer"
+                >
+                  Request Demo
+                </button>
+                <p className="text-xs text-charcoal-light/60 text-center">
+                  We&apos;ll respond within one business day. No spam, no obligations.
+                </p>
+              </form>
+            </Card>
+          </AnimatedReveal>
 
-            <div className="mt-12 bg-gray-50 rounded-xl p-6">
-              <h3 className="font-semibold text-gray-900">Prefer email?</h3>
-              <p className="mt-2 text-gray-600 text-sm">
-                Reach us directly at{' '}
-                <a href="mailto:hello@precaliq.com" className="text-[#1F4E79] underline">
-                  hello@precaliq.com
-                </a>
-              </p>
-            </div>
+          {/* FAQ + Email */}
+          <div>
+            <AnimatedReveal direction="left">
+              <h2 className="text-2xl font-bold text-charcoal mb-6">Common Questions</h2>
+              <Accordion items={faqs} />
+            </AnimatedReveal>
+
+            <AnimatedReveal direction="left" delay={200}>
+              <Card hover={false} className="mt-8 p-6">
+                <h3 className="font-bold text-charcoal">Prefer email?</h3>
+                <p className="mt-2 text-charcoal-light text-sm">
+                  Reach us directly at{' '}
+                  <a href="mailto:hello@precaliq.com" className="text-navy hover:text-navy-light underline transition-colors">
+                    hello@precaliq.com
+                  </a>
+                </p>
+              </Card>
+            </AnimatedReveal>
           </div>
         </div>
-      </div>
+      </Section>
     </div>
   );
 }
