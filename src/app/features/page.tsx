@@ -288,23 +288,23 @@ export default function FeaturesPage() {
 
 function VendorPortalMockup() {
   return (
-    <div className="bg-gray-50 min-h-0">
-      <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
+      <div className="flex items-center h-12 px-4 gap-4 text-[9px] font-semibold text-white/80 shadow-md" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068, #1F4E79)' }}>
+        <span className="font-bold text-[11px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
-        <span className="text-white/60">Vendor Portal</span>
+        <span className="px-2.5 py-1 rounded-lg text-white/60">Vendor Portal</span>
       </div>
-      <div className="px-5 pt-4 pb-3 bg-white border-b border-gray-100">
-        <p className="text-[11px] font-bold text-gray-900">Vendor Quote Request</p>
+      <div className="px-5 pt-4 pb-3 bg-white/80 border-b border-gray-200/60" style={{ backdropFilter: 'blur(8px)' }}>
+        <p className="text-[12px] font-extrabold text-gray-900">Vendor Quote Request</p>
         <p className="text-[8px] text-gray-400 mt-0.5">Highland Medical Center — Interior Doors</p>
       </div>
       <div className="p-4 space-y-2.5">
-        <div className="bg-white rounded-lg p-3 ring-1 ring-gray-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-3 border border-gray-200/60 shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)]">
           <div className="flex items-center justify-between mb-2">
             <span className="text-[9px] font-semibold text-gray-800">Quote Items (12)</span>
             <div className="flex gap-1.5">
-              <span className="px-2 py-0.5 rounded text-[7px] font-semibold bg-blue-50 text-blue-600">Download Excel</span>
-              <span className="px-2 py-0.5 rounded text-[7px] font-semibold bg-green-50 text-green-600">Upload Pricing</span>
+              <span className="px-2 py-0.5 rounded-lg text-[7px] font-semibold bg-blue-50 text-blue-600">Download Excel</span>
+              <span className="px-2 py-0.5 rounded-lg text-[7px] font-semibold bg-green-50 text-green-600">Upload Pricing</span>
             </div>
           </div>
           <table className="w-full">
@@ -332,7 +332,7 @@ function VendorPortalMockup() {
             </tbody>
           </table>
         </div>
-        <div className="bg-white rounded-lg p-3 ring-1 ring-green-100 shadow-sm">
+        <div className="bg-white rounded-2xl p-3 border border-green-200/60 shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)]">
           <div className="flex items-center gap-2">
             <div className="w-4 h-4 rounded-full bg-green-100 flex items-center justify-center">
               <svg className="w-2.5 h-2.5 text-green-600" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
@@ -347,11 +347,11 @@ function VendorPortalMockup() {
 
 function PdfPreviewMockup() {
   return (
-    <div className="bg-gray-50 min-h-0">
-      <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
+      <div className="flex items-center h-12 px-4 gap-4 text-[9px] font-semibold text-white/80 shadow-md" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068, #1F4E79)' }}>
+        <span className="font-bold text-[11px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
-        <span className="text-white/60">Bid Documents</span>
+        <span className="px-2.5 py-1 rounded-lg text-white/60">Bid Documents</span>
       </div>
       <div className="p-4 flex gap-3">
         {/* Sidebar versions */}
@@ -369,7 +369,7 @@ function PdfPreviewMockup() {
           ))}
         </div>
         {/* PDF preview */}
-        <div className="flex-1 bg-white rounded-lg shadow-sm ring-1 ring-gray-100 p-4">
+        <div className="flex-1 bg-white rounded-2xl shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)] border border-gray-200/60 p-4">
           <div className="text-center mb-3">
             <p className="text-[10px] font-bold text-gray-900">BID PROPOSAL</p>
             <p className="text-[7px] text-gray-400 mt-0.5">Highland Medical Center — V3</p>
@@ -389,8 +389,8 @@ function PdfPreviewMockup() {
             </div>
           </div>
           <div className="mt-3 flex gap-1.5">
-            <span className="px-2 py-1 rounded text-[7px] font-semibold bg-blue-600 text-white">Download PDF</span>
-            <span className="px-2 py-1 rounded text-[7px] font-semibold bg-gray-100 text-gray-600">Export Excel</span>
+            <span className="px-2.5 py-1 rounded-lg text-[7px] font-semibold text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' }}>Download PDF</span>
+            <span className="px-2.5 py-1 rounded-lg text-[7px] font-semibold bg-gray-100 text-gray-600 shadow-sm">Export Excel</span>
           </div>
         </div>
       </div>
@@ -400,13 +400,13 @@ function PdfPreviewMockup() {
 
 function DiffViewMockup() {
   return (
-    <div className="bg-gray-50 min-h-0">
-      <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
+      <div className="flex items-center h-12 px-4 gap-4 text-[9px] font-semibold text-white/80 shadow-md" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068, #1F4E79)' }}>
+        <span className="font-bold text-[11px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
-        <span className="text-white/60">Change Orders</span>
+        <span className="px-2.5 py-1 rounded-lg text-white/60">Change Orders</span>
       </div>
-      <div className="px-5 pt-3 pb-2 bg-white border-b border-gray-100">
+      <div className="px-5 pt-3 pb-2 bg-white/80 border-b border-gray-200/60" style={{ backdropFilter: 'blur(8px)' }}>
         <div className="flex items-center gap-2">
           <p className="text-[11px] font-bold text-gray-900">Revision Comparison</p>
           <span className="px-1.5 py-0.5 rounded text-[7px] font-semibold bg-orange-50 text-orange-600">3 changes detected</span>
@@ -414,7 +414,7 @@ function DiffViewMockup() {
         <p className="text-[8px] text-gray-400 mt-0.5">Spec Rev A → Rev B · Highland Medical Center</p>
       </div>
       <div className="p-3 space-y-2">
-        <div className="bg-green-50 rounded-lg p-2.5 ring-1 ring-green-100">
+        <div className="bg-green-50 rounded-2xl p-2.5 border border-green-200/60">
           <div className="flex items-center gap-1.5 mb-1">
             <span className="px-1.5 py-0.5 rounded text-[7px] font-bold bg-green-200 text-green-800">ADDED</span>
             <span className="text-[8px] font-semibold text-gray-800">08 14 16 — Flush Wood Doors</span>
@@ -422,7 +422,7 @@ function DiffViewMockup() {
           <p className="text-[7px] text-gray-500 pl-1">New section requiring additional 6 doors at Corridor 3F</p>
           <p className="text-[7px] text-green-700 font-semibold pl-1 mt-0.5">Est. impact: +$8,400</p>
         </div>
-        <div className="bg-yellow-50 rounded-lg p-2.5 ring-1 ring-yellow-100">
+        <div className="bg-yellow-50 rounded-2xl p-2.5 border border-yellow-200/60">
           <div className="flex items-center gap-1.5 mb-1">
             <span className="px-1.5 py-0.5 rounded text-[7px] font-bold bg-yellow-200 text-yellow-800">MODIFIED</span>
             <span className="text-[8px] font-semibold text-gray-800">08 11 13 — Hollow Metal Frames</span>
@@ -430,7 +430,7 @@ function DiffViewMockup() {
           <p className="text-[7px] text-gray-500 pl-1">Fire rating changed: 60min → 90min for Level 2</p>
           <p className="text-[7px] text-yellow-700 font-semibold pl-1 mt-0.5">Est. impact: +$3,200</p>
         </div>
-        <div className="bg-red-50 rounded-lg p-2.5 ring-1 ring-red-100">
+        <div className="bg-red-50 rounded-2xl p-2.5 border border-red-200/60">
           <div className="flex items-center gap-1.5 mb-1">
             <span className="px-1.5 py-0.5 rounded text-[7px] font-bold bg-red-200 text-red-800">REMOVED</span>
             <span className="text-[8px] font-semibold text-gray-800">09 65 13 — Resilient Base</span>

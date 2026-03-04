@@ -6,16 +6,17 @@
 /* ── Shared tiny components ── */
 function StatusBadge({ status }: { status: 'active' | 'draft' | 'completed' }) {
   const colors = {
-    active: { bg: '#DCFCE7', text: '#166534' },
-    draft: { bg: '#F3F4F6', text: '#6B7280' },
-    completed: { bg: '#DBEAFE', text: '#1E40AF' },
+    active: { bg: '#DCFCE7', text: '#166534', dot: '#22C55E' },
+    draft: { bg: '#F3F4F6', text: '#6B7280', dot: '#9CA3AF' },
+    completed: { bg: '#DBEAFE', text: '#1E40AF', dot: '#3B82F6' },
   };
   const c = colors[status];
   return (
     <span
-      className="inline-flex items-center px-2 py-0.5 rounded-full text-[8px] font-semibold uppercase tracking-wide"
+      className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[8px] font-semibold uppercase tracking-wide"
       style={{ background: c.bg, color: c.text }}
     >
+      <span className="w-1.5 h-1.5 rounded-full" style={{ background: c.dot }} />
       {status}
     </span>
   );
@@ -24,19 +25,19 @@ function StatusBadge({ status }: { status: 'active' | 'draft' | 'completed' }) {
 function ProgressBar({ pct, color = '#2563EB' }: { pct: number; color?: string }) {
   return (
     <div className="w-full h-1.5 rounded-full bg-gray-100">
-      <div className="h-full rounded-full" style={{ width: `${pct}%`, background: color }} />
+      <div className="h-full rounded-full" style={{ width: `${pct}%`, background: `linear-gradient(90deg, ${color}, ${color}dd)` }} />
     </div>
   );
 }
 
 function MockNav() {
   return (
-    <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-      <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
+    <div className="flex items-center h-12 px-4 gap-4 text-[9px] font-semibold text-white/80 shadow-md" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068, #1F4E79)' }}>
+      <span className="font-bold text-[11px] tracking-tight text-white">Precaliq</span>
       <div className="flex-1" />
-      <span className="opacity-60">Projects</span>
-      <span className="opacity-60">Settings</span>
-      <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center text-[8px] text-white font-bold">JD</div>
+      <span className="px-2.5 py-1 rounded-lg opacity-70 hover:opacity-100">Projects</span>
+      <span className="px-2.5 py-1 rounded-lg opacity-70 hover:opacity-100">Settings</span>
+      <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-[8px] text-white font-bold">JD</div>
     </div>
   );
 }
@@ -66,13 +67,13 @@ export function HeroMockup() {
   ];
 
   return (
-    <div className="bg-white min-h-0">
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
       <MockNav />
       {/* Project header */}
-      <div className="px-4 pt-3 pb-2 bg-white border-b border-gray-100">
+      <div className="px-4 pt-3 pb-2 bg-white/80 border-b border-gray-200/60" style={{ backdropFilter: 'blur(8px)' }}>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-lg flex items-center justify-center text-[9px] font-bold text-white" style={{ background: '#2563EB' }}>HM</div>
+            <div className="w-7 h-7 rounded-xl flex items-center justify-center text-[9px] font-bold text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' }}>HM</div>
             <div>
               <div className="flex items-center gap-2">
                 <p className="text-[11px] font-bold text-gray-900">Highland Medical Center</p>
@@ -82,20 +83,20 @@ export function HeroMockup() {
             </div>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="px-2 py-1 rounded-md text-[7px] font-semibold bg-gray-100 text-gray-500">Export</div>
-            <div className="px-2 py-1 rounded-md text-[7px] font-semibold text-white" style={{ background: '#2563EB' }}>Generate Takeoff</div>
+            <div className="px-2.5 py-1 rounded-lg text-[7px] font-semibold bg-gray-100 text-gray-500 shadow-sm">Export</div>
+            <div className="px-2.5 py-1 rounded-lg text-[7px] font-semibold text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' }}>Generate Takeoff</div>
           </div>
         </div>
       </div>
       {/* Main content with sidebar */}
       <div className="flex">
         {/* Left sidebar */}
-        <div className="w-[120px] bg-gray-50 border-r border-gray-100 py-2">
+        <div className="w-[120px] border-r border-gray-200/60 py-2" style={{ background: '#f5f7fa' }}>
           {sidebarItems.map((item) => (
             <div
               key={item.label}
-              className={`flex items-center gap-2 px-3 py-1.5 mx-1.5 rounded-md text-[8px] font-medium ${
-                item.active ? 'bg-blue-50 text-blue-700 font-semibold' : 'text-gray-500 hover:bg-gray-100'
+              className={`flex items-center gap-2 px-3 py-1.5 mx-1.5 rounded-lg text-[8px] font-medium ${
+                item.active ? 'bg-blue-50 text-blue-700 font-semibold shadow-sm' : 'text-gray-500 hover:bg-gray-100'
               }`}
             >
               <svg className={`w-3 h-3 shrink-0 ${item.active ? 'text-blue-600' : 'text-gray-400'}`} fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -108,17 +109,17 @@ export function HeroMockup() {
         {/* Main area */}
         <div className="flex-1 min-w-0">
           {/* Takeoff header */}
-          <div className="px-4 py-2 bg-white border-b border-gray-100 flex items-center justify-between">
+          <div className="px-4 py-2 bg-white/80 border-b border-gray-200/60 flex items-center justify-between">
             <div className="flex items-center gap-3">
               <span className="text-[9px] font-bold text-gray-900">Interior Doors</span>
-              <span className="px-1.5 py-0.5 rounded text-[7px] font-medium bg-blue-50 text-blue-600">12 items</span>
+              <span className="px-1.5 py-0.5 rounded-md text-[7px] font-medium bg-blue-50 text-blue-600">12 items</span>
             </div>
             <div className="flex items-center gap-1">
               {['Standard', 'Premium', 'Budget'].map((v) => (
                 <div
                   key={v}
-                  className={`px-2.5 py-1 rounded-md text-[7px] font-semibold ${v === 'Standard' ? 'text-white' : 'bg-gray-100 text-gray-500'}`}
-                  style={v === 'Standard' ? { background: '#2563EB' } : undefined}
+                  className={`px-2.5 py-1 rounded-lg text-[7px] font-semibold ${v === 'Standard' ? 'text-white shadow-sm' : 'bg-gray-100 text-gray-500'}`}
+                  style={v === 'Standard' ? { background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' } : undefined}
                 >
                   {v}
                 </div>
@@ -129,14 +130,14 @@ export function HeroMockup() {
           <div className="px-3 py-1">
             <table className="w-full">
               <thead>
-                <tr className="text-[7px] font-bold text-gray-400 uppercase tracking-wider border-b border-gray-100">
-                  <th className="text-left py-2 px-2">Item</th>
+                <tr className="text-[7px] font-bold text-white uppercase tracking-wider" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068)' }}>
+                  <th className="text-left py-2 px-2 rounded-tl">Item</th>
                   <th className="text-left py-2 px-2">Location</th>
                   <th className="text-left py-2 px-2">Material</th>
                   <th className="text-left py-2 px-2">Hardware</th>
                   <th className="text-left py-2 px-2">Fire</th>
                   <th className="text-center py-2 px-2">Qty</th>
-                  <th className="text-right py-2 px-2">Cost</th>
+                  <th className="text-right py-2 px-2 rounded-tr">Cost</th>
                 </tr>
               </thead>
               <tbody>
@@ -161,7 +162,7 @@ export function HeroMockup() {
             </table>
           </div>
           {/* Bottom summary bar */}
-          <div className="px-4 py-2 bg-gray-50 border-t border-gray-100 flex items-center justify-between">
+          <div className="px-4 py-2 border-t border-gray-200/60 flex items-center justify-between" style={{ background: '#f5f7fa' }}>
             <div className="flex items-center gap-4">
               <div className="text-[7px] text-gray-400"><span className="font-semibold text-gray-600">6</span> items shown</div>
               <div className="text-[7px] text-gray-400"><span className="font-semibold text-gray-600">14</span> total qty</div>
@@ -173,7 +174,7 @@ export function HeroMockup() {
           </div>
         </div>
         {/* Right summary panel */}
-        <div className="w-[130px] bg-white border-l border-gray-100 p-3">
+        <div className="w-[130px] bg-white border-l border-gray-200/60 p-3">
           <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-3">Bid Summary</p>
           <div className="space-y-1.5">
             {[
@@ -231,16 +232,16 @@ export function DashboardMockup() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-0">
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
       <MockNav />
-      <div className="px-5 pt-4 pb-3 bg-white border-b border-gray-100">
+      <div className="px-5 pt-4 pb-3 bg-white/80 border-b border-gray-200/60" style={{ backdropFilter: 'blur(8px)' }}>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-[11px] font-bold text-gray-900">Projects</p>
+            <p className="text-[12px] font-extrabold text-gray-900">Projects</p>
             <p className="text-[8px] text-gray-400 mt-0.5">3 projects · 2 active</p>
           </div>
           <div className="flex items-center gap-1.5">
-            <div className="px-2.5 py-1 rounded-md text-[8px] font-semibold text-white" style={{ background: '#2563EB' }}>
+            <div className="px-2.5 py-1.5 rounded-lg text-[8px] font-semibold text-white shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' }}>
               + New Project
             </div>
           </div>
@@ -248,7 +249,7 @@ export function DashboardMockup() {
       </div>
       <div className="p-4 grid grid-cols-3 gap-3">
         {projects.map((p) => (
-          <div key={p.name} className="bg-white rounded-lg p-3 shadow-sm ring-1 ring-gray-100">
+          <div key={p.name} className="bg-white rounded-2xl p-3 shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)] border border-gray-200/60">
             <div className="flex items-start justify-between mb-2">
               <p className="text-[9px] font-bold text-gray-900 leading-tight max-w-[80%]">{p.name}</p>
               <StatusBadge status={p.status} />
@@ -259,7 +260,7 @@ export function DashboardMockup() {
               <span className="text-[7px] text-gray-400">{p.pct}% complete</span>
               <span className="text-[7px] text-gray-400">{p.takeoffs} takeoffs</span>
             </div>
-            <div className="mt-2 pt-2 border-t border-gray-50">
+            <div className="mt-2 pt-2 border-t border-gray-100/60">
               <span className="text-[7px] text-gray-300">Updated {p.updated}</span>
             </div>
           </div>
@@ -285,25 +286,26 @@ export function TakeoffMockup() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-0">
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
       <MockNav />
-      <div className="bg-white border-b border-gray-100 px-4 flex items-end gap-0">
+      <div className="bg-white/80 border-b border-gray-200/60 px-4 flex items-end gap-0" style={{ backdropFilter: 'blur(8px)' }}>
         {tabs.map((t) => (
           <div
             key={t}
-            className={`px-3 py-2 text-[8px] font-semibold ${t === 'Takeoffs' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-400'}`}
+            className={`px-3 py-2.5 text-[8px] font-semibold ${t === 'Takeoffs' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-400'}`}
           >
             {t}
           </div>
         ))}
       </div>
-      <div className="px-4 py-2.5 bg-white flex items-center gap-4 border-b border-gray-100">
-        <span className="text-[8px] font-bold text-gray-900">Interior Doors</span>
+      <div className="px-4 py-2.5 bg-white/80 flex items-center gap-4 border-b border-gray-200/60">
+        <span className="text-[9px] font-extrabold text-gray-900">Interior Doors</span>
         <div className="flex items-center gap-1 ml-auto">
           {variants.map((v) => (
             <div
               key={v}
-              className={`px-2.5 py-1 rounded text-[7px] font-semibold ${v === 'Standard' ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'}`}
+              className={`px-2.5 py-1 rounded-lg text-[7px] font-semibold ${v === 'Standard' ? 'text-white shadow-sm' : 'bg-gray-100 text-gray-500'}`}
+              style={v === 'Standard' ? { background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' } : undefined}
             >
               {v}
             </div>
@@ -313,13 +315,13 @@ export function TakeoffMockup() {
       <div className="px-3 py-2">
         <table className="w-full">
           <thead>
-            <tr className="text-[7px] font-bold text-gray-400 uppercase tracking-wider">
-              <th className="text-left py-1.5 px-2">Item</th>
+            <tr className="text-[7px] font-bold text-white uppercase tracking-wider" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068)' }}>
+              <th className="text-left py-1.5 px-2 rounded-tl">Item</th>
               <th className="text-left py-1.5 px-2">Location</th>
               <th className="text-left py-1.5 px-2">Material</th>
               <th className="text-left py-1.5 px-2">Hardware</th>
               <th className="text-left py-1.5 px-2">Fire Rating</th>
-              <th className="text-right py-1.5 px-2">Qty</th>
+              <th className="text-right py-1.5 px-2 rounded-tr">Qty</th>
             </tr>
           </thead>
           <tbody>
@@ -361,21 +363,21 @@ export function BidBuilderMockup() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-0">
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
       <MockNav />
-      <div className="px-5 pt-3 pb-2 bg-white border-b border-gray-100">
-        <p className="text-[11px] font-bold text-gray-900">Bid Builder — Highland Medical Center</p>
+      <div className="px-5 pt-3 pb-2 bg-white/80 border-b border-gray-200/60" style={{ backdropFilter: 'blur(8px)' }}>
+        <p className="text-[12px] font-extrabold text-gray-900">Bid Builder — Highland Medical Center</p>
         <p className="text-[8px] text-gray-400 mt-0.5">Bid Session V2 · Last edited 2 hrs ago</p>
       </div>
       <div className="flex">
         <div className="flex-1 p-3 grid grid-cols-2 gap-2">
           {categories.map((cat) => (
-            <div key={cat.name} className="bg-white rounded-lg p-2.5 shadow-sm ring-1 ring-gray-100">
+            <div key={cat.name} className="bg-white rounded-2xl p-2.5 shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)] border border-gray-200/60">
               <div className="flex items-center gap-1.5 mb-1.5">
-                <div className="w-2 h-2 rounded-sm" style={{ background: cat.color }} />
+                <div className="w-2.5 h-2.5 rounded-md" style={{ background: cat.color }} />
                 <span className="text-[8px] font-semibold text-gray-800">{cat.name}</span>
               </div>
-              <p className="text-[12px] font-bold text-gray-900">{cat.amount}</p>
+              <p className="text-[13px] font-extrabold text-gray-900">{cat.amount}</p>
               <div className="mt-1.5 flex items-center gap-1">
                 <span className="text-[7px] text-gray-400">Variant:</span>
                 <span className="px-1.5 py-0.5 rounded text-[7px] font-medium bg-blue-50 text-blue-600">{cat.variant}</span>
@@ -383,8 +385,8 @@ export function BidBuilderMockup() {
             </div>
           ))}
         </div>
-        <div className="w-[140px] bg-white border-l border-gray-100 p-3">
-          <p className="text-[9px] font-bold text-gray-900 mb-3">Bid Summary</p>
+        <div className="w-[140px] bg-white border-l border-gray-200/60 p-3">
+          <p className="text-[10px] font-extrabold text-gray-900 mb-3">Bid Summary</p>
           <div className="space-y-2">
             <div className="flex justify-between text-[8px]">
               <span className="text-gray-500">Subtotal</span>
@@ -405,7 +407,7 @@ export function BidBuilderMockup() {
               </div>
             </div>
           </div>
-          <div className="mt-4 px-2 py-1.5 rounded-md text-[7px] font-semibold text-white text-center" style={{ background: '#2563EB' }}>
+          <div className="mt-4 px-2 py-1.5 rounded-lg text-[7px] font-semibold text-white text-center shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #1d4ed8)' }}>
             Generate Bid Doc
           </div>
         </div>
@@ -442,20 +444,20 @@ export function SpecsMockup() {
   ];
 
   return (
-    <div className="bg-gray-50 min-h-0">
+    <div className="min-h-0" style={{ background: '#f0f2f6' }}>
       <MockNav />
-      <div className="bg-white border-b border-gray-100 px-4 flex items-end gap-0">
+      <div className="bg-white/80 border-b border-gray-200/60 px-4 flex items-end gap-0" style={{ backdropFilter: 'blur(8px)' }}>
         {['Overview', 'Documents', 'Specs', 'Takeoffs', 'Vendors', 'Bid Builder'].map((t) => (
           <div
             key={t}
-            className={`px-3 py-2 text-[8px] font-semibold ${t === 'Specs' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-400'}`}
+            className={`px-3 py-2.5 text-[8px] font-semibold ${t === 'Specs' ? 'text-blue-600 border-b-2 border-blue-600' : 'text-gray-400'}`}
           >
             {t}
           </div>
         ))}
       </div>
       <div className="flex">
-        <div className="w-[160px] bg-white border-r border-gray-100 p-3">
+        <div className="w-[160px] bg-white border-r border-gray-200/60 p-3">
           <p className="text-[8px] font-bold text-gray-400 uppercase tracking-wider mb-2">CSI Divisions</p>
           <div className="space-y-0.5">
             {tree.map((item, i) => (
@@ -483,7 +485,7 @@ export function SpecsMockup() {
             <p className="text-[10px] font-bold text-gray-900">08 14 00 — Wood Doors</p>
             <p className="text-[7px] text-gray-400 mt-0.5">Extracted from Project Specification, pages 142–148</p>
           </div>
-          <div className="bg-white rounded-lg shadow-sm ring-1 ring-gray-100 overflow-hidden">
+          <div className="bg-white rounded-2xl shadow-[0_1px_3px_rgb(0_0_0/0.04),0_4px_12px_rgb(0_0_0/0.04)] border border-gray-200/60 overflow-hidden">
             {specFields.map((f, i) => (
               <div key={i} className={`flex items-center px-3 py-1.5 text-[8px] ${i > 0 ? 'border-t border-gray-50' : ''}`}>
                 <span className="w-[90px] text-gray-400 font-medium shrink-0">{f.label}</span>
