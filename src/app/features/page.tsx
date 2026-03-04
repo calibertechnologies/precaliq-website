@@ -12,7 +12,7 @@ import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/comp
 
 export const metadata: Metadata = {
   title: 'Features',
-  description: 'Explore PreCalIQ features: AI specification parsing, automated takeoffs across 15 categories, multi-option bid variants, vendor pricing portal, change order detection, and bid document generation.',
+  description: 'Explore Precaliq features: AI specification parsing, automated takeoffs across 15 categories, multi-option bid variants, vendor pricing portal, change order detection, and bid document generation.',
   alternates: { canonical: 'https://precaliq.com/features' },
 };
 
@@ -73,7 +73,7 @@ export default function FeaturesPage() {
           <FeatureShowcase
             badge="AI Specification Parsing"
             title="Every CSI section, extracted automatically"
-            description="Upload spec PDFs and PreCalIQ reads every section — identifying manufacturers, materials, finishes, fire ratings, hardware sets, and CSI codes automatically."
+            description="Upload spec PDFs and Precaliq reads every section — identifying manufacturers, materials, finishes, fire ratings, hardware sets, and CSI codes automatically."
             details={[
               'Supports 200+ page specification documents',
               'Extracts data from all CSI divisions',
@@ -88,7 +88,7 @@ export default function FeaturesPage() {
           <FeatureShowcase
             badge="Architectural Plan Analysis"
             title="Plans and schedules, classified by AI"
-            description="Upload plans and PreCalIQ classifies sheets (door schedules, finish schedules, floor plans), extracts schedules, and combines plan data with specs."
+            description="Upload plans and Precaliq classifies sheets (door schedules, finish schedules, floor plans), extracts schedules, and combines plan data with specs."
             details={[
               'AI vision reads complex tables and ditto marks',
               'Multi-page schedule extraction',
@@ -209,7 +209,7 @@ export default function FeaturesPage() {
             title="Professional proposals, one click"
             description="Generate professional PDF bid proposals and Excel workbooks with company branding, scope of work, cost breakdowns, terms, and signature lines."
             details={[
-              'Bid versioning tracks V1, V2, V3 — send directly to clients from PreCalIQ',
+              'Bid versioning tracks V1, V2, V3 — send directly to clients from Precaliq',
             ]}
             screenshot={
               <DeviceFrame>
@@ -221,7 +221,7 @@ export default function FeaturesPage() {
           <FeatureShowcase
             badge="Change Order Detection"
             title="Spot revisions before they cost you"
-            description="Upload revised specs or plans. PreCalIQ compares against originals, identifying additions, removals, and modifications with estimated cost impact."
+            description="Upload revised specs or plans. Precaliq compares against originals, identifying additions, removals, and modifications with estimated cost impact."
             details={[
               'Integrates with bid builder to show how revisions affect your current bid',
             ]}
@@ -264,7 +264,7 @@ export default function FeaturesPage() {
 
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
           <SectionLabel light>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">See PreCalIQ in action</h2>
+          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">See Precaliq in action</h2>
           <p className="mt-4 text-blue-100/40 leading-relaxed">Book a 30-minute demo with your own spec documents.</p>
           <div className="mt-10">
             <Button href="/contact">
@@ -286,7 +286,7 @@ function VendorPortalMockup() {
   return (
     <div className="bg-gray-50 min-h-0">
       <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">PreCalIQ</span>
+        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
         <span className="text-white/60">Vendor Portal</span>
       </div>
@@ -345,7 +345,7 @@ function PdfPreviewMockup() {
   return (
     <div className="bg-gray-50 min-h-0">
       <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">PreCalIQ</span>
+        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
         <span className="text-white/60">Bid Documents</span>
       </div>
@@ -398,7 +398,7 @@ function DiffViewMockup() {
   return (
     <div className="bg-gray-50 min-h-0">
       <div className="flex items-center h-10 px-4 gap-4 text-[9px] font-semibold text-white/80" style={{ background: '#1F4E79' }}>
-        <span className="font-bold text-[10px] tracking-tight text-white">PreCalIQ</span>
+        <span className="font-bold text-[10px] tracking-tight text-white">Precaliq</span>
         <div className="flex-1" />
         <span className="text-white/60">Change Orders</span>
       </div>
@@ -444,7 +444,7 @@ function ExcelTableMockup() {
     <div className="bg-white">
       {/* Excel-like header */}
       <div className="flex items-center h-7 px-3 text-[8px] font-semibold" style={{ background: '#217346', color: 'white' }}>
-        <span>PreCalIQ_Takeoff_Export.xlsx</span>
+        <span>Precaliq_Takeoff_Export.xlsx</span>
       </div>
       {/* Sheet tabs */}
       <div className="flex items-center gap-0 border-b border-gray-200 bg-gray-50">

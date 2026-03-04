@@ -398,6 +398,94 @@ body {
 }
 
 /* ═══════════════════════════════════════
+   STAT CARD EFFECTS
+   ═══════════════════════════════════════ */
+
+.stat-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.stat-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, transparent, transparent);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+.stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+.stat-card:hover::before {
+  background: linear-gradient(135deg, rgba(37,99,235,0.2), rgba(96,165,250,0.1));
+}
+
+/* Step icon pulse ring on hover */
+.step-icon {
+  position: relative;
+}
+.step-icon::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: inherit;
+  border: 2px solid rgba(37,99,235,0);
+  transition: border-color 0.5s ease, transform 0.5s ease;
+  pointer-events: none;
+}
+.step-icon:hover::after {
+  border-color: rgba(37,99,235,0.15);
+  transform: scale(1.08);
+}
+
+/* Gradient line connector animation */
+@keyframes line-flow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+.line-animated {
+  background-size: 200% 100%;
+  animation: line-flow 4s linear infinite;
+}
+
+/* Dark stat card glow on hover */
+.dark-stat-card {
+  position: relative;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s cubic-bezier(0.16, 1, 0.3, 1), background 0.5s ease;
+}
+.dark-stat-card::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(37,99,235,0), rgba(37,99,235,0));
+  z-index: -1;
+  transition: background 0.5s ease;
+  pointer-events: none;
+}
+.dark-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 30px rgba(37,99,235,0.1);
+}
+.dark-stat-card:hover::after {
+  background: linear-gradient(135deg, rgba(37,99,235,0.15), rgba(96,165,250,0.08));
+}
+
+/* Section divider with gradient fade */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(37,99,235,0.15), transparent);
+}
+
+/* ═══════════════════════════════════════
    PERFORMANCE
    ═══════════════════════════════════════ */
 

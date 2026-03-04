@@ -12,7 +12,7 @@ import { BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
   title: 'Pricing',
-  description: 'PreCalIQ pricing: Free plan for one project, Professional at $299/month for unlimited projects and 15 categories, Enterprise with custom pricing. Start free, no credit card required.',
+  description: 'Precaliq pricing: Free plan for one project, Professional at $299/month for unlimited projects and 15 categories, Enterprise with custom pricing. Start free, no credit card required.',
   alternates: { canonical: 'https://precaliq.com/pricing' },
 };
 
@@ -21,7 +21,7 @@ const tiers = [
     name: 'Free',
     price: '$0',
     period: 'forever',
-    description: 'Try PreCalIQ on a single project — no credit card required.',
+    description: 'Try Precaliq on a single project — no credit card required.',
     features: [
       '1 active project',
       '3 takeoff categories',
@@ -76,8 +76,8 @@ const tiers = [
 
 const faqs = [
   {
-    question: 'Can I try PreCalIQ before committing?',
-    answer: "Yes. The Free plan lets you test PreCalIQ on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
+    question: 'Can I try Precaliq before committing?',
+    answer: "Yes. The Free plan lets you test Precaliq on one project with three takeoff categories — no credit card required. When you're ready for more, upgrade to Professional with a 14-day free trial.",
   },
   {
     question: 'What counts as a "project"?',
@@ -85,7 +85,7 @@ const faqs = [
   },
   {
     question: 'How does vendor pricing work?',
-    answer: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. PreCalIQ parses the pricing and matches it to your takeoff items automatically.',
+    answer: 'You send takeoff line items to vendors through a secure, tokenized link. Vendors download the Excel file, add their pricing, and upload it back — no account required. Precaliq parses the pricing and matches it to your takeoff items automatically.',
   },
   {
     question: 'Can I add more team members on the Professional plan?',
@@ -96,8 +96,8 @@ const faqs = [
     answer: 'Yes. Annual billing saves 20% — $239/month billed annually ($2,868/year) instead of $299/month.',
   },
   {
-    question: 'What file formats does PreCalIQ accept?',
-    answer: 'PreCalIQ accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
+    question: 'What file formats does Precaliq accept?',
+    answer: 'Precaliq accepts PDF files for both specifications and architectural plans. Vendor pricing uploads are accepted as Excel (.xlsx) files.',
   },
 ];
 

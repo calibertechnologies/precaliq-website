@@ -19,13 +19,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://precaliq.com'),
   title: {
-    default: 'PreCalIQ — AI-Powered Preconstruction Platform',
-    template: '%s — PreCalIQ',
+    default: 'Precaliq — AI-Powered Preconstruction Platform',
+    template: '%s — Precaliq',
   },
-  description: 'PreCalIQ automates construction takeoffs, bid building, and vendor management using AI. The only platform that reads both specs and plans. Built for GCs who want to bid faster and smarter.',
+  description: 'Precaliq automates construction takeoffs, bid building, and vendor management using AI. The only platform that reads both specs and plans. Built for GCs who want to bid faster and smarter.',
   keywords: ['construction takeoff software', 'AI preconstruction', 'construction estimating', 'material takeoff', 'bid management', 'vendor pricing', 'CSI specification parsing', 'construction AI'],
-  authors: [{ name: 'PreCalIQ', url: 'https://precaliq.com' }],
-  creator: 'PreCalIQ',
+  authors: [{ name: 'Precaliq', url: 'https://precaliq.com' }],
+  creator: 'Precaliq',
   publisher: 'Caliber Technologies',
   robots: {
     index: true,
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'PreCalIQ — AI-Powered Preconstruction Platform',
+    title: 'Precaliq — AI-Powered Preconstruction Platform',
     description: 'Automate takeoffs, build bids, manage vendors. The only AI platform that reads both specs and plans.',
     url: 'https://precaliq.com',
-    siteName: 'PreCalIQ',
+    siteName: 'Precaliq',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'PreCalIQ — AI-Powered Preconstruction Platform',
+    title: 'Precaliq — AI-Powered Preconstruction Platform',
     description: 'Automate takeoffs, build bids, manage vendors. Built for GCs who want to bid faster.',
   },
   alternates: {
@@ -74,7 +74,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'SoftwareApplication',
-              name: 'PreCalIQ',
+              name: 'Precaliq',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Web',
               description: 'AI-powered preconstruction platform that automates construction takeoffs, bid building, and vendor management.',
@@ -106,7 +106,7 @@ function Header() {
       style={{ background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)' }}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[72px]" aria-label="Main navigation">
-        <a href="/" className="flex items-center gap-2.5 group" aria-label="PreCalIQ home">
+        <a href="/" className="flex items-center gap-2.5 group" aria-label="Precaliq home">
           <Logo size={32} />
           <span className="text-[1.125rem] font-bold text-charcoal tracking-tight">
             Pre<span className="text-stone font-light">-</span>Cal<span className="text-stone font-light">-</span>IQ
@@ -163,7 +163,7 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4">
-            <a href="/" className="inline-flex items-center gap-2.5" aria-label="PreCalIQ home">
+            <a href="/" className="inline-flex items-center gap-2.5" aria-label="Precaliq home">
               <Logo size={28} light />
               <span className="text-lg font-bold text-white tracking-tight">
                 Pre<span className="text-white/20 font-light">-</span>Cal<span className="text-white/20 font-light">-</span>IQ
@@ -238,7 +238,7 @@ function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
-            &copy; {currentYear} PreCalIQ. All rights reserved.
+            &copy; {currentYear} Precaliq. All rights reserved.
           </p>
           <p className="text-xs text-white/15">
             A Caliber Technologies Company

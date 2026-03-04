@@ -5,7 +5,7 @@ import SectionLabel from '@/components/SectionLabel';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: 'PreCalIQ Privacy Policy. Learn how we collect, use, and protect your information when using the PreCalIQ preconstruction platform.',
+  description: 'Precaliq Privacy Policy. Learn how we collect, use, and protect your information when using the Precaliq preconstruction platform.',
   alternates: { canonical: 'https://precaliq.com/privacy' },
 };
 
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">1. Introduction</h2>
               <p>
-                PreCalIQ (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), operated by Caliber Technologies, is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the PreCalIQ platform and website (collectively, the &ldquo;Service&rdquo;).
+                Precaliq (&ldquo;we,&rdquo; &ldquo;our,&rdquo; or &ldquo;us&rdquo;), operated by Caliber Technologies, is committed to protecting the privacy of our users. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use the Precaliq platform and website (collectively, the &ldquo;Service&rdquo;).
               </p>
             </div>
 
@@ -48,7 +48,7 @@ export default function PrivacyPage() {
               <h2 className="text-xl font-bold text-charcoal mb-3">3. How We Use Your Information</h2>
               <p>We use collected information to:</p>
               <ul className="list-disc pl-6 mt-2 space-y-1.5">
-                <li>Provide, maintain, and improve the PreCalIQ platform</li>
+                <li>Provide, maintain, and improve the Precaliq platform</li>
                 <li>Process and generate takeoffs, bids, and related documents</li>
                 <li>Send transactional communications (account confirmations, security alerts)</li>
                 <li>Provide customer support</li>
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">10. Contact Us</h2>
               <p>
-                If you have questions about this Privacy Policy, contact us at <a href="mailto:privacy@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2">privacy@precaliq.com</a> or by mail at Caliber Technologies, PreCalIQ Privacy, United States.
+                If you have questions about this Privacy Policy, contact us at <a href="mailto:privacy@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2">privacy@precaliq.com</a> or by mail at Caliber Technologies, Precaliq Privacy, United States.
               </p>
             </div>
           </div>

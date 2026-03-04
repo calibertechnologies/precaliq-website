@@ -13,8 +13,8 @@ import FeatureShowcase from '@/components/FeatureShowcase';
 import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
-  title: 'PreCalIQ — AI-Powered Preconstruction Platform',
-  description: 'PreCalIQ automates construction takeoffs, bid building, and vendor management. The only AI platform that reads both specs and plans. From specs to bids in minutes.',
+  title: 'Precaliq — AI-Powered Preconstruction Platform',
+  description: 'Precaliq automates construction takeoffs, bid building, and vendor management. The only AI platform that reads both specs and plans. From specs to bids in minutes.',
   alternates: { canonical: 'https://precaliq.com' },
 };
 
@@ -103,36 +103,47 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ PROBLEM STATEMENT ═══════════ */}
-      <Section bg="white">
-        <AnimatedReveal direction="up" className="max-w-3xl mx-auto text-center">
-          <SectionLabel>The Problem</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
-            Estimators spend 60% of their time on work AI should do
-          </h2>
-          <p className="mt-6 text-[1.0625rem] text-graphite leading-[1.75] max-w-2xl mx-auto">
-            Reading 200-page specs, counting items on plans, cross-referencing CSI codes — tedious, error-prone work. A single missed spec reference can cost
-            <span className="text-charcoal font-semibold"> $50,000+</span> in rework.
-          </p>
-        </AnimatedReveal>
+      <section className="relative py-24 md:py-36 px-6 bg-white overflow-hidden">
+        {/* Subtle dot grid background */}
+        <div className="absolute inset-0 dot-pattern opacity-50 pointer-events-none" />
 
-        <AnimatedReveal direction="up" delay={150}>
-          <div className="mt-16 grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+        <div className="relative max-w-6xl mx-auto">
+          <AnimatedReveal direction="up" className="max-w-3xl mx-auto text-center">
+            <SectionLabel>The Problem</SectionLabel>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
+              Estimators spend 60% of their time on work AI should do
+            </h2>
+            <p className="mt-6 text-[1.0625rem] text-graphite leading-[1.75] max-w-2xl mx-auto">
+              Reading 200-page specs, counting items on plans, cross-referencing CSI codes — tedious, error-prone work. A single missed spec reference can cost
+              <span className="text-charcoal font-semibold"> $50,000+</span> in rework.
+            </p>
+          </AnimatedReveal>
+
+          <div className="mt-16 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
-              { stat: '200+', label: 'Pages per spec' },
-              { stat: '60%', label: 'Time wasted' },
-              { stat: '$50K', label: 'Cost of errors' },
+              { stat: '200+', label: 'Pages per spec', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
+              { stat: '60%', label: 'Time wasted', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { stat: '$50K', label: 'Cost of errors', icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' },
             ].map((item, i) => (
-              <div key={i} className="text-center p-6 rounded-2xl bg-snow ring-1 ring-border hover-lift">
-                <div className="text-2xl md:text-3xl font-extrabold text-charcoal tracking-tight">{item.stat}</div>
-                <div className="text-xs text-slate mt-1.5 font-medium uppercase tracking-wide">{item.label}</div>
-              </div>
+              <AnimatedReveal key={i} direction="up" delay={i * 100}>
+                <div className="stat-card text-center p-8 rounded-2xl bg-white ring-1 ring-border shadow-sm">
+                  <svg className="w-6 h-6 text-accent/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                  </svg>
+                  <div className="text-3xl md:text-4xl font-extrabold text-charcoal tracking-tight">{item.stat}</div>
+                  <div className="text-xs text-slate mt-2 font-medium uppercase tracking-wider">{item.label}</div>
+                </div>
+              </AnimatedReveal>
             ))}
           </div>
-        </AnimatedReveal>
-      </Section>
+        </div>
+
+        {/* Section divider */}
+        <div className="absolute bottom-0 left-0 right-0 section-divider" />
+      </section>
 
       {/* ═══════════ THE SOLUTION (WITH SCREENSHOTS) ═══════════ */}
-      <section className="py-16 md:py-24 px-6 bg-white">
+      <section className="relative py-16 md:py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <AnimatedReveal direction="up" className="text-center mb-8">
             <SectionLabel>The Solution</SectionLabel>
@@ -144,7 +155,7 @@ export default function HomePage() {
           <FeatureShowcase
             badge="01 — Specification Parsing"
             title="We Read Your Specs"
-            description="Upload a spec PDF. PreCalIQ identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page."
+            description="Upload a spec PDF. Precaliq identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page."
             details={[
               'Supports 200+ page specification documents',
               'Extracts data from all CSI divisions automatically',
@@ -160,7 +171,7 @@ export default function HomePage() {
           <FeatureShowcase
             badge="02 — Cross-Referencing"
             title="We Cross-Reference Everything"
-            description='Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." PreCalIQ connects them automatically — no manual lookup.'
+            description='Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." Precaliq connects them automatically — no manual lookup.'
             details={[
               'Matches spec requirements to plan schedules',
               'Generates takeoff items with full CSI details',
@@ -193,37 +204,44 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ HOW IT WORKS ═══════════ */}
-      <Section bg="snow" wide>
-        <AnimatedReveal direction="up" className="text-center mb-20">
-          <SectionLabel>Process</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
-            Four steps to a winning bid
-          </h2>
-        </AnimatedReveal>
+      <section className="relative py-24 md:py-36 px-6 bg-snow overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          <AnimatedReveal direction="up" className="text-center mb-20">
+            <SectionLabel>Process</SectionLabel>
+            <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
+              Four steps to a winning bid
+            </h2>
+          </AnimatedReveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
-          <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px]" style={{ background: 'linear-gradient(to right, rgba(37,99,235,0.08), rgba(37,99,235,0.2), rgba(37,99,235,0.08))' }} aria-hidden="true" />
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
+            {/* Animated gradient connector line */}
+            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px] line-animated" style={{ background: 'linear-gradient(90deg, rgba(37,99,235,0.05), rgba(37,99,235,0.25), rgba(96,165,250,0.15), rgba(37,99,235,0.25), rgba(37,99,235,0.05))' }} aria-hidden="true" />
 
-          {[
-            { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. PreCalIQ parses every section and classifies every sheet.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-            { step: '02', title: 'Generate', desc: 'Select categories — doors, flooring, millwork. AI generates detailed takeoffs cross-referencing specs with plans.', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
-            { step: '03', title: 'Price', desc: 'Send takeoffs to vendors through a secure portal. Collect and compare quotes automatically.', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
-            { step: '04', title: 'Win', desc: 'Build your bid with real-time cost comparisons. Generate professional bid documents in PDF or Excel.', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },
-          ].map((item, i) => (
-            <AnimatedReveal key={item.step} direction="up" delay={i * 100}>
-              <div className="text-center relative group">
-                <div className="w-24 h-24 rounded-2xl flex items-center justify-center mx-auto relative z-10 bg-charcoal ring-4 ring-white shadow-lg group-hover:scale-105 group-hover:shadow-xl transition-all duration-500">
-                  <svg className="w-10 h-10 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
+            {[
+              { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. Precaliq parses every section and classifies every sheet.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
+              { step: '02', title: 'Generate', desc: 'Select categories — doors, flooring, millwork. AI generates detailed takeoffs cross-referencing specs with plans.', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
+              { step: '03', title: 'Price', desc: 'Send takeoffs to vendors through a secure portal. Collect and compare quotes automatically.', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
+              { step: '04', title: 'Win', desc: 'Build your bid with real-time cost comparisons. Generate professional bid documents in PDF or Excel.', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },
+            ].map((item, i) => (
+              <AnimatedReveal key={item.step} direction="up" delay={i * 120}>
+                <div className="text-center relative group">
+                  {/* Step number badge */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 text-[10px] font-bold text-accent bg-white px-2.5 py-0.5 rounded-full ring-1 ring-accent/20 shadow-sm">
+                    {item.step}
+                  </div>
+                  <div className="step-icon w-24 h-24 rounded-2xl flex items-center justify-center mx-auto relative z-10 shadow-lg group-hover:shadow-xl transition-all duration-500" style={{ background: 'linear-gradient(135deg, #1D1D1F, #2A2A2E)' }}>
+                    <svg className="w-10 h-10 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                    </svg>
+                  </div>
+                  <h3 className="text-lg font-bold text-charcoal mt-7">{item.title}</h3>
+                  <p className="text-graphite mt-3 text-sm leading-relaxed">{item.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold text-charcoal mt-6">{item.title}</h3>
-                <p className="text-graphite mt-3 text-sm leading-relaxed">{item.desc}</p>
-              </div>
-            </AnimatedReveal>
-          ))}
+              </AnimatedReveal>
+            ))}
+          </div>
         </div>
-      </Section>
+      </section>
 
       {/* ═══════════ STATS ═══════════ */}
       <section className="relative overflow-hidden py-24 md:py-36 px-6" style={{ background: 'linear-gradient(170deg, #0D0D0D 0%, #111827 50%, #0D0D0D 100%)' }}>
@@ -248,8 +266,8 @@ export default function HomePage() {
               { value: '0', label: 'Missed Specifications', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
             ].map((item, i) => (
               <AnimatedReveal key={i} direction="up" delay={i * 80}>
-                <div className="text-center p-6 rounded-2xl ring-1 ring-white/[0.06] bg-white/[0.03] hover:bg-white/[0.06] hover:ring-white/[0.1] transition-all duration-500">
-                  <svg className="w-6 h-6 text-accent/40 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <div className="dark-stat-card text-center p-8 rounded-2xl ring-1 ring-white/[0.06] bg-white/[0.03]">
+                  <svg className="w-6 h-6 text-accent/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                     <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                   </svg>
                   <AnimatedCounter value={item.value} label={item.label} />

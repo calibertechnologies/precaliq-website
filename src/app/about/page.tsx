@@ -8,7 +8,7 @@ import AuroraBackground from '@/components/AuroraBackground';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'PreCalIQ was built by preconstruction veterans who spent years reading specs manually. Learn about our mission, team, and parent company Caliber Technologies.',
+  description: 'Precaliq was built by preconstruction veterans who spent years reading specs manually. Learn about our mission, team, and parent company Caliber Technologies.',
   alternates: { canonical: 'https://precaliq.com/about' },
 };
 
@@ -41,11 +41,11 @@ export default function AboutPage() {
       <Section bg="snow">
         <AnimatedReveal direction="up">
           <SectionLabel>Mission</SectionLabel>
-          <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Why PreCalIQ?</h2>
+          <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Why Precaliq?</h2>
           <p className="text-graphite leading-[1.75] text-[1.0625rem]">
             In construction, the difference between a winning bid and a losing one comes down to
             calibration — getting the quantities, specs, and costs dialed in with precision.
-            PreCalIQ was built because we believe AI can bring a new level of intelligence to
+            Precaliq was built because we believe AI can bring a new level of intelligence to
             this process. We&apos;re not replacing estimators — we&apos;re giving them superhuman
             accuracy by reading every spec section, interpreting every plan sheet, and generating
             takeoffs that are calibrated to win.
@@ -72,7 +72,7 @@ export default function AboutPage() {
           <SectionLabel>Brand</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug">The Name</h2>
           <p className="mt-4 text-graphite max-w-2xl mx-auto leading-relaxed">
-            PreCalIQ brings intelligence to preconstruction. The name says exactly what we do.
+            Precaliq brings intelligence to preconstruction. The name says exactly what we do.
           </p>
         </AnimatedReveal>
 
@@ -115,7 +115,7 @@ export default function AboutPage() {
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Story</h2>
           <div className="space-y-5 text-graphite leading-[1.75] text-[1.0625rem]">
             <p>
-              PreCalIQ was born out of frustration. Our founders spent years working in preconstruction
+              Precaliq was born out of frustration. Our founders spent years working in preconstruction
               for general contractors — reading specifications page by page, manually counting doors
               and materials, and assembling bids in spreadsheets that were outdated before the ink
               dried. They saw firsthand how much time, money, and competitive edge was lost to a
@@ -125,7 +125,7 @@ export default function AboutPage() {
               In 2024, they set out to build the platform they wished they&apos;d had: one that could
               read a spec the way an experienced estimator does, cross-reference it against
               architectural plans, and produce structured material takeoffs in minutes instead of
-              days. The result is PreCalIQ.
+              days. The result is Precaliq.
             </p>
           </div>
         </AnimatedReveal>
@@ -146,7 +146,7 @@ export default function AboutPage() {
               We also believe that preconstruction deserves purpose-built software. Generic AI tools
               don&apos;t understand CSI divisions, don&apos;t know the difference between a
               fire-rated hollow metal frame and a standard welded frame, and can&apos;t cross-reference
-              spec Section 08 11 00 with a door schedule on sheet A5.01. PreCalIQ does — because it
+              spec Section 08 11 00 with a door schedule on sheet A5.01. Precaliq does — because it
               was built by people who&apos;ve lived that workflow.
             </p>
           </div>
@@ -161,7 +161,7 @@ export default function AboutPage() {
         </AnimatedReveal>
         <div className="grid md:grid-cols-2 gap-6">
           {[
-            { role: 'Estimators', desc: 'Precision in preconstruction — that\'s your entire job. PreCalIQ delivers it.' },
+            { role: 'Estimators', desc: 'Precision in preconstruction — that\'s your entire job. Precaliq delivers it.' },
             { role: 'GC Executives', desc: 'Intelligent precon is the competitive advantage you\'re chasing.' },
             { role: 'Subcontractors', desc: 'Calibrated takeoffs are what win you bids.' },
             { role: 'Owners & Developers', desc: 'Smarter preconstruction is how projects stay on budget.' },
@@ -189,7 +189,7 @@ export default function AboutPage() {
           <SectionLabel>Team</SectionLabel>
           <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Team</h2>
           <p className="text-graphite leading-[1.75] text-[1.0625rem]">
-            PreCalIQ is built by a small, focused team of engineers and construction professionals
+            Precaliq is built by a small, focused team of engineers and construction professionals
             who have collectively spent decades in preconstruction, commercial contracting, and
             software development. We&apos;re headquartered in the United States and work closely
             with GCs across the country to refine and expand the platform.
@@ -205,7 +205,7 @@ export default function AboutPage() {
               <p className="text-xs text-accent uppercase tracking-[0.2em] font-semibold">A Company by</p>
               <p className="mt-3 text-3xl font-extrabold text-charcoal inline-block">Caliber Technologies</p>
               <p className="mt-4 text-graphite max-w-lg mx-auto leading-relaxed">
-                PreCalIQ is developed and operated by Caliber Technologies — a technology company
+                Precaliq is developed and operated by Caliber Technologies — a technology company
                 focused on building AI-powered tools for the construction industry.
               </p>
             </div>
@@ -220,7 +220,7 @@ export default function AboutPage() {
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
           <SectionLabel light>Get Started</SectionLabel>
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">Want to learn more?</h2>
-          <p className="mt-4 text-blue-100/40 leading-relaxed">See how PreCalIQ transforms your preconstruction workflow.</p>
+          <p className="mt-4 text-blue-100/40 leading-relaxed">See how Precaliq transforms your preconstruction workflow.</p>
           <div className="mt-10">
             <Button href="/contact">Get in Touch</Button>
           </div>
