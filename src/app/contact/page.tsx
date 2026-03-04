@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import AnimatedReveal from '@/components/AnimatedReveal';
-import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
-import Card from '@/components/Card';
 import Accordion from '@/components/Accordion';
 import AuroraBackground from '@/components/AuroraBackground';
 
@@ -56,109 +54,114 @@ export default function ContactPage() {
       </section>
 
       {/* Form + FAQ */}
-      <Section bg="snow" wide>
-        <div className="grid md:grid-cols-2 gap-16">
-          {/* Form */}
-          <AnimatedReveal direction="right">
-            <Card hover={false} className="p-8">
-              <form className="space-y-5">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-1.5">Full Name</label>
-                  <input
-                    id="name"
-                    name="name"
-                    type="text"
-                    required
-                    autoComplete="name"
-                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                    placeholder="John Smith"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-1.5">Work Email</label>
-                  <input
-                    id="email"
-                    name="email"
-                    type="email"
-                    required
-                    autoComplete="email"
-                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                    placeholder="john@company.com"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-1.5">Company</label>
-                  <input
-                    id="company"
-                    name="company"
-                    type="text"
-                    required
-                    autoComplete="organization"
-                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                    placeholder="Acme Construction"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="role" className="block text-sm font-semibold text-charcoal mb-1.5">Role</label>
-                  <select
-                    id="role"
-                    name="role"
-                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal"
+      <section className="relative py-24 md:py-36 px-6 overflow-hidden mesh-gradient-snow">
+        <div className="absolute top-[30%] left-[5%] w-2 h-2 rounded-full particle-2 pointer-events-none" style={{ background: 'rgba(37,99,235,0.08)' }} />
+        <div className="absolute bottom-[20%] right-[8%] w-2.5 h-2.5 rounded-full particle-1 pointer-events-none" style={{ background: 'rgba(96,165,250,0.06)' }} />
+
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid md:grid-cols-2 gap-16">
+            {/* Form */}
+            <AnimatedReveal direction="right">
+              <div className="card-spotlight bg-white rounded-2xl ring-1 ring-border shadow-card p-8">
+                <form className="space-y-5">
+                  <div>
+                    <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-1.5">Full Name</label>
+                    <input
+                      id="name"
+                      name="name"
+                      type="text"
+                      required
+                      autoComplete="name"
+                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
+                      placeholder="John Smith"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-1.5">Work Email</label>
+                    <input
+                      id="email"
+                      name="email"
+                      type="email"
+                      required
+                      autoComplete="email"
+                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-1.5">Company</label>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      required
+                      autoComplete="organization"
+                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
+                      placeholder="Acme Construction"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="role" className="block text-sm font-semibold text-charcoal mb-1.5">Role</label>
+                    <select
+                      id="role"
+                      name="role"
+                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal"
+                    >
+                      <option value="">Select your role</option>
+                      <option value="estimator">Estimator</option>
+                      <option value="project-manager">Project Manager</option>
+                      <option value="preconstruction-manager">Preconstruction Manager</option>
+                      <option value="owner">Owner / Executive</option>
+                      <option value="other">Other</option>
+                    </select>
+                  </div>
+                  <div>
+                    <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
+                      Tell us about your workflow <span className="font-normal text-slate">(optional)</span>
+                    </label>
+                    <textarea
+                      id="message"
+                      name="message"
+                      rows={4}
+                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all resize-none text-charcoal placeholder:text-slate/50"
+                      placeholder="What types of projects do you bid on? What tools do you currently use?"
+                    />
+                  </div>
+                  <button
+                    type="submit"
+                    className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent cursor-pointer btn-shimmer"
                   >
-                    <option value="">Select your role</option>
-                    <option value="estimator">Estimator</option>
-                    <option value="project-manager">Project Manager</option>
-                    <option value="preconstruction-manager">Preconstruction Manager</option>
-                    <option value="owner">Owner / Executive</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-                <div>
-                  <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
-                    Tell us about your workflow <span className="font-normal text-slate">(optional)</span>
-                  </label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows={4}
-                    className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all resize-none text-charcoal placeholder:text-slate/50"
-                    placeholder="What types of projects do you bid on? What tools do you currently use?"
-                  />
-                </div>
-                <button
-                  type="submit"
-                  className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent cursor-pointer"
-                >
-                  Request Demo
-                </button>
-                <p className="text-xs text-slate text-center">
-                  We&apos;ll respond within one business day. No spam, no obligations.
-                </p>
-              </form>
-            </Card>
-          </AnimatedReveal>
-
-          {/* FAQ + Email */}
-          <div>
-            <AnimatedReveal direction="left">
-              <h2 className="text-xl font-bold text-charcoal mb-6">Common Questions</h2>
-              <Accordion items={faqs} />
+                    Request Demo
+                  </button>
+                  <p className="text-xs text-slate text-center">
+                    We&apos;ll respond within one business day. No spam, no obligations.
+                  </p>
+                </form>
+              </div>
             </AnimatedReveal>
 
-            <AnimatedReveal direction="left" delay={200}>
-              <Card hover={false} className="mt-8 p-6">
-                <h3 className="font-bold text-charcoal">Prefer email?</h3>
-                <p className="mt-2 text-graphite text-sm">
-                  Reach us directly at{' '}
-                  <a href="mailto:hello@precaliq.com" className="text-accent hover:text-accent-hover underline underline-offset-2 transition-colors">
-                    hello@precaliq.com
-                  </a>
-                </p>
-              </Card>
-            </AnimatedReveal>
+            {/* FAQ + Email */}
+            <div>
+              <AnimatedReveal direction="left">
+                <h2 className="text-xl font-bold text-charcoal mb-6">Common Questions</h2>
+                <Accordion items={faqs} />
+              </AnimatedReveal>
+
+              <AnimatedReveal direction="left" delay={200}>
+                <div className="card-spotlight card-glow-line bg-white rounded-2xl ring-1 ring-border shadow-card mt-8 p-6">
+                  <h3 className="font-bold text-charcoal">Prefer email?</h3>
+                  <p className="mt-2 text-graphite text-sm">
+                    Reach us directly at{' '}
+                    <a href="mailto:hello@precaliq.com" className="text-accent hover:text-accent-hover underline-animated transition-colors">
+                      hello@precaliq.com
+                    </a>
+                  </p>
+                </div>
+              </AnimatedReveal>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
     </div>
   );
 }

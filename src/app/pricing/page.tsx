@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import AnimatedReveal from '@/components/AnimatedReveal';
-import Section from '@/components/Section';
 import SectionLabel from '@/components/SectionLabel';
 import Button from '@/components/Button';
 import Accordion from '@/components/Accordion';
@@ -137,75 +136,82 @@ export default function PricingPage() {
       </section>
 
       {/* Tiers */}
-      <Section bg="snow" wide>
-        <div className="grid md:grid-cols-3 gap-6 items-start">
-          {tiers.map((tier, i) => (
-            <AnimatedReveal key={tier.name} direction="up" delay={i * 100}>
-              <div
-                className={`relative rounded-2xl ${tier.highlight ? 'ring-2 ring-accent shadow-accent' : 'ring-1 ring-border shadow-sm'}`}
-              >
+      <section className="relative py-24 md:py-36 px-6 overflow-hidden mesh-gradient-snow">
+        {/* Floating decorative particles */}
+        <div className="absolute top-[30%] right-[8%] w-2 h-2 rounded-full particle-1 pointer-events-none" style={{ background: 'rgba(37,99,235,0.1)' }} />
+        <div className="absolute bottom-[20%] left-[12%] w-2.5 h-2.5 rounded-full particle-3 pointer-events-none" style={{ background: 'rgba(96,165,250,0.08)' }} />
+
+        <div className="max-w-6xl mx-auto relative">
+          <div className="grid md:grid-cols-3 gap-6 items-start">
+            {tiers.map((tier, i) => (
+              <AnimatedReveal key={tier.name} direction="up" delay={i * 120}>
                 <div
-                  className={`relative rounded-2xl p-8 flex flex-col h-full bg-white transition-all duration-400 ${
-                    !tier.highlight ? 'hover:shadow-md hover:-translate-y-1' : ''
-                  }`}
+                  className={`pricing-card relative rounded-2xl bg-white ${tier.highlight ? 'ring-2 ring-accent pricing-highlight' : 'ring-1 ring-border shadow-card'}`}
                 >
-                  {tier.highlight && (
-                    <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-5 py-1.5 rounded-full bg-accent shadow-accent">
-                      Most Popular
+                  <div className="relative rounded-2xl p-8 flex flex-col h-full">
+                    {tier.highlight && (
+                      <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 text-white text-xs font-semibold px-5 py-1.5 rounded-full shadow-lg btn-shimmer" style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)' }}>
+                        Most Popular
+                      </div>
+                    )}
+                    <h2 className="text-xl font-bold text-charcoal">{tier.name}</h2>
+                    <div className="mt-5">
+                      <span className="text-4xl font-extrabold text-charcoal tracking-tight">{tier.price}</span>
+                      {tier.period && <span className="text-slate ml-1 text-sm">{tier.period}</span>}
                     </div>
-                  )}
-                  <h2 className="text-xl font-bold text-charcoal">{tier.name}</h2>
-                  <div className="mt-5">
-                    <span className="text-4xl font-extrabold text-charcoal tracking-tight">{tier.price}</span>
-                    {tier.period && <span className="text-slate ml-1 text-sm">{tier.period}</span>}
-                  </div>
-                  <p className="mt-3 text-graphite text-sm leading-relaxed">{tier.description}</p>
+                    <p className="mt-3 text-graphite text-sm leading-relaxed">{tier.description}</p>
 
-                  <ul className="mt-8 space-y-3 flex-1">
-                    {tier.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm text-graphite">
-                        <svg className="w-4 h-4 text-accent mt-0.5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                    <ul className="mt-8 space-y-3 flex-1">
+                      {tier.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-3 text-sm text-graphite">
+                          <div className="w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5" style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.1), rgba(96,165,250,0.05))' }}>
+                            <svg className="w-3 h-3 text-accent" fill="currentColor" viewBox="0 0 20 20">
+                              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                            </svg>
+                          </div>
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
 
-                  <div className="mt-10">
-                    <Button
-                      href={tier.href}
-                      variant={tier.highlight ? 'primary' : 'secondary'}
-                      className="w-full"
-                    >
-                      {tier.cta}
-                    </Button>
+                    <div className="mt-10">
+                      <Button
+                        href={tier.href}
+                        variant={tier.highlight ? 'primary' : 'secondary'}
+                        className="w-full"
+                      >
+                        {tier.cta}
+                      </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </AnimatedReveal>
-          ))}
-        </div>
+              </AnimatedReveal>
+            ))}
+          </div>
 
-        <AnimatedReveal direction="fade" delay={400}>
-          <p className="text-center text-sm text-slate mt-10">
-            Save 20% with annual billing — <span className="text-charcoal font-medium">$239/month</span> billed annually.
-          </p>
-        </AnimatedReveal>
-      </Section>
+          <AnimatedReveal direction="fade" delay={400}>
+            <p className="text-center text-sm text-slate mt-10">
+              Save 20% with annual billing — <span className="text-charcoal font-medium">$239/month</span> billed annually.
+            </p>
+          </AnimatedReveal>
+        </div>
+      </section>
 
       {/* FAQ */}
-      <Section bg="white">
-        <AnimatedReveal direction="up" className="text-center mb-14">
-          <SectionLabel>FAQ</SectionLabel>
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal leading-tight">Common Questions</h2>
-        </AnimatedReveal>
-        <AnimatedReveal direction="up" delay={100}>
-          <div className="max-w-3xl mx-auto">
-            <Accordion items={faqs} />
-          </div>
-        </AnimatedReveal>
-      </Section>
+      <section className="relative py-24 md:py-36 px-6 bg-white overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient-light pointer-events-none" />
+        <div className="max-w-4xl mx-auto relative">
+          <AnimatedReveal direction="up" className="text-center mb-14">
+            <SectionLabel>FAQ</SectionLabel>
+            <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-charcoal leading-tight">Common Questions</h2>
+          </AnimatedReveal>
+          <AnimatedReveal direction="up" delay={100}>
+            <div className="max-w-3xl mx-auto">
+              <Accordion items={faqs} />
+            </div>
+          </AnimatedReveal>
+        </div>
+      </section>
     </div>
   );
 }

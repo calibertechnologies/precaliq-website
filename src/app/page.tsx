@@ -103,9 +103,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ PROBLEM STATEMENT ═══════════ */}
-      <section className="relative py-24 md:py-36 px-6 bg-white overflow-hidden">
-        {/* Subtle dot grid background */}
-        <div className="absolute inset-0 dot-pattern opacity-50 pointer-events-none" />
+      <section className="relative py-24 md:py-36 px-6 overflow-hidden mesh-gradient-light">
+        {/* Floating decorative particles */}
+        <div className="absolute bottom-0 right-[10%] w-3 h-3 rounded-full particle-1 pointer-events-none" style={{ background: 'rgba(37,99,235,0.15)' }} />
+        <div className="absolute bottom-[20%] left-[15%] w-2 h-2 rounded-full particle-2 pointer-events-none" style={{ background: 'rgba(96,165,250,0.12)' }} />
+        <div className="absolute bottom-[10%] right-[30%] w-1.5 h-1.5 rounded-full particle-3 pointer-events-none" style={{ background: 'rgba(37,99,235,0.1)' }} />
 
         <div className="relative max-w-6xl mx-auto">
           <AnimatedReveal direction="up" className="max-w-3xl mx-auto text-center">
@@ -119,17 +121,19 @@ export default function HomePage() {
             </p>
           </AnimatedReveal>
 
-          <div className="mt-16 grid grid-cols-3 gap-6 max-w-3xl mx-auto">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
             {[
               { stat: '200+', label: 'Pages per spec', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
               { stat: '60%', label: 'Time wasted', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
               { stat: '$50K', label: 'Cost of errors', icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' },
             ].map((item, i) => (
-              <AnimatedReveal key={i} direction="up" delay={i * 100}>
-                <div className="stat-card text-center p-8 rounded-2xl bg-white ring-1 ring-border shadow-sm">
-                  <svg className="w-6 h-6 text-accent/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
+              <AnimatedReveal key={i} direction="up" delay={i * 120}>
+                <div className="card-spotlight card-glow-line text-center p-8 rounded-2xl bg-white ring-1 ring-border shadow-card group">
+                  <div className="icon-glow w-14 h-14 rounded-2xl flex items-center justify-center mx-auto mb-5 transition-all duration-500 group-hover:scale-110" style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.08), rgba(96,165,250,0.04))' }}>
+                    <svg className="w-6 h-6 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                    </svg>
+                  </div>
                   <div className="text-3xl md:text-4xl font-extrabold text-charcoal tracking-tight">{item.stat}</div>
                   <div className="text-xs text-slate mt-2 font-medium uppercase tracking-wider">{item.label}</div>
                 </div>
@@ -143,8 +147,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ THE SOLUTION (WITH SCREENSHOTS) ═══════════ */}
-      <section className="relative py-16 md:py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
+      <section className="relative py-16 md:py-24 px-6 bg-white overflow-hidden">
+        {/* Subtle mesh gradient */}
+        <div className="absolute inset-0 mesh-gradient-light pointer-events-none" />
+
+        <div className="max-w-6xl mx-auto relative">
           <AnimatedReveal direction="up" className="text-center mb-8">
             <SectionLabel>The Solution</SectionLabel>
             <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-charcoal leading-[1.15] tracking-[-0.02em]">
@@ -204,7 +211,11 @@ export default function HomePage() {
       </section>
 
       {/* ═══════════ HOW IT WORKS ═══════════ */}
-      <section className="relative py-24 md:py-36 px-6 bg-snow overflow-hidden">
+      <section className="relative py-24 md:py-36 px-6 overflow-hidden mesh-gradient-snow">
+        {/* Floating decorative particles */}
+        <div className="absolute top-[20%] right-[5%] w-2.5 h-2.5 rounded-full particle-2 pointer-events-none" style={{ background: 'rgba(37,99,235,0.1)' }} />
+        <div className="absolute top-[60%] left-[8%] w-2 h-2 rounded-full particle-3 pointer-events-none" style={{ background: 'rgba(96,165,250,0.08)' }} />
+
         <div className="max-w-6xl mx-auto">
           <AnimatedReveal direction="up" className="text-center mb-20">
             <SectionLabel>Process</SectionLabel>
@@ -213,9 +224,9 @@ export default function HomePage() {
             </h2>
           </AnimatedReveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 relative">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-6 relative">
             {/* Animated gradient connector line */}
-            <div className="hidden md:block absolute top-12 left-[12.5%] right-[12.5%] h-[2px] line-animated" style={{ background: 'linear-gradient(90deg, rgba(37,99,235,0.05), rgba(37,99,235,0.25), rgba(96,165,250,0.15), rgba(37,99,235,0.25), rgba(37,99,235,0.05))' }} aria-hidden="true" />
+            <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px] connector-animated rounded-full" aria-hidden="true" />
 
             {[
               { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. Precaliq parses every section and classifies every sheet.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
@@ -224,17 +235,17 @@ export default function HomePage() {
               { step: '04', title: 'Win', desc: 'Build your bid with real-time cost comparisons. Generate professional bid documents in PDF or Excel.', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },
             ].map((item, i) => (
               <AnimatedReveal key={item.step} direction="up" delay={i * 120}>
-                <div className="text-center relative group">
+                <div className="step-card text-center relative group bg-white rounded-2xl p-6 pt-10 ring-1 ring-border shadow-card">
                   {/* Step number badge */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 text-[10px] font-bold text-accent bg-white px-2.5 py-0.5 rounded-full ring-1 ring-accent/20 shadow-sm">
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-20 text-[10px] font-bold text-white px-3 py-1 rounded-full shadow-sm" style={{ background: 'linear-gradient(135deg, #2563EB, #3B82F6)' }}>
                     {item.step}
                   </div>
-                  <div className="step-icon w-24 h-24 rounded-2xl flex items-center justify-center mx-auto relative z-10 shadow-lg group-hover:shadow-xl transition-all duration-500" style={{ background: 'linear-gradient(135deg, #1D1D1F, #2A2A2E)' }}>
-                    <svg className="w-10 h-10 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                  <div className="icon-glow w-20 h-20 rounded-2xl flex items-center justify-center mx-auto relative z-10 shadow-lg group-hover:shadow-xl transition-all duration-500 group-hover:scale-105" style={{ background: 'linear-gradient(135deg, #1D1D1F, #2A2A2E)' }}>
+                    <svg className="w-9 h-9 text-white/90" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
                     </svg>
                   </div>
-                  <h3 className="text-lg font-bold text-charcoal mt-7">{item.title}</h3>
+                  <h3 className="text-lg font-bold text-charcoal mt-6">{item.title}</h3>
                   <p className="text-graphite mt-3 text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </AnimatedReveal>
@@ -265,11 +276,13 @@ export default function HomePage() {
               { value: '5', label: 'Minutes Per Category', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
               { value: '0', label: 'Missed Specifications', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
             ].map((item, i) => (
-              <AnimatedReveal key={i} direction="up" delay={i * 80}>
-                <div className="dark-stat-card text-center p-8 rounded-2xl ring-1 ring-white/[0.06] bg-white/[0.03]">
-                  <svg className="w-6 h-6 text-accent/50 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
-                  </svg>
+              <AnimatedReveal key={i} direction="up" delay={i * 100}>
+                <div className="dark-stat-card text-center p-8 rounded-2xl ring-1 ring-white/[0.08] group" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))' }}>
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mx-auto mb-5 ring-1 ring-white/[0.08] group-hover:ring-accent/30 transition-all duration-500" style={{ background: 'linear-gradient(135deg, rgba(37,99,235,0.15), rgba(37,99,235,0.05))' }}>
+                    <svg className="w-5 h-5 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d={item.icon} />
+                    </svg>
+                  </div>
                   <AnimatedCounter value={item.value} label={item.label} />
                 </div>
               </AnimatedReveal>

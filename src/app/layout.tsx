@@ -109,7 +109,7 @@ function Header() {
         <a href="/" className="flex items-center gap-2.5 group" aria-label="Precaliq home">
           <Logo size={32} />
           <span className="text-[1.125rem] font-bold text-charcoal tracking-tight">
-            Pre<span className="text-stone font-light">-</span>Cal<span className="text-stone font-light">-</span>IQ
+            Precaliq
           </span>
         </a>
 
@@ -166,7 +166,7 @@ function Footer() {
             <a href="/" className="inline-flex items-center gap-2.5" aria-label="Precaliq home">
               <Logo size={28} light />
               <span className="text-lg font-bold text-white tracking-tight">
-                Pre<span className="text-white/20 font-light">-</span>Cal<span className="text-white/20 font-light">-</span>IQ
+                Precaliq
               </span>
             </a>
             <p className="text-[0.875rem] text-white/30 mt-4 leading-relaxed max-w-xs">
@@ -239,9 +239,6 @@ function Footer() {
         <div className="mt-16 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
             &copy; {currentYear} Precaliq. All rights reserved.
-          </p>
-          <p className="text-xs text-white/15">
-            A Caliber Technologies Company
           </p>
         </div>
       </div>

@@ -57,8 +57,9 @@ export default function FeaturesPage() {
       </section>
 
       {/* ═══════════ FEATURE SHOWCASES ═══════════ */}
-      <section className="bg-snow">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative bg-snow overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient-snow pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 relative">
           {/* Input group header */}
           <div className="pt-20 md:pt-28 pb-4">
             <AnimatedReveal direction="up">
@@ -103,8 +104,9 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative bg-white overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient-light pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 relative">
           {/* Processing group header */}
           <div className="pt-20 md:pt-28 pb-4">
             <AnimatedReveal direction="up">
@@ -147,8 +149,9 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="bg-snow">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative bg-snow overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient-snow pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 relative">
           {/* Collaboration group header */}
           <div className="pt-20 md:pt-28 pb-4">
             <AnimatedReveal direction="up">
@@ -191,8 +194,9 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="max-w-6xl mx-auto px-6">
+      <section className="relative bg-white overflow-hidden">
+        <div className="absolute inset-0 mesh-gradient-light pointer-events-none" />
+        <div className="max-w-6xl mx-auto px-6 relative">
           {/* Output group header */}
           <div className="pt-20 md:pt-28 pb-4">
             <AnimatedReveal direction="up">
