@@ -1,0 +1,40 @@
+name: Generate Blog Post
+
+on:
+  schedule:
+    # Runs on the 1st and 15th of each month at 9:00 AM UTC
+    - cron: '0 9 1,15 * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate blog post
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: npx tsx scripts/generate-blog-post.ts
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/lib/blog-posts.ts
+          git diff --staged --quiet && echo "No changes to commit" && exit 0
+          git commit -m "blog: auto-generate new blog post $(date +%Y-%m-%d)"
+          git push

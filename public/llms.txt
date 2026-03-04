@@ -1,0 +1,35 @@
+# Precaliq
+
+## About
+Precaliq is an AI-powered preconstruction platform built for general contractors. It automates construction material takeoffs, bid building, and vendor management.
+
+## Product
+Precaliq reads both construction specifications (CSI-formatted PDFs) and architectural plan sets, using AI to extract structured data and generate accurate material takeoffs across 15 trade categories.
+
+## Key Features
+- AI Spec Parsing: Automatically reads and structures CSI division specifications
+- AI Plan Parsing: Extracts quantities and details from architectural drawings
+- Material Takeoffs: Generates detailed takeoffs across 15 categories (doors, frames, hardware, flooring, etc.)
+- Multi-Option Variants: Standard, premium, and budget material options with side-by-side comparison
+- Vendor Portal: Tokenized links for vendors to submit pricing — no account required
+- Bid Builder: Collaborative bid assembly with category-level variant selection
+- Excel & PDF Export: Professional bid documents ready for submission
+- Change Order Detection: AI-powered detection of spec revisions and scope changes
+
+## Pricing
+- Free: $0/forever — 1 project, 3 categories
+- Professional: $299/month — Unlimited projects, all 15 categories, vendor portal, bid builder
+- Enterprise: Custom pricing — SSO, custom integrations, dedicated support
+
+## Important Pages
+- Homepage: https://precaliq.com
+- Features: https://precaliq.com/features
+- Pricing: https://precaliq.com/pricing
+- Blog: https://precaliq.com/blog
+- Contact: https://precaliq.com/contact
+- About: https://precaliq.com/about
+
+## Contact
+- Email: hello@precaliq.com
+- Website: https://precaliq.com
+- App: https://app.precaliq.com

@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   keywords: ['construction takeoff software', 'AI preconstruction', 'construction estimating', 'material takeoff', 'bid management', 'vendor pricing', 'CSI specification parsing', 'construction AI'],
   authors: [{ name: 'Precaliq', url: 'https://precaliq.com' }],
   creator: 'Precaliq',
-  publisher: 'Caliber Technologies',
+  publisher: 'Precaliq',
   robots: {
     index: true,
     follow: true,
@@ -53,6 +53,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: 'https://precaliq.com',
+    types: {
+      'application/rss+xml': 'https://precaliq.com/feed.xml',
+    },
   },
 };
 
@@ -62,12 +65,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
+        <link rel="manifest" href="/manifest.webmanifest" />
       </head>
       <body>
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
 
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'Precaliq',
+              url: 'https://precaliq.com',
+              logo: 'https://precaliq.com/favicon.svg',
+              contactPoint: {
+                '@type': 'ContactPoint',
+                email: 'hello@precaliq.com',
+                contactType: 'sales',
+              },
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -81,7 +102,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: 'https://precaliq.com',
               author: {
                 '@type': 'Organization',
-                name: 'Caliber Technologies',
+                name: 'Precaliq',
                 url: 'https://precaliq.com',
               },
               offers: {
