@@ -38,49 +38,47 @@ export default function MobileMenu() {
         </div>
       </button>
 
-      <div
-        className={`fixed inset-0 bg-ink/20 backdrop-blur-sm z-40 transition-opacity duration-300 ${
-          open ? 'opacity-100' : 'opacity-0 pointer-events-none'
-        }`}
-        onClick={() => setOpen(false)}
-        aria-hidden="true"
-      />
+      {open && (
+        <>
+          <div
+            className="fixed inset-0 bg-ink/20 backdrop-blur-sm z-40 animate-[fade-in_200ms_ease-out]"
+            onClick={() => setOpen(false)}
+            aria-hidden="true"
+          />
 
-      <div
-        className={`fixed top-[72px] left-0 right-0 bottom-0 bg-white z-40 transition-transform duration-400 ease-out ${
-          open ? 'translate-y-0' : '-translate-y-full'
-        }`}
-      >
-        <nav className="max-w-6xl mx-auto px-6 pt-8 flex flex-col gap-1" aria-label="Mobile navigation">
-          {links.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="py-4 px-2 text-lg font-medium text-charcoal border-b border-border transition-colors"
-              onClick={() => setOpen(false)}
-              style={{ animationDelay: `${i * 50}ms` }}
-            >
-              {link.label}
-            </a>
-          ))}
-          <div className="mt-8 flex flex-col gap-3">
-            <a
-              href="https://app.precaliq.com/login"
-              className="py-3 px-4 text-center text-graphite font-medium rounded-xl ring-1 ring-border"
-              onClick={() => setOpen(false)}
-            >
-              Log in
-            </a>
-            <a
-              href="https://app.precaliq.com"
-              className="py-3 px-4 text-white text-center font-semibold rounded-xl bg-accent hover:bg-accent-hover transition-colors"
-              onClick={() => setOpen(false)}
-            >
-              Get Started Free
-            </a>
+          <div className="fixed top-[72px] left-0 right-0 bottom-0 bg-white z-40 animate-[reveal-up_300ms_ease-out]">
+            <nav className="max-w-6xl mx-auto px-6 pt-8 flex flex-col gap-1" aria-label="Mobile navigation">
+              {links.map((link, i) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="py-4 px-2 text-lg font-medium text-charcoal border-b border-border transition-colors"
+                  onClick={() => setOpen(false)}
+                  style={{ animationDelay: `${i * 50}ms` }}
+                >
+                  {link.label}
+                </a>
+              ))}
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href="https://app.precaliq.com/login"
+                  className="py-3 px-4 text-center text-graphite font-medium rounded-xl ring-1 ring-border"
+                  onClick={() => setOpen(false)}
+                >
+                  Log in
+                </a>
+                <a
+                  href="https://app.precaliq.com"
+                  className="py-3 px-4 text-white text-center font-semibold rounded-xl bg-accent hover:bg-accent-hover transition-colors"
+                  onClick={() => setOpen(false)}
+                >
+                  Get Started Free
+                </a>
+              </div>
+            </nav>
           </div>
-        </nav>
-      </div>
+        </>
+      )}
     </div>
   );
 }
