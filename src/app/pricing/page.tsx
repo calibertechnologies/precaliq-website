@@ -48,8 +48,8 @@ const tiers = [
       'Priority email support',
       'Up to 10 team members',
     ],
-    cta: 'Start 14-Day Trial',
-    href: '/contact',
+    cta: 'Upgrade to Pro',
+    href: 'https://app.precaliq.com/settings/billing',
     highlight: true,
   },
   {
