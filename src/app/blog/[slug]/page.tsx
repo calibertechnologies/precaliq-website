@@ -24,7 +24,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'article',
       publishedTime: post.date,
       url: `https://precaliq.com/blog/${slug}`,
-      siteName: 'Precaliq',
+      siteName: 'PreCal-IQ',
     },
   };
 }
@@ -143,8 +143,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             headline: post.title,
             description: post.excerpt,
             datePublished: post.date,
-            author: { '@type': 'Organization', name: 'Precaliq', url: 'https://precaliq.com' },
-            publisher: { '@type': 'Organization', name: 'Precaliq', url: 'https://precaliq.com', logo: { '@type': 'ImageObject', url: 'https://precaliq.com/favicon.svg' } },
+            author: { '@type': 'Organization', name: 'PreCal-IQ', url: 'https://precaliq.com' },
+            publisher: { '@type': 'Organization', name: 'PreCal-IQ', url: 'https://precaliq.com', logo: { '@type': 'ImageObject', url: 'https://precaliq.com/favicon.svg' } },
             mainEntityOfPage: { '@type': 'WebPage', '@id': `https://precaliq.com/blog/${slug}` },
           }),
         }}
@@ -170,7 +170,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <section className="relative overflow-hidden py-24 px-6 bg-white">
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-xl mx-auto">
           <SectionLabel>Next Step</SectionLabel>
-          <h3 className="text-2xl md:text-3xl font-extrabold text-charcoal">Ready to see Precaliq in action?</h3>
+          <h3 className="text-2xl md:text-3xl font-extrabold text-charcoal">Ready to see PreCal-IQ in action?</h3>
           <p className="mt-3 text-graphite leading-relaxed">Transform your preconstruction workflow with AI-powered takeoffs.</p>
           <div className="mt-8">
             <Button href="/contact">Request a Demo</Button>

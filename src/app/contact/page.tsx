@@ -6,14 +6,14 @@ import AuroraBackground from '@/components/AuroraBackground';
 
 export const metadata: Metadata = {
   title: 'Contact',
-  description: 'Request a demo of Precaliq. See how AI-powered preconstruction can transform your estimating workflow. We respond within one business day.',
+  description: 'Request a demo of PreCal-IQ. See how AI-powered preconstruction can transform your estimating workflow. We respond within one business day.',
   alternates: { canonical: 'https://precaliq.com/contact' },
 };
 
 const faqs = [
   {
     question: 'How long does a demo take?',
-    answer: 'Most demos run 30 minutes. We walk through your workflow, show Precaliq on a real spec, and answer questions.',
+    answer: 'Most demos run 30 minutes. We walk through your workflow, show PreCal-IQ on a real spec, and answer questions.',
   },
   {
     question: 'Do I need to prepare anything?',
@@ -25,7 +25,7 @@ const faqs = [
   },
   {
     question: 'How quickly can I be up and running?',
-    answer: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — Precaliq runs in your browser.',
+    answer: 'Most teams are generating their first takeoff within 15 minutes of signing up. There\'s nothing to install — PreCal-IQ runs in your browser.',
   },
 ];
 
@@ -47,7 +47,7 @@ export default function ContactPage() {
           </AnimatedReveal>
           <AnimatedReveal direction="up" delay={180}>
             <p className="mt-6 text-[1.125rem] text-blue-100/50 max-w-xl mx-auto leading-relaxed">
-              See how Precaliq can transform your preconstruction workflow.
+              See how PreCal-IQ can transform your preconstruction workflow.
             </p>
           </AnimatedReveal>
         </div>

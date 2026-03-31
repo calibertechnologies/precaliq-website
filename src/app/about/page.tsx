@@ -6,7 +6,7 @@ import AuroraBackground from '@/components/AuroraBackground';
 
 export const metadata: Metadata = {
   title: 'About',
-  description: 'Precaliq was built by preconstruction veterans who spent years reading specs manually. Learn about our mission, team, and vision for AI-powered preconstruction.',
+  description: 'PreCal-IQ was built by preconstruction veterans who spent years reading specs manually. Learn about our mission, team, and vision for AI-powered preconstruction.',
   alternates: { canonical: 'https://precaliq.com/about' },
 };
 
@@ -42,11 +42,11 @@ export default function AboutPage() {
         <div className="max-w-4xl mx-auto relative">
           <AnimatedReveal direction="up">
             <SectionLabel>Mission</SectionLabel>
-            <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Why Precaliq?</h2>
+            <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Why PreCal-IQ?</h2>
             <p className="text-graphite leading-[1.75] text-[1.0625rem]">
               In construction, the difference between a winning bid and a losing one comes down to
               calibration — getting the quantities, specs, and costs dialed in with precision.
-              Precaliq was built because we believe AI can bring a new level of intelligence to
+              PreCal-IQ was built because we believe AI can bring a new level of intelligence to
               this process. We&apos;re not replacing estimators — we&apos;re giving them superhuman
               accuracy by reading every spec section, interpreting every plan sheet, and generating
               takeoffs that are calibrated to win.
@@ -77,7 +77,7 @@ export default function AboutPage() {
             <SectionLabel>Brand</SectionLabel>
             <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug">The Name</h2>
             <p className="mt-4 text-graphite max-w-2xl mx-auto leading-relaxed">
-              Precaliq brings intelligence to preconstruction. The name says exactly what we do.
+              PreCal-IQ brings intelligence to preconstruction. The name says exactly what we do.
             </p>
           </AnimatedReveal>
 
@@ -122,7 +122,7 @@ export default function AboutPage() {
             <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Story</h2>
             <div className="space-y-5 text-graphite leading-[1.75] text-[1.0625rem]">
               <p>
-                Precaliq was born out of frustration. Our founders spent years working in preconstruction
+                PreCal-IQ was born out of frustration. Our founders spent years working in preconstruction
                 for general contractors — reading specifications page by page, manually counting doors
                 and materials, and assembling bids in spreadsheets that were outdated before the ink
                 dried. They saw firsthand how much time, money, and competitive edge was lost to a
@@ -132,7 +132,7 @@ export default function AboutPage() {
                 In 2024, they set out to build the platform they wished they&apos;d had: one that could
                 read a spec the way an experienced estimator does, cross-reference it against
                 architectural plans, and produce structured material takeoffs in minutes instead of
-                days. The result is Precaliq.
+                days. The result is PreCal-IQ.
               </p>
             </div>
           </AnimatedReveal>
@@ -158,7 +158,7 @@ export default function AboutPage() {
                 We also believe that preconstruction deserves purpose-built software. Generic AI tools
                 don&apos;t understand CSI divisions, don&apos;t know the difference between a
                 fire-rated hollow metal frame and a standard welded frame, and can&apos;t cross-reference
-                spec Section 08 11 00 with a door schedule on sheet A5.01. Precaliq does — because it
+                spec Section 08 11 00 with a door schedule on sheet A5.01. PreCal-IQ does — because it
                 was built by people who&apos;ve lived that workflow.
               </p>
             </div>
@@ -175,7 +175,7 @@ export default function AboutPage() {
           </AnimatedReveal>
           <div className="grid md:grid-cols-2 gap-6">
             {[
-              { role: 'Estimators', desc: 'Precision in preconstruction — that\'s your entire job. Precaliq delivers it.', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z' },
+              { role: 'Estimators', desc: 'Precision in preconstruction — that\'s your entire job. PreCal-IQ delivers it.', icon: 'M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z' },
               { role: 'GC Executives', desc: 'Intelligent precon is the competitive advantage you\'re chasing.', icon: 'M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4' },
               { role: 'Subcontractors', desc: 'Calibrated takeoffs are what win you bids.', icon: 'M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z' },
               { role: 'Owners & Developers', desc: 'Smarter preconstruction is how projects stay on budget.', icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
@@ -206,7 +206,7 @@ export default function AboutPage() {
             <SectionLabel>Team</SectionLabel>
             <h2 className="text-2xl md:text-[2rem] font-extrabold text-charcoal leading-snug mb-6">Our Team</h2>
             <p className="text-graphite leading-[1.75] text-[1.0625rem]">
-              Precaliq is built by a small, focused team of engineers and construction professionals
+              PreCal-IQ is built by a small, focused team of engineers and construction professionals
               who have collectively spent decades in preconstruction, commercial contracting, and
               software development. We&apos;re headquartered in the United States and work closely
               with GCs across the country to refine and expand the platform.
@@ -222,7 +222,7 @@ export default function AboutPage() {
         <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
           <SectionLabel light>Get Started</SectionLabel>
           <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">Want to learn more?</h2>
-          <p className="mt-4 text-blue-100/40 leading-relaxed">See how Precaliq transforms your preconstruction workflow.</p>
+          <p className="mt-4 text-blue-100/40 leading-relaxed">See how PreCal-IQ transforms your preconstruction workflow.</p>
           <div className="mt-10">
             <Button href="/contact">Get in Touch</Button>
           </div>

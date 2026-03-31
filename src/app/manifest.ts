@@ -2,8 +2,8 @@ import type { MetadataRoute } from 'next';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: 'Precaliq — AI-Powered Preconstruction',
-    short_name: 'Precaliq',
+    name: 'PreCal-IQ — AI-Powered Preconstruction',
+    short_name: 'PreCal-IQ',
     description:
       'Automate construction takeoffs, build bids, and manage vendors with AI.',
     start_url: '/',

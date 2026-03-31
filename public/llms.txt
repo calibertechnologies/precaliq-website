@@ -1,10 +1,10 @@
-# Precaliq
+# PreCal-IQ
 
 ## About
-Precaliq is an AI-powered preconstruction platform built for general contractors. It automates construction material takeoffs, bid building, and vendor management.
+PreCal-IQ is an AI-powered preconstruction platform built for general contractors. It automates construction material takeoffs, bid building, and vendor management.
 
 ## Product
-Precaliq reads both construction specifications (CSI-formatted PDFs) and architectural plan sets, using AI to extract structured data and generate accurate material takeoffs across 15 trade categories.
+PreCal-IQ reads both construction specifications (CSI-formatted PDFs) and architectural plan sets, using AI to extract structured data and generate accurate material takeoffs across 15 trade categories.
 
 ## Key Features
 - AI Spec Parsing: Automatically reads and structures CSI division specifications

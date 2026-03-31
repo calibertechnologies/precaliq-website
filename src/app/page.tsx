@@ -13,8 +13,8 @@ import FeatureShowcase from '@/components/FeatureShowcase';
 import { HeroMockup, SpecsMockup, TakeoffMockup, BidBuilderMockup } from '@/components/AppMockup';
 
 export const metadata: Metadata = {
-  title: 'Precaliq — AI-Powered Preconstruction Platform',
-  description: 'Precaliq automates construction takeoffs, bid building, and vendor management. The only AI platform that reads both specs and plans. From specs to bids in minutes.',
+  title: 'PreCal-IQ — AI-Powered Preconstruction Platform',
+  description: 'PreCal-IQ automates construction takeoffs, bid building, and vendor management. The only AI platform that reads both specs and plans. From specs to bids in minutes.',
   alternates: { canonical: 'https://precaliq.com' },
 };
 
@@ -162,7 +162,7 @@ export default function HomePage() {
           <FeatureShowcase
             badge="01 — Specification Parsing"
             title="We Read Your Specs"
-            description="Upload a spec PDF. Precaliq identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page."
+            description="Upload a spec PDF. PreCal-IQ identifies every CSI section, extracts manufacturers, materials, fire ratings, hardware sets, and finishes — page by page."
             details={[
               'Supports 200+ page specification documents',
               'Extracts data from all CSI divisions automatically',
@@ -178,7 +178,7 @@ export default function HomePage() {
           <FeatureShowcase
             badge="02 — Cross-Referencing"
             title="We Cross-Reference Everything"
-            description='Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." Precaliq connects them automatically — no manual lookup.'
+            description='Specs say "1-hr fire-rated, oak veneer." Plans say "Door D-101." PreCal-IQ connects them automatically — no manual lookup.'
             details={[
               'Matches spec requirements to plan schedules',
               'Generates takeoff items with full CSI details',
@@ -229,7 +229,7 @@ export default function HomePage() {
             <div className="hidden md:block absolute top-16 left-[12.5%] right-[12.5%] h-[2px] connector-animated rounded-full" aria-hidden="true" />
 
             {[
-              { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. Precaliq parses every section and classifies every sheet.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
+              { step: '01', title: 'Upload', desc: 'Drop in spec PDFs and architectural plan drawings. PreCal-IQ parses every section and classifies every sheet.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
               { step: '02', title: 'Generate', desc: 'Select categories — doors, flooring, millwork. AI generates detailed takeoffs cross-referencing specs with plans.', icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z' },
               { step: '03', title: 'Price', desc: 'Send takeoffs to vendors through a secure portal. Collect and compare quotes automatically.', icon: 'M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z' },
               { step: '04', title: 'Win', desc: 'Build your bid with real-time cost comparisons. Generate professional bid documents in PDF or Excel.', icon: 'M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z' },

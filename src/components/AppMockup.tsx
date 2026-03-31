@@ -1,5 +1,5 @@
 /* ──────────────────────────────────────────
-   AppMockup — Pure CSS/HTML mockups of Precaliq
+   AppMockup — Pure CSS/HTML mockups of PreCal-IQ
    5 variants: Hero, Dashboard, Takeoff, BidBuilder, Specs
    ────────────────────────────────────────── */
 
@@ -33,7 +33,7 @@ function ProgressBar({ pct, color = '#2563EB' }: { pct: number; color?: string }
 function MockNav() {
   return (
     <div className="flex items-center h-12 px-4 gap-4 text-[9px] font-semibold text-white/80 shadow-md" style={{ background: 'linear-gradient(135deg, #0f2b47, #1a4068, #1F4E79)' }}>
-      <span className="font-bold text-[11px] tracking-tight text-white">Precaliq</span>
+      <span className="font-bold text-[11px] tracking-tight text-white">PreCal-IQ</span>
       <div className="flex-1" />
       <span className="px-2.5 py-1 rounded-lg opacity-70 hover:opacity-100">Projects</span>
       <span className="px-2.5 py-1 rounded-lg opacity-70 hover:opacity-100">Settings</span>

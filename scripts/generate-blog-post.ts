@@ -65,7 +65,7 @@ async function main() {
     messages: [
       {
         role: 'user',
-        content: `Write a blog article for Precaliq, an AI-powered preconstruction platform for general contractors. The article should be about: "${topic}"
+        content: `Write a blog article for PreCal-IQ, an AI-powered preconstruction platform for general contractors. The article should be about: "${topic}"
 
 Requirements:
 - Write 800-1200 words

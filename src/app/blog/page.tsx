@@ -7,7 +7,7 @@ import Card from '@/components/Card';
 
 export const metadata: Metadata = {
   title: 'Blog',
-  description: 'Insights on AI-powered preconstruction, construction estimating, takeoff automation, and the future of bidding. From the Precaliq team.',
+  description: 'Insights on AI-powered preconstruction, construction estimating, takeoff automation, and the future of bidding. From the PreCal-IQ team.',
   alternates: { canonical: 'https://precaliq.com/blog' },
 };
 

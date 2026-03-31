@@ -19,14 +19,14 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL('https://precaliq.com'),
   title: {
-    default: 'Precaliq — AI-Powered Preconstruction Platform',
-    template: '%s — Precaliq',
+    default: 'PreCal-IQ — AI-Powered Preconstruction Platform',
+    template: '%s — PreCal-IQ',
   },
-  description: 'Precaliq automates construction takeoffs, bid building, and vendor management using AI. The only platform that reads both specs and plans. Built for GCs who want to bid faster and smarter.',
+  description: 'PreCal-IQ automates construction takeoffs, bid building, and vendor management using AI. The only platform that reads both specs and plans. Built for GCs who want to bid faster and smarter.',
   keywords: ['construction takeoff software', 'AI preconstruction', 'construction estimating', 'material takeoff', 'bid management', 'vendor pricing', 'CSI specification parsing', 'construction AI'],
-  authors: [{ name: 'Precaliq', url: 'https://precaliq.com' }],
-  creator: 'Precaliq',
-  publisher: 'Precaliq',
+  authors: [{ name: 'PreCal-IQ', url: 'https://precaliq.com' }],
+  creator: 'PreCal-IQ',
+  publisher: 'PreCal-IQ',
   robots: {
     index: true,
     follow: true,
@@ -39,16 +39,16 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: 'Precaliq — AI-Powered Preconstruction Platform',
+    title: 'PreCal-IQ — AI-Powered Preconstruction Platform',
     description: 'Automate takeoffs, build bids, manage vendors. The only AI platform that reads both specs and plans.',
     url: 'https://precaliq.com',
-    siteName: 'Precaliq',
+    siteName: 'PreCal-IQ',
     locale: 'en_US',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Precaliq — AI-Powered Preconstruction Platform',
+    title: 'PreCal-IQ — AI-Powered Preconstruction Platform',
     description: 'Automate takeoffs, build bids, manage vendors. Built for GCs who want to bid faster.',
   },
   alternates: {
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'Organization',
-              name: 'Precaliq',
+              name: 'PreCal-IQ',
               url: 'https://precaliq.com',
               logo: 'https://precaliq.com/favicon.svg',
               contactPoint: {
@@ -95,14 +95,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'SoftwareApplication',
-              name: 'Precaliq',
+              name: 'PreCal-IQ',
               applicationCategory: 'BusinessApplication',
               operatingSystem: 'Web',
               description: 'AI-powered preconstruction platform that automates construction takeoffs, bid building, and vendor management.',
               url: 'https://precaliq.com',
               author: {
                 '@type': 'Organization',
-                name: 'Precaliq',
+                name: 'PreCal-IQ',
                 url: 'https://precaliq.com',
               },
               offers: {
@@ -127,10 +127,10 @@ function Header() {
       style={{ background: 'rgba(255, 255, 255, 0.85)', backdropFilter: 'blur(20px) saturate(1.2)', WebkitBackdropFilter: 'blur(20px) saturate(1.2)' }}
     >
       <nav className="max-w-6xl mx-auto px-6 flex items-center justify-between h-[72px]" aria-label="Main navigation">
-        <a href="/" className="flex items-center gap-2.5 group" aria-label="Precaliq home">
+        <a href="/" className="flex items-center gap-2.5 group" aria-label="PreCal-IQ home">
           <Logo size={32} />
           <span className="text-[1.125rem] font-bold text-charcoal tracking-tight">
-            Precaliq
+            PreCal-IQ
           </span>
         </a>
 
@@ -184,10 +184,10 @@ function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-8">
           {/* Brand */}
           <div className="col-span-2 md:col-span-4">
-            <a href="/" className="inline-flex items-center gap-2.5" aria-label="Precaliq home">
+            <a href="/" className="inline-flex items-center gap-2.5" aria-label="PreCal-IQ home">
               <Logo size={28} light />
               <span className="text-lg font-bold text-white tracking-tight">
-                Precaliq
+                PreCal-IQ
               </span>
             </a>
             <p className="text-[0.875rem] text-white/30 mt-4 leading-relaxed max-w-xs">
@@ -259,7 +259,7 @@ function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-6 border-t border-white/[0.06] flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-white/20">
-            &copy; {currentYear} Precaliq. All rights reserved.
+            &copy; {currentYear} PreCal-IQ. All rights reserved.
           </p>
         </div>
       </div>
