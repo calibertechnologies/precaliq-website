@@ -105,13 +105,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 name: 'PreCal-IQ',
                 url: 'https://precaliq.com',
               },
-              offers: {
-                '@type': 'AggregateOffer',
-                lowPrice: '0',
-                highPrice: '299',
-                priceCurrency: 'USD',
-                offerCount: '3',
-              },
             }),
           }}
         />

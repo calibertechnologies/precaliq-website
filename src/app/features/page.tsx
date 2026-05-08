@@ -166,9 +166,10 @@ export default function FeaturesPage() {
           <FeatureShowcase
             badge="Vendor Portal & Pricing"
             title="Collect quotes without the phone tag"
-            description="Send takeoffs to vendors through a secure, tokenized link. Vendors download the Excel, add pricing, and upload back — no account required."
+            description="Request quotes on any takeoff and route them to multiple vendors at once. Each vendor gets a secure, tokenized link — no account required — to download the Excel, add pricing, and upload back."
             details={[
               'AI parses vendor pricing and matches it to your takeoff items automatically',
+              'Accept the winning quote and its pricing flows straight into your bid total',
             ]}
             screenshot={
               <DeviceFrame>
@@ -225,9 +226,10 @@ export default function FeaturesPage() {
           <FeatureShowcase
             badge="Change Order Detection"
             title="Spot revisions before they cost you"
-            description="Upload revised specs or plans. PreCal-IQ compares against originals, identifying additions, removals, and modifications with estimated cost impact."
+            description="Upload a revised spec and PreCal-IQ compares it against the original — flagging additions, removals, and modifications with estimated cost impact."
             details={[
-              'Integrates with bid builder to show how revisions affect your current bid',
+              'Surfaces every takeoff affected by the change with one-click regenerate',
+              'Choose to keep your manual edits or overwrite from the revised spec',
             ]}
             screenshot={
               <DeviceFrame>
