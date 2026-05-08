@@ -3,6 +3,7 @@ import AnimatedReveal from '@/components/AnimatedReveal';
 import SectionLabel from '@/components/SectionLabel';
 import Accordion from '@/components/Accordion';
 import AuroraBackground from '@/components/AuroraBackground';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
   title: 'Contact',
@@ -62,82 +63,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2 gap-16">
             {/* Form */}
             <AnimatedReveal direction="right">
-              <div className="card-spotlight bg-white rounded-2xl ring-1 ring-border shadow-card p-8">
-                <form className="space-y-5">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-semibold text-charcoal mb-1.5">Full Name</label>
-                    <input
-                      id="name"
-                      name="name"
-                      type="text"
-                      required
-                      autoComplete="name"
-                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                      placeholder="John Smith"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-semibold text-charcoal mb-1.5">Work Email</label>
-                    <input
-                      id="email"
-                      name="email"
-                      type="email"
-                      required
-                      autoComplete="email"
-                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                      placeholder="john@company.com"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="company" className="block text-sm font-semibold text-charcoal mb-1.5">Company</label>
-                    <input
-                      id="company"
-                      name="company"
-                      type="text"
-                      required
-                      autoComplete="organization"
-                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal placeholder:text-slate/50"
-                      placeholder="Acme Construction"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="role" className="block text-sm font-semibold text-charcoal mb-1.5">Role</label>
-                    <select
-                      id="role"
-                      name="role"
-                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all text-charcoal"
-                    >
-                      <option value="">Select your role</option>
-                      <option value="estimator">Estimator</option>
-                      <option value="project-manager">Project Manager</option>
-                      <option value="preconstruction-manager">Preconstruction Manager</option>
-                      <option value="owner">Owner / Executive</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-semibold text-charcoal mb-1.5">
-                      Tell us about your workflow <span className="font-normal text-slate">(optional)</span>
-                    </label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      className="w-full px-4 py-3 bg-snow ring-1 ring-border rounded-xl focus:ring-2 focus:ring-accent focus:bg-white outline-none transition-all resize-none text-charcoal placeholder:text-slate/50"
-                      placeholder="What types of projects do you bid on? What tools do you currently use?"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="w-full px-8 py-3.5 text-white rounded-xl text-[0.9375rem] font-semibold bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent cursor-pointer btn-shimmer"
-                  >
-                    Request Demo
-                  </button>
-                  <p className="text-xs text-slate text-center">
-                    We&apos;ll respond within one business day. No spam, no obligations.
-                  </p>
-                </form>
-              </div>
+              <ContactForm />
             </AnimatedReveal>
 
             {/* FAQ + Email */}
