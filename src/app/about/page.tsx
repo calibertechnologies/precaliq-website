@@ -129,7 +129,7 @@ export default function AboutPage() {
                 process that hadn&apos;t fundamentally changed in decades.
               </p>
               <p>
-                In 2024, they set out to build the platform they wished they&apos;d had: one that could
+                In 2025, they set out to build the platform they wished they&apos;d had: one that could
                 read a spec the way an experienced estimator does, cross-reference it against
                 architectural plans, and produce structured material takeoffs in minutes instead of
                 days. The result is PreCal-IQ.
