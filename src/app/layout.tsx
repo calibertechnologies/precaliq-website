@@ -137,7 +137,6 @@ function Header() {
         <div className="hidden md:flex items-center gap-1">
           {[
             { href: '/features', label: 'Features' },
-            { href: '/pricing', label: 'Pricing' },
             { href: '/about', label: 'About' },
             { href: '/blog', label: 'Blog' },
             { href: '/contact', label: 'Contact' },
@@ -201,7 +200,6 @@ function Footer() {
             <ul className="space-y-3">
               {[
                 { href: '/features', label: 'Features' },
-                { href: '/pricing', label: 'Pricing' },
                 { href: '/contact', label: 'Request Demo' },
               ].map((link) => (
                 <li key={link.href}>
