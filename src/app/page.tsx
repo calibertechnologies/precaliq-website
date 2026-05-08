@@ -273,7 +273,7 @@ export default function HomePage() {
               { value: 'Hours', label: 'Not days', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
               { value: '15', label: 'Takeoff Categories', icon: 'M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' },
               { value: '3', label: 'Variants Per Category', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-              { value: 'PDF', label: 'Specs and plans, in', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
+              { value: 'PDF', label: 'Native input format', icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z' },
             ].map((item, i) => (
               <AnimatedReveal key={i} direction="up" delay={i * 100}>
                 <div className="dark-stat-card text-center p-8 rounded-2xl ring-1 ring-white/[0.08] group" style={{ background: 'linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01))' }}>
