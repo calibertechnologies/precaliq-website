@@ -60,7 +60,7 @@ export default function PrivacyPage() {
             <div>
               <h2 className="text-xl font-bold text-charcoal mb-3">4. Data Security</h2>
               <p>
-                We implement industry-standard security measures, including encryption in transit (TLS 1.3) and at rest (AES-256), regular security audits, and access controls. Your construction documents and project data are stored in SOC 2 compliant data centers within the United States.
+                We implement industry-standard security measures, including encryption in transit (TLS 1.3) and at rest (AES-256), regular security audits, and access controls. Your construction documents and project data are stored in secure data centers within the United States.
               </p>
             </div>
 
