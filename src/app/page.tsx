@@ -301,29 +301,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ═══════════ CTA (DARK) ═══════════ */}
-      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
-        <AuroraBackground />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
-
-        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
-          <SectionLabel light>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.75rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">
-            Ready to transform your preconstruction?
-          </h2>
-          <p className="mt-6 text-[1.0625rem] text-blue-100/40 leading-[1.75]">
-            Join the GCs who are winning more bids with AI-powered estimating. Start with a free project — no credit card required.
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button href="/contact">
-              Request a Demo
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-          </div>
-        </AnimatedReveal>
-      </section>
     </div>
   );
 }

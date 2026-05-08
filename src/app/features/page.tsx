@@ -261,25 +261,6 @@ export default function FeaturesPage() {
         </AnimatedReveal>
       </Section>
 
-      {/* ═══════════ CTA (DARK) ═══════════ */}
-      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
-        <AuroraBackground />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
-
-        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
-          <SectionLabel light>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">See PreCal-IQ in action</h2>
-          <p className="mt-4 text-blue-100/40 leading-relaxed">Book a 30-minute demo with your own spec documents.</p>
-          <div className="mt-10">
-            <Button href="/contact">
-              Request a Demo
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Button>
-          </div>
-        </AnimatedReveal>
-      </section>
     </div>
   );
 }

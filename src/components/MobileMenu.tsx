@@ -66,13 +66,6 @@ export default function MobileMenu() {
                 >
                   Log in
                 </a>
-                <a
-                  href="https://app.precaliq.com"
-                  className="py-3 px-4 text-white text-center font-semibold rounded-xl bg-accent hover:bg-accent-hover transition-colors"
-                  onClick={() => setOpen(false)}
-                >
-                  Get Started Free
-                </a>
               </div>
             </nav>
           </div>

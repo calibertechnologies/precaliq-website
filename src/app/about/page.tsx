@@ -215,19 +215,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="relative overflow-hidden py-32 md:py-44 px-6" style={{ background: '#0A0A1A' }}>
-        <AuroraBackground />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full pointer-events-none opacity-[0.07]" style={{ background: 'radial-gradient(circle, #2563EB, transparent 60%)' }} />
-        <AnimatedReveal direction="up" className="text-center relative z-10 max-w-2xl mx-auto">
-          <SectionLabel light>Get Started</SectionLabel>
-          <h2 className="text-3xl md:text-[2.5rem] font-extrabold text-white leading-[1.15] tracking-[-0.02em]">Want to learn more?</h2>
-          <p className="mt-4 text-blue-100/40 leading-relaxed">See how PreCal-IQ transforms your preconstruction workflow.</p>
-          <div className="mt-10">
-            <Button href="/contact">Get in Touch</Button>
-          </div>
-        </AnimatedReveal>
-      </section>
     </div>
   );
 }

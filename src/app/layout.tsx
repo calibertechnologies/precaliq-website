@@ -158,12 +158,6 @@ function Header() {
           >
             Log in
           </a>
-          <a
-            href="https://app.precaliq.com"
-            className="px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl bg-accent hover:bg-accent-hover transition-all duration-300 shadow-sm hover:shadow-accent"
-          >
-            Get Started
-          </a>
         </div>
 
         <MobileMenu />
@@ -239,19 +233,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* CTA */}
-          <div className="col-span-2 md:col-span-2">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.15em] text-white/20 mb-5">Get Started</h4>
-            <a
-              href="https://app.precaliq.com"
-              className="inline-flex items-center gap-2 px-5 py-2.5 text-[0.875rem] font-semibold text-white rounded-xl bg-accent hover:bg-accent-hover transition-all duration-300"
-            >
-              Try Free
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </a>
-          </div>
         </div>
 
         {/* Bottom bar */}
