@@ -8,6 +8,140 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'closing-the-vendor-pricing-loop',
+    title: 'Closing the Vendor Pricing Loop: From Takeoff to Bid Without Spreadsheet Email Chains',
+    date: 'May 6, 2026',
+    excerpt: 'The gap between a finished takeoff and a priced bid is where most preconstruction time disappears. Phone tag, email threads, and Excel reconciliation drag a one-day task into a one-week ordeal. Here is what a closed-loop vendor pricing workflow actually looks like.',
+    content: `If you watch an estimating team for a week, you will see a familiar pattern. The takeoff comes together quickly. The bid comes together quickly. But the middle — getting vendors to price the takeoff and getting that pricing back into the bid — drags. A task that should take a day takes a week. A task that should take three emails takes thirty.
+
+This is the vendor pricing loop, and most teams have not closed it.
+
+## What Open Loops Look Like
+
+In the typical workflow, an estimator finishes a takeoff and exports it to Excel. They open Outlook, pick a few vendors from a contact list, and send the spreadsheet as an attachment with some text in the body explaining what is needed and when. Then they wait.
+
+Some vendors respond same day. Some take a week. Some never respond. The ones who respond send back the spreadsheet with prices typed into one of the columns — sometimes the right column, sometimes a new column they added, sometimes pasted into a follow-up email instead of the spreadsheet.
+
+Now the estimator has to consolidate. They open three vendor responses, copy values across, normalize unit prices, flag missing items, and try to remember which vendor quoted which line. If a spec changes mid-process, they start over.
+
+This is not a process. It is a series of manual reconciliations between systems that were never designed to talk to each other.
+
+## What a Closed Loop Looks Like
+
+A closed-loop workflow has four properties:
+
+**One source of truth for the takeoff.** The takeoff lives in a system, not in a file that has been emailed three times and now exists in seven slightly different versions. When the takeoff updates, every vendor sees the update.
+
+**Vendors price against structured data, not free-form Excel.** When a vendor opens the takeoff, they see line items with quantities, locations, and specifications already filled in. Their job is to add unit prices, not to reformat data.
+
+**Submitted prices flow back into the same system.** When a vendor uploads pricing, the system parses it, matches each line to the original takeoff item, and stores it as structured pricing data. No copy-paste, no reconciliation.
+
+**The estimator chooses which quote to accept.** Multiple vendors can quote the same takeoff. The estimator compares them side by side and accepts the winning quote. The accepted quote is the one that drives the bid total — the others are kept for record but do not double-count.
+
+The first three properties eliminate manual handoff. The fourth makes sure the bid math is correct when more than one vendor responds.
+
+## The Operational Difference
+
+When the loop is closed, three things change.
+
+**The cycle time compresses dramatically.** A vendor opens a link and uploads a populated spreadsheet in fifteen minutes instead of forwarding emails for three days. Multiply that across ten vendors and the difference is a week per bid.
+
+**Pricing becomes auditable.** Every quote has a vendor, a timestamp, a status, and an Excel file behind it. When someone asks "where did this number come from?", the answer is always one click away.
+
+**Bid totals stay accurate during late changes.** When a spec revision lands and a takeoff regenerates, the previously accepted quote is automatically marked stale. The estimator knows immediately which categories need a re-quote — instead of finding out at bid submission that the numbers in the bid spreadsheet do not match the latest takeoff.
+
+## Why Most Tools Do Not Do This
+
+Most preconstruction tools handle one or two of the four properties, not all four. Takeoff tools generate takeoffs but do not solicit pricing. Bid tools assemble bids but assume someone else collected the quotes. Vendor management tools track relationships but do not connect to specific takeoffs.
+
+The gap is integration. Closing the loop requires that the takeoff, the vendor portal, the quote acceptance step, and the bid total all live in the same system — so accepting a quote on a takeoff automatically updates every bid that depends on it.
+
+When that integration exists, the workflow stops feeling like a workflow and starts feeling like a calculator. You change an input, the output updates, and you trust the math because every step is visible.
+
+## What to Look For
+
+If you are evaluating tools, ask three specific questions.
+
+First, can a vendor receive a takeoff and submit pricing without creating an account? If the answer is no, your vendors will not bother — they have a hundred other bids to price this week.
+
+Second, when a vendor uploads pricing, does the system match it line by line against the original takeoff, or does it just store the file? Storing the file is not closing the loop; it is filing the email.
+
+Third, when you accept a quote on a takeoff, does the bid total update automatically? If you have to manually copy numbers from one screen to another, the loop is not closed.
+
+These three questions sound simple, but they separate tools that look integrated from tools that actually are.
+
+## The Bottom Line
+
+The vendor pricing loop is the longest part of preconstruction for a reason: it spans organizations, formats, and tools that were never designed to work together. Closing it is not about a faster Excel template. It is about treating the takeoff, the quote request, the vendor response, and the bid total as a single connected workflow.
+
+Teams that close the loop do not just save time. They bid more, with better data, and they stop losing nights to spreadsheet reconciliation.`,
+  },
+  {
+    slug: 'when-the-spec-changes-mid-bid',
+    title: 'When the Spec Changes Mid-Bid: How AI Change Detection Saves the Estimating Day',
+    date: 'April 11, 2026',
+    excerpt: 'Late addenda are the silent killer of estimating timelines. A revised spec lands the day before bid is due, and the team has hours to figure out what changed and which takeoffs are now wrong. AI change detection turns a panic into a checklist.',
+    content: `Every senior estimator has the same story. It is Monday afternoon. Bid is due Wednesday. The team has been heads-down for two weeks getting the takeoff, the vendor pricing, and the bid documents into shape. Then the email arrives: Addendum 4. Revised spec attached.
+
+The team opens the new spec. It is 320 pages. The cover page says only "various revisions." There is no redline. No summary of changes. No indication of which CSI sections moved.
+
+Now what?
+
+## The Manual Approach
+
+The traditional answer is brute force. Two estimators print the new spec. They compare it page by page against the original, marking differences in red ink. They look for added sections, removed sections, changed manufacturers, modified hardware sets, revised fire ratings, and updated finishes. They do this for hours.
+
+By Tuesday morning, they have a list of changes. By Tuesday afternoon, they have started to update the takeoffs. By Tuesday evening, they have updated the bid. By Wednesday morning, they are submitting — running on caffeine, hoping they did not miss anything, knowing that one missed change could cost the firm tens of thousands in rework.
+
+This is the standard process. It is also the reason late addenda are dreaded.
+
+## What Changes With AI
+
+AI change detection inverts the workflow. Instead of two estimators searching for differences, the system runs a structured diff between the original and the revision and produces a list of every modification. Items added. Items removed. Items modified. Each change includes the original value, the revised value, and an estimated cost impact.
+
+The estimator does not have to find the changes. They start with the changes already found and decide what to do about each one.
+
+That sounds incremental, but the operational difference is large. Finding changes is the slow part. Acting on changes — once you know what they are — is fast. A team that previously spent ten hours hunting for changes can now spend two hours reviewing them and another two hours regenerating the affected takeoffs.
+
+## The Affected-Takeoffs Question
+
+A change order is not actionable until you know what it touches. A spec revision that modifies five sections does not affect every takeoff — it affects the takeoffs whose categories overlap with the modified sections.
+
+Connecting the diff to the takeoff list is where most "change detection" tools stop. They tell you what changed but leave you to figure out which takeoffs are affected. That is half the answer.
+
+A useful change-detection workflow goes one step further: it lists the existing takeoffs in the affected categories, lets the estimator pick one, and offers two regeneration paths.
+
+The first path keeps the manual edits the estimator has already made. If they spent two hours cleaning up the door schedule, those edits survive. The system replaces only the items that came directly from the spec, adds new items the revision introduced, and leaves the manually edited items alone.
+
+The second path overwrites everything. This is appropriate when the revision is large enough that the previous takeoff is no longer a useful starting point — when keeping old edits would create more confusion than they prevent.
+
+The estimator chooses, which is the point. The tool does not silently overwrite work. It surfaces the choice and acts on the user's decision.
+
+## What This Looks Like in Practice
+
+Take a real example. A revised spec changes the fire rating on a category of doors from one hour to ninety minutes. The change ripples through three places: the door schedule, the hardware set, and the frame specification.
+
+Without AI: an estimator notices the change in the door schedule but misses that the hardware set referenced in section 08 71 00 also changed. The bid goes out with the new fire rating but the old hardware. Two months later, the discrepancy is caught during shop drawing review and the GC eats the difference.
+
+With AI: the change-detection report flags both modifications. The estimator regenerates the door takeoff with "keep my edits" — preserving their manually entered locations and quantities — and the new hardware set flows in correctly. The bid goes out with consistent specs across every line item.
+
+The difference is not that AI is smarter than the estimator. It is that AI does not get tired on page 287 of a 320-page spec at 9 PM on a Tuesday.
+
+## The Pattern Worth Noticing
+
+Late addenda used to be a crisis. With structured change detection and one-click regeneration, they become a checklist.
+
+This is the broader pattern with AI in preconstruction. It is not replacing judgment. It is removing the painful manual work between judgment calls — so that when the judgment calls happen, the estimator is alert, has all the information, and is making them with hours to spare instead of minutes.
+
+The bid still has to be smart. The strategy still has to be sound. The relationships still have to be maintained. None of that goes away. What goes away is the hours spent hunting for what changed, manually updating affected takeoffs, and praying nothing was missed.
+
+## The Bottom Line
+
+Late addenda will keep coming. Specs will keep being revised at the worst possible time. Architects will keep issuing 80-page addenda the day before bid is due.
+
+The teams that handle them gracefully are not the teams with more estimators. They are the teams that have stopped doing the diff manually. AI change detection is not a luxury feature for these teams — it is the difference between a stressful Tuesday and a calm one.`,
+  },
+  {
     slug: 'why-ai-cant-replace-construction-estimators',
     title: "Why AI Can't Replace Construction Estimators — But It Can Make Them 10x Faster",
     date: 'August 15, 2025',
