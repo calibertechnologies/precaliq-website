@@ -1,10 +1,13 @@
 import { NextResponse } from 'next/server';
 
+// Force runtime evaluation. Without these, Next.js may treat the route as
+// static at build time and capture an empty env, which surfaces as
+// "Email delivery is not configured" on the deployed site even after
+// CALIMATIC_API_KEY is set in the hosting platform.
+export const runtime = 'nodejs';
+export const dynamic = 'force-dynamic';
+
 const CALIMATIC_API_URL = 'https://api.calimatic.app/api/v1/emails/send';
-const CALIMATIC_API_KEY = process.env.CALIMATIC_API_KEY || '';
-const FROM_EMAIL = process.env.FROM_EMAIL || 'noreply@precaliq.com';
-const FROM_NAME = process.env.FROM_NAME || 'PreCal-IQ';
-const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'hello@precaliq.com';
 
 interface ContactBody {
   name?: string;
@@ -51,8 +54,16 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Submission is too long' }, { status: 400 });
   }
 
-  if (!CALIMATIC_API_KEY) {
-    console.error('[Contact] CALIMATIC_API_KEY is not set; cannot deliver demo request from', email);
+  const calimaticApiKey = process.env.CALIMATIC_API_KEY?.trim() || '';
+  const fromEmail = process.env.FROM_EMAIL?.trim() || 'noreply@precaliq.com';
+  const fromName = process.env.FROM_NAME?.trim() || 'PreCal-IQ';
+  const toEmail = process.env.CONTACT_TO_EMAIL?.trim() || 'hello@precaliq.com';
+
+  if (!calimaticApiKey) {
+    console.error(
+      '[Contact] CALIMATIC_API_KEY is not set in the runtime environment. ' +
+        'If you set it on the hosting platform, redeploy so the new env is picked up.'
+    );
     return NextResponse.json({ error: 'Email delivery is not configured' }, { status: 500 });
   }
 
@@ -75,11 +86,11 @@ export async function POST(request: Request) {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'X-Api-Key': CALIMATIC_API_KEY,
+        'X-Api-Key': calimaticApiKey,
       },
       body: JSON.stringify({
-        from: { email: FROM_EMAIL, name: FROM_NAME },
-        to: [{ email: TO_EMAIL }],
+        from: { email: fromEmail, name: fromName },
+        to: [{ email: toEmail }],
         replyTo: { email, name },
         subject: `Demo request: ${subjectName} (${company})`,
         bodyHtml: html,
